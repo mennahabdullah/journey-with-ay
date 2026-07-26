@@ -10,3 +10,9 @@ Parents can see their kids' progress and review their answers over the critical 
 
 # AI Usage
 AI helped wifth generating pictures, writing stories, making sure the information is accurate, and I used it in small parts of the JavaScript code.
+
+# The Link of The website
+https://mennahabdullah.github.io/journey-with-ay/
+
+# The Link of The Screanshots And Video
+https://drive.google.com/drive/folders/1nGp0B-trc0ddtC-xV7ESANLqeeO6NkNQ?usp=drive_link
