@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Journey With Ay | رحلة مع آي</title>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo">
+
+        <ul>
+            <a href="Home" data-i18n="nav.home">Home</a>
+            <a href="story.html" data-i18n="nav.stories">Stories</a>
+            <a href="" data-i18n="nav.badges">Badges</a>
+            <a href="parents.html" data-i18n="nav.parents">Parents</a>
+        </ul>
+        <button data-i18n="btn.login" id="login-btn">Log In</button>
+    </header>
+
+    <main>
+        <section class="hero-sec">
+            <div class="hero-txt">
+                <h1 data-i18n="hero.title">A new adventure awaits every day!</h1>
+                <p data-i18n="hero.desc">Join Ay and travel back in time to Ancient Egypt through stories, games and fun activities!</p>
+                <button>
+                    <span data-i18n="hero.cta">Start today's journey</span>
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE70lEQVR4nO2aWYhcVRCGe9wVF1xwiYJGFFTcUERU9EXEBzUiiCIuEHcEFQRBxA2X+OAC6sMoPvigggZ9cUON0SiCCDFE1GSCJiajGCYzk+lbdW/91ROTkro9Pd5p+07fM91nRsQD92nuf6e+qjrnVJ3Ttdr/4z8yzGxPgG5R8FcK3gZhUqFPReiiKvpGg09X4UEIr4cQFPSbCr3EzEfU5mtkWbZIwd8o2NofCP0J8N1lWjPbDeDH/b1OegWPZllybnQIs5H9IbS2xIgWzC7V5PJOehV6cTat5nquAxOLo4IA9Gw3Q5oPDZvZ3kVtQ/jaalo2FVoZDSJN0yMhNFnVGJH0xpbWoRT0R2UQsEVLMRW+L8QQgN9taUX4hhCt5np6LgoIhD8IM4a2TGvB78wBZHUUkHyJDDFESAva4VAQBY1EAWmu90EgUtBqcESEJiOBMM/VoxCeCAfhiVgg64OMEd5Y0G4ITi3hTVFAVPi1QGNWTWubpUxoan0YBySjqwM9OlhwwmAwCPjJKCBmtg/A26sbQne2tECyNBREJDm/Fmuo0KMV02JXlmVHt3Rpmh4FoZ0BC8UWLzCjgZhtP6jSftKhVlLwl5VBlO/pyVAgvdQnaXOppWHvEdybM9/hS2Ypwz0aOzvVSarJkmrR5A1mtm9RO5llZwO8XMFjEMp88QD44hIIXlby8VERuqD4bkP4Ogjt6JRSqnxvp++b2YBHqktKSiNNz5zhAKGHOqVl7kylK2d6S5L7u3gpUaWTZsA0+FQIv+fd4VSHuMKjNVvEvQNU0OaS/7NNJDmvDeLhLhEc9R5pyqD0jNlSpbAcfuterfU4mPlwFX5ZQVshnAK0BuDHkiQ5tPgeQLdWWx2TpS3qldUnYXJZbR6GanJi1doOwu/XVOnkPK8rggD0xryACK2o7FzhX3yCP1FZkD+0OTaECF8fXGWH1kDFHiPGMLMBCK8Lcy6PecOzNQyEOSYImvuYBdr0kzc8jbm2r2UebQhf44d1Xpd5BH2DA+gZP7zoBqLCr4SCuMbnyHiYiD4uhajXD1Ghz8oXCh4v3Y1bERH6IRhEkyXhcwS8rJMBU0VhVyN835jMsnP61oUKbzSz3fPtv9fS2ur1g8MmKI34sWsJCIU5Nrk5F2ZZdkynmqmE/uf20trM9lKhL0LTAUIfdaoSIPR9dQj6Lo9GQfxCReFtbRADCno9OKf//t5d/wABP13REZlv5jNTw8YOrJAaq9qjAfBTc4WYMka88Cx+M8uyRXmBOrtuh2pyRedJhonjfD0uEa5tv7fwxqcXiMK3f2zvPZD3O5yWaMa6Vdg1s9EDVOhB/7iHDsJD3tpOl8ktCKFH+gFRSLG3zGyPNscuVuFXFfT71F405Ctme4U8p+GeA+jNfkIUnq8bDT6tFnvkqxtodSSIVprt9BP8RpqeFQVCRI4NPcDu+RH6xO8Z+wZhZvsFH5X2L0KT3oL3BUSFHlgICC083p/0DBJ7XlSKDGjNAlwlREkxzPvlTpyI8Hg/QCoXcdEeoc97BvGdfqFBRNKb+vRLBx5awLRa3rdTeaB+vNdf1dKAN3kP7ad/Xtz5KaYfg/rBnv8IB6DnvZ/v+uMB4V/9Ny0z+o1+DG+g/OKmeSpJI36o1zxc4HUAve1/A+onhHyTiA4ToQs1o6sAugOg2/NbMaVTot6N/JvHX7mX2GRK15C1AAAAAElFTkSuQmCC" alt="cat-footprint">
+                </button>
+            </div>
+        </section>
+
+
+        <section class="cards">
+            <div class="story">
+                <div class="bookIcon">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAADfElEQVR4nO1ZzatVVRS/fgQ5MKiksIzoA6qRgSM1LNKBNGmQEwOd9kFBoYPSgkZSIIQgBEX+AZUf0aAvRQoHBg/6oHxnrfPs9e47a5217r3Kw4lCxo7fPhe99/ie7977nmmwf7DhcN46v4+9136DuxqNhISEkeDKwYT/NqXzpjRtypkrfefKH5vQHpP8+c40r2ksEooifwCcprTXlT9x5e+hWWnTeXiBp5GCDLSEzIQ+N6WXyjJ7aFB+1Jryyyb0hQv5oHqNUYOo/vGgF/RkWebPmNB27JgpHXLlX03o8rXB+LQJv9GeGr+vztlp0v2m/KYL/1T/Dlym/Au4o4bQdmj6NK2NHhYa5Ho17fb4Siuyzab8ril940qXeoz9U73Lt2KZ0rd4d9U8XTKhr03pHXCAq7FAP4v2YafDd5jwiyZ82JUuXtsadBF/Qw1qb4gfrxWOvANdFMWZu01p15UTUtrVbP5+16h8Pqi/xQ5yo3k8BRkRKUgNKYinIP1IQWpIQTwF6UcKUkMK4ilIP1KQGlIQT0H6kYLUkIJ4CtKPFKSGFMRTkFs0iAv95cK/mfIpE/rMhfe78qtW5OubzeaKYQ3MBXBZka8HNzSqmQufgnb0sOAg11nVRIt/riZM+Q78cD1oEJFslSvtxLdxLtKdSPk8a+ggQAhjt81MTd2JQYsqPdFSes6FXnelD134hAnN9Aejyyb8A355b7XOrK7zYvjjSrtN+cf6kChyCZ+ouOk1aEET2vAALwOd9Ci9HEJY2pbscVd+xZWPmvCF3tNypWNXzdKXvbverT2K8Vu7GH8shLBkGO15g5hQ6cJnTWkMO+dCX7nQR9WQkna2lDbN1kLA5OTk7a68DQZ7p1c9YfDuiCu/gNrZOESyVS3lp6GFaRa04SGeotJY9AaP8wUZeAmZKx83pfcxjS3LiXt6+dAOaEMTmsDCM9711pidvbc7yf0gtpVEzqF8zHpcOF6IYVfM6GH0aFlmz8ZLKfS2CR+MY2NhnfXyx2Em7/Mi3xBCWNblXNb77JJtRA1q5/gHol2Ng9CENjygheEJ3qo7M1wrzgmM0WILQAztp3yuZqptSp+6ZE9hxWflTq3mXNW6/Ba4ZmondlMQL75OrHOh92Ivz9mSuH98wAraEsLJ5Y1bHd7MH60uK/+JFZ+dH2n8XxFCWIp1s30kNP5j/Au9Fl8KfTKiJwAAAABJRU5ErkJggg==" alt="open-book--v1">
+                </div>
+                <div>
+                    <h3 data-i18n="card.story.title">Story Of The Day</h3>
+                    <small data-i18n="card.story.desc">Read or listen to a new story from Ancient Egypt every single day.</small>
+                </div>
+                <button onclick="window.location.href='story.html'">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAbUlEQVR4nO3UsQmAMBCF4Syh4CjvYTaxyDUOqoWgsdHCcZSAK5iIvg+uuuKHK845EZG3MWAwIHZAnTdMzkaegdyzxq1tKyO3FDfy6L1vFHcBGO9FjlnLhIFY/tRP+U80CcBS5oEAU5GXKSLfdwEHHqP/wesHEAAAAABJRU5ErkJggg==" alt="long-arrow-right">
+                </button>
+            </div>
+
+
+            <div class="story">
+                <div class="medalIcon">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAADb0lEQVR4nO2aTYxMQRCAn3+Jn/g5SGziJ3Fz8HsVLs4SJ4SwOIirg8gubn4PxF+cuLjgwJI4bZBIxIHdxTBbNbsmO6bqVc8MFgli8aRmdtcaI/b99HsvG5X0YSb9+vXXVV1VXf0c57/8Lp7njTOMew3BC8PwWRhQGFoqBWjSJowHDeErIegXxk6XcJfneeOdtIkQnjOMnp8mBBecNIkQbPYL8QsGtyQ28XI5O0NNQxiOGoZbQjgQAmTAMLTpWKUi7jQmMz0eCM6uNoT5oBP/ZyN8VeaeVXYhytkZViF4GKbXqmbUnKxD8GArYrM1EGE4HheIMByzBqIbOzaNMNy05mLDeCffGiEc0HdGBqDR1xBejE8TWAcEFzRrCA0i1L07KQgz2DS+hAYxjE+TBhHGzgg0Au+TB4G34TWiwSl5kFx4jTC0pgCkJTRIuS87P2mQSgGa/oOkzLRanbCiafXY2OwE/UmDGMY34UEYu8ZEQHTjPIOwxbOJJo2auCWmDYLzkSSNYyaNT/Bg1ebYkjFz1C1p3SkujbiwwxqIlmjiyIaFoMd1u6Y5NqVEuZU2YYSgp1TEFU4cUtVMEZuF8Ui13BlJyRSPqDlZ14S9IrYlFzsa0QApjGcM4f7+vr7Z1f/0t39tnNNndQwdSxjPGoYrThxiXsMyIfgxYkWva+TVJox7DMHz2kUPgp7s9DxTu+iBVs1iNQEUhg41zeHnCK6NBCwRrLEPwnCl0cpmMpnJfsfyvMeTGqY/BLcdm8L8YqEQfm1oKoTPtAbmut2LEXEKUe8Cw7lthuGhNmHcOjSO62YXVetl1Wu6hvvmh+vmlloDMQynQ7jWG9UxCrklQvB9FPvnshWIQiEzRwg/BgUpMa714xSE8KtqNXIQYTwU2MUydOgYlQrO9FPwE8KTkULk8/mpQuAGNyvYXlsM2OfTPX94l8/Pigyken8eFILA6EJ4njchUGpDcCAyEGHsDm5WeLi2GLAx0POEHNkJUQjuBzSpLyK982og2B5wfz2J5QsJjRuGsfKXSVwa6mcYTv0F9pP16+jRihCuF4Jvf0yyCMt/D4J/9nGLsMlJkwhDS90mvVvfR4Ninf2fcNImXi35u/prkrkN9X1cN7duBEi7592b6KRRyrUvIx4J4wN1t436COEdzcuKxZdz45+hk375CQb/0GMNFp9BAAAAAElFTkSuQmCC" alt="warranty">
+                </div>
+                <div>
+                    <h3 data-i18n="card.badges.title">Badges & Rewards</h3>
+                    <small data-i18n="card.badges.desc">Collect badges and celebrate your achievements.</small>
+                </div>
+                <button onclick="window.location.href='badges.html'">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAbUlEQVR4nO3UsQmAMBCF4Syh4CjvYTaxyDUOqoWgsdHCcZSAK5iIvg+uuuKHK845EZG3MWAwIHZAnTdMzkaegdyzxq1tKyO3FDfy6L1vFHcBGO9FjlnLhIFY/tRP+U80CcBS5oEAU5GXKSLfdwEHHqP/wesHEAAAAABJRU5ErkJggg==" alt="long-arrow-right">
+                </button>
+            </div>
+
+
+            <div class="P-story">
+                <div class="parIcon">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFDUlEQVR4nO0Za4scRXCi+EJF8RVf4BNBjVFRfKCiEDVR0RCCEsEP4kcxCIchmKgE8fFByQ9QIb4SiFFzUb8oGI2KBj3f591UzR1L9qa6q2fPi/GVu5xxpLp7dvfudu9mbzd3K2zBMLvd1dVV1fXsCYIOdKADHfjfwfAQnm0I1xoFO1jhF/KW/zIetDOkaXoYK3zSKNhvFKZTH9jPCtanabogaDdI03QBE74mjDLBv0ywNdHRfYbCGxId3Sv/ZdzN46a2E4JV2OWZ38dxuKQmThwukXkvxKNBuwBReIoh/NNpOFo2HW6i4E53Qvh7sdh7UtAOYKzDWjvfngtfwXsWX8OaoB2ACT51ZhEtz4m/wgpAsLMejtYDp7GCJ1hBDysY8U8PE6yTuZYKYAjYMmQKp+fBT5K+M7y/6Jr0FK5kgt9qRzJMWcFeUULrBFA4JoR7e3uPzIMveJ6ZsclzSYwPVTH7bqLw5r2FwonyaB3dYhR0Z5HOaHiwpSfAPLiwmRPQGq7JlGEIVtdbLxEsU4CsaVoAJtwlBHWMd+fDj5Z7Jj/JxiQvGMLdfnzjTDQMwUaHi7ubzimG4HEf29/Jha9wu998bWUsWubsG0nrH46dkYbpPY4JlaMTLW1KAKXwVKPgLyY4yIS3TbsxRUt9HvhD8keVUFu89jfk3dcQPO1LlM1NCWCJaViTRQhxvFo44oQy7/DCrglliIIRa4Z6YFHePZn7L/O+8GvTZiSFnGjCO+dBo+BNCXUl1X+1i/uw2Y1bLb9RvaEpRhdmwgudRvbkLNwavKApAcpCEGwwCkbrVKOjrPCpyUyKWXkBehrdkxV82xI/qAat+8+1WZTwA5c97Xu9Ur+cUxM/hlXeqX9qJMsyDy6UNS4CwqpgvsD6hi+1XR6AbskDWsO10gQVi8Vj5JHfMiZztknyOUPWCo1gPoHj6Hom2MaE4/VKCDO5pCAct2sYr2sJE6VS//E+nj/rwiJ8JCYkb+vghM/IvODVoxHHfSfbRkjBK0z4jSFIvKbH5LcdU/iy4LSsHDcU3sgEbzHhgXyag38Mwfscw63z2pmZGK4wBF9VHekBVvi5nAAT3C9JraQGrpK3/a/wOWnyJwoKX5ohuHxOGU/T9HBW8LzVpEv/sdTpeYs5wZOoJGVDZssidHV4lXLCSO5Q8J2lL7g24shNR9ildXTprJiXGiTrqKzGCV+QsVnTInyx4rjQndVBSsHFVZGpTl+AnyUa7sq9YaFQONrd81gCJbH9oAWQENxkFA57pexCxKOcEHhJEuOVw0U4q7Sn/0weChezwgeMwpeyksQLvkPm86TtrT7hFJjh/KCF4MoJ2OOZ2jKTc2sxMYLVldoKhkTY+hvY5OHqFdFMK5mvMDWwqKqVfLiBbPxx+UpnKFw8BUkyYPk+J47uORTMT274RZDSTGbhIU17jigXkgqGpvTmTPC6J/p2MAeQNTxMuCnvGttnE+z0fG6beERSRRKO1yvGWg1ah+e5EA2jjRR34uyZpRjC2+2gxOvshiCYQ6icAqybZWP1oRvw5WpZojkC2c84xf3YyLqRkcETpF2VHJLEfRcF5eZklsmqucIQJcb/3ehaJnzVd36PVE5AwWN5L66aBUlkFVPA7xte63oFF4r9Nd+0Kf1QPey+M6zIbrXrfzipuXafXKBZqeQDhSH4uZFmoznGcdyf/MpMs4kK7xBzyrn2a+ncWm8bHehABzoQNAj/AW/Ykq51Ayk4AAAAAElFTkSuQmCC" alt="user-group-man-woman">
+                </div>
+                <div>
+                    <h3 data-i18n="card.parents.title">Parents Corner</h3>
+                    <small data-i18n="card.parents.desc">Track progress, view achievements, and find resources to support your child's learning.</small>
+                </div>
+                <button onclick="window.location.href='parents.html'">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAbUlEQVR4nO3UsQmAMBCF4Syh4CjvYTaxyDUOqoWgsdHCcZSAK5iIvg+uuuKHK845EZG3MWAwIHZAnTdMzkaegdyzxq1tKyO3FDfy6L1vFHcBGO9FjlnLhIFY/tRP+U80CcBS5oEAU5GXKSLfdwEHHqP/wesHEAAAAABJRU5ErkJggg==" alt="long-arrow-right">
+                </button>
+            </div>
+        </section>
+
+
+
+        <section class="place-sec">
+            <h2 data-i18n="places.heading">Let's Know More Places</h2>
+            <div class="his-places">
+                <div class="places">
+                    <img class="myImg" src="Karnak.png" alt="">
+                    <div>
+                        <h3 data-i18n="place.karnak.title">The Karnak Temple</h3>
+                        <small data-i18n="place.karnak.desc">Explore the grand temple of Karnak and its secrets.</small>
+                    </div>
+                    <button>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAbUlEQVR4nO3UsQmAMBCF4Syh4CjvYTaxyDUOqoWgsdHCcZSAK5iIvg+uuuKHK845EZG3MWAwIHZAnTdMzkaegdyzxq1tKyO3FDfy6L1vFHcBGO9FjlnLhIFY/tRP+U80CcBS5oEAU5GXKSLfdwEHHqP/wesHEAAAAABJRU5ErkJggg==" alt="long-arrow-right">
+                    </button>
+                </div>
+
+                <div class="places">
+                    <img class="myImg" src="vally.png" alt="">
+                    <h3 data-i18n="place.valley.title">Valley of the Kings</h3>
+                    <small data-i18n="place.valley.desc">Explore the hidden tombs of Egypt's greatest pharaohs and their treasures.</small>
+                    <button>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAbUlEQVR4nO3UsQmAMBCF4Syh4CjvYTaxyDUOqoWgsdHCcZSAK5iIvg+uuuKHK845EZG3MWAwIHZAnTdMzkaegdyzxq1tKyO3FDfy6L1vFHcBGO9FjlnLhIFY/tRP+U80CcBS5oEAU5GXKSLfdwEHHqP/wesHEAAAAABJRU5ErkJggg==" alt="long-arrow-right">
+                    </button>
+                </div>
+
+                <div class="places">
+                    <img class="myImg" src="tmpl.png" alt="">
+                    <h3 data-i18n="place.abu.title">Abu Simbel Temples</h3>
+                    <small data-i18n="place.abu.desc">Discover the giant mountain temple where the sun lights up the king's face.</small>
+                    <button>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAbUlEQVR4nO3UsQmAMBCF4Syh4CjvYTaxyDUOqoWgsdHCcZSAK5iIvg+uuuKHK845EZG3MWAwIHZAnTdMzkaegdyzxq1tKyO3FDfy6L1vFHcBGO9FjlnLhIFY/tRP+U80CcBS5oEAU5GXKSLfdwEHHqP/wesHEAAAAABJRU5ErkJggg==" alt="long-arrow-right">
+                    </button>
+                </div>
+
+                <div class="places">
+                    <img class="myImg" src="pyramid.png" alt="">
+                    <h3 data-i18n="place.pyramid.title">The Great Pyramid</h3>
+                    <small data-i18n="place.pyramid.desc">Uncover the mysteries of the ancient world's most massive stone wonder.</small>
+                    <button>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAbUlEQVR4nO3UsQmAMBCF4Syh4CjvYTaxyDUOqoWgsdHCcZSAK5iIvg+uuuKHK845EZG3MWAwIHZAnTdMzkaegdyzxq1tKyO3FDfy6L1vFHcBGO9FjlnLhIFY/tRP+U80CcBS5oEAU5GXKSLfdwEHHqP/wesHEAAAAABJRU5ErkJggg==" alt="long-arrow-right">
+                    </button>
+                </div>
+
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p data-i18n="footer.quote">The past is full of stories, and every story is a journey</p>
+        <small data-i18n="footer.author">- Ay</small>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFPklEQVR4nO1YTWwbRRi1KqgQIIE4ABIcECckOHCDA6iq7cSxk911Yq9/E9s7s5gk9c46sRPHcZqtm6RJ49kAUgWqBJcKwQVROBQJ8SOoQFAkEEIg8VMoBVIQDVREDSpJ6kGzJJG93nXqNNlIyE+ai/ftfO/Nznzf57HZmmiiiSaa2E2MRliU9bkWEOMoy6yjnAt2nJE57nYzfj7OObK8+7zMOq4i1l7OBTpOKzy/17YbGAmxz6KO/UTSjYyv7VfFZtuj5xciXA8VrecPB9q/sl68wD6CGLsmYDTMkqP9cTLd20Oyfvd/v0WYpyv5SnfnnWlvywo1XIhyGn+mL0YGu1xrfG+vpQZyvOcjGnisu5OoCG4MLAEyEmRIpqvtjyrDQeYk5RcFvoo/258gaa+TDPs9Zy01MNjVujjkbyO4QkyliUyna1XPz4fZGq6KIJmAITLgbVm21AA9hFPJqKEgOg4l+JVKfpp1lGcPJAy5GEF6bq5aamDY7142E0/HTF+sagsVot66/EMCb+0XKILgl/UEqRL8tpI/3dv9Sz3+0f74BUsNqAhM1hOEEXxTx39nE/5blhqYSwv3YwRMtwVGoFhlQILjdb9YCozZrAZG4BmT1SyXEHiomis8Vmf1yziVfMByA8eTyZsxAmcMRL2g5yqKsoeeC0MDEnxlx0QqEe7hId59HjH2Ms3V+TB7ovL5TDJ5G5bgcxjBBRXBeRXBkqIY9zZzksgZiD832x+/e51T6u6+ZSTEvDvQ2bJC+6tcoONDo7bk2sRHA4+mWeeqvnfJBTo+3tKEdCtJAKgI/qhK4KKK4Al1IHZPpfhsl+uiPt5ImDvWuHhFuYFWT61d6OkkpVRC611oNaW/FSJc1rbNGOI932z0Vn0xrbdCrINkfW2XGp4sH2ZLdLKDMV/Nni1EvSTrc/2+neILUXaQNnpKIlAdK8ISmbWXG54w62v7LRdsNylSgGS6qnud68HxZPLGQW/LlXGDxSoKQUK73oYnHWCdq/QzmqW+STH8z3YZKES5I8OBdsPGcFIM00av8VgjIXalbuWU4Dmj95R4/KZckDmV9jqX6coNdLZeHg1zE/ViDQfafzJr9KiBHO/5tGEDE2Lou00MvFojHrbekfG1LeizCN3buTD7klmsYiKwaBbnMAitHgx79zVsACPRsMqujzkE41XieX5vxu+ep4LTrFNbuVIKELqvNSOMnYzFONEoVumAcMUszpEnoydtW8FTcvw+LMG/TSaep1ulkp8LeL6gQmXWTqZ7u2syCX1GC+EUDN1Vu1jwc+M44M8ZSbx3Swa0iVMgQfsUXQZaKaUEd7V45g1tqzB2MvVExGC7AZp2NRNDvPt7fRxVFmIGzeCSKoH9Wxa/MTmCHtrvaBMi+BmWRVfl83yQeXH9ZuIwCJluOVoEZcaxVlk7nq9ZLCQmVQTOqhJcxBI4pW8GdwS5APPe+iFVEn7zVnnjQAY1Lv1StFDadgv04mqI9/ygHVivk0yI5iuvHxMwvPElsn7Pz4UoE7ZUPL3fGexy/ZVmHVqGwSlwzeLXB835tN9Ba/dKNPWORVlgiYFhvv0T2tDNpoSGhetHKSWQohDQ7pFkzml4NrYd4zH+0vUKNy6MgIzH/I13nY2iJAlLO2FA1VI0vLzjBjACH+yUAWzFzcRcSnycFrNNtsMFVYLvYwm+jBF4DSNweu0vZ913SlbkfgpVEvapEnxbKzoILGEJfq1K8HWMgDyXFh80e4/+98UItqiSkKb3Spjeakgwr8qQP9bff6sl4ptoookmmvhf4V900pk2tcCsTgAAAABJRU5ErkJggg==" alt="cat-footprint" class="cat">
+        <img src="AY.png" alt="Ay">
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
