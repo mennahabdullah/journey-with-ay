@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Journey With Ay | Parents</title>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo">
+
+        <ul>
+            <a href="index.html" data-i18n="nav.home">Home</a>
+            <a href="story.html" data-i18n="nav.stories">Stories</a>
+            <a href="parents.html" data-i18n="nav.badges">Parents</a>
+        </ul>
+        <button data-i18n="btn.login" id="login-btn">Log In</button>
+    </header>
+
+    <main>
+        <section class="hero-sec">
+            <div class="hero-txt">
+                <h1 data-i18n="hero.title">Your Badges</h1>
+                <p data-i18n="hero.desc">Every badge is a step in your journey through Ancient Egypt</p>
+            </div>
+        </section>
+
+
+
+        <section class="badge-info">
+            <div class="Ay-sec">
+                <img src="AY4.png" alt="Ay">
+                <small>Hi, little explorer!</small>
+            </div>
+            <div id="first-info">
+                <div style="display: flex; align-items: center;">
+                    <img style="width: 2rem; height: 2rem;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE7UlEQVR4nO2W3WtbZRzHnxbbJmlO3pqXkyG7UZZMt+kYeD9kYNH/YLo7EYogwnZha20nG3hZZSCyodJdeDEYXgh9TdI07zE9OXlpu1nU2k2dq+2Fgq515/nK7zk5MdZ22U2aRPqFHyeQ3znP9/M83+c5h7EDHehAj628L/iyIgfv5v1B7KzNzU1Rz7+zhOcGF3FicBHHB8s4NlTGs0MlPDNUwtF3i9W+3Z6hyME7inyknzVKNMBuA1PdX18XVQ/A6NvrOYocWGsYwF6DUv308z1R9QCMvkc9izUDYO3uj6LqARh9LQfw/Q9rouoBGH1NAVD8gfJeg658+52oegBG3557wB8oNwxAPXT0ZN4fWN1t4OVvVkTVAzD6dgcIrNIYrJHK+U9Z8v7AqCIHtmoHLy3fElUPwOjbYfyvvBz8cLkvILH9knooeCQvB2YNE2ppUVQ9AKOv5uyPqb7gMdYMgbEORQ6ey/uD93NqEVT1AIw+RQ5sKv7AW2CskzVbxcPHnZlr44vpnFIXgHqyn3y2oshPe1irKTV8aaD/Yp7vBfDi5QWeHvngPGtlXRm4Yr0w+lXhhffKVYCTwyW8eXFi9erIVRdrFy18eebyr1k3X496ePbTM5dYu0m7ze7wIgPPMCDEGveB1ii1PQBusX6t2Pm7lurYRoS9xNpNUH1eFL1/8sluIOU4wdpNKHjeR9EHPtEFLW6LsnYSkk+aoXrWUfDqAGEzR87vZu0i5PveQN4DqB4BwENm4GvXddYOAlgHFPcSFDcIogqQdW4B7AnW6kLO/QoW+oAFNwiiCpBxAgXPKGvpmc94ZGSdYeT6IGphB0DRu4GyR6be5piMWGTEbWcRly5oSduYlrTd0FL2hJayryHt3BYms07Ku165vh0r4BX7Aqp3G6pnDQVfAkXvDRTlMZR8F1D2nyXAxgGEzNf5rBl8zgoel8CTdr1SdvC0Q1QVIqtD1GxiESmxucUG9+pAxcqVemMSkLSNNw4ArFMLmdJ8qkc3RtewBTxqBU/awFP/hRB9MWs1UgKC9gj1xCX9/sqztHlJRWQfNjoivTd5xAw+YwK9aYUBquke8IhFrA7STmGSz5r01UjZgXmrWA0+Ublnslt/RthML7u5hhv/F0RM+piTITI8a9LNGyCGuagVoP9rIQ1QuidiAT0DGce1fTVfhUhL57WEnVN2+VyvmEk+Y9avCRvEfqGYEAD9H9JnW/ymexJ2Wp2Rppj/B8LxGjJOjScduum4Tb+SSZpt2hdkmiAoWnQyZVxAxsWRd77OWkGI298WcaJZpZqvzDrlXZxUNvCpbj02tMlLMp0+zYnNbtIiljFxEhEEmaeNSTkXMbHpEPQfrchcL5BzASWfwlpFWtiSFJGJUs4rcYn2iqO0GimCCNVEacH9G2sFIce6tJDlD3GihCn33frZnnKIl5VYBQMiURslO1D2WJvtnyFsOSVmlkwb5hI2/YW15KeX0wMdohInitpkJUpZx6vN9s8w0zMgACjzVPOS/tmQd99DzncaMdNhLWodr0LQalSihLj0RbP9M22653Mx68asJu1byLiGd/Zhrve0FpMK1ZNqqhsPQ+YV1mxp0z3LZF4LmTjmpZuIMNOjvqUQk85p89IvtMkfTnU/YM2WNtG1oU2bVIR6nnrce5C0ubSY9SOETRuNdXegA/3/9TcuMRh9rG0/fQAAAABJRU5ErkJggg==" alt="medal">
+                    <h3>Badges Earned</h3>
+                </div>
+                <h4>0</h4>
+            </div>
+
+            <div id="sec-info">
+                <div style="display: flex; align-items: center;">
+                    <img style="width: 2rem; height: 2rem;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFOElEQVR4nO1YbUxbZRTmn5ps/nZ/TfSfJv4z+0MC7b1VEwPRMTAuKxGZMWLcAhu097bVwQRkHwXW3nv7RWnZKm4G2Jhxkg0dsPGxZbAFZJAxmKjFdjFAZ7/WY87FltuPS2+hLppwkpO8eXvv+z73fDznnObkbMu2/E9Fr1U836qWlZho0mnWKaY5ilgxqGVhVFzjnllHOgw1ecXmqt07nxqwlur8lzkN2cGo5YHOpsLVUddH8KDvCHiv62Bl7CivuMa9kbMHoLOxcJWh5H6WJp1GSvbSvwbs+MHXn2MpmR4v+7Gt1I8gfLfqJCk+228rDTAUEeBo4pRNm/tsVsHhl7M0MXuhpdi3NKiRDMyXoEsDNHQ3F/lMGnKCVZG7sgLOcCT/NSNF/DnkLA/6btbGXfh4oh4Cs80QXjTBkyUrgLedV1zjHv72eKIhHujNWhhyloU4mvCcrsl7dcuWQ3B3uyoiccDG6yE0bwTwOgAepdfwLyz/McIz7nRVRDia+KO1MveFTYHDOGFpYnrI+WFAeLD/5xMAXntKIMHfrRB0W1P+FvG08+8KzxpwlgU5DTmF8Z0xQJYi9BhzQreiyzayVDfzPvRaSjd8Bs8QurtLX+TjaNmxjKkEs1WYELzlNrg46LbCueZiON9aAo9mWiC01Cb6rNCSmDgsRfgycjVLkx1IC8KYE3PryjwDlyxKYCgCDCpZTBmagH7Xx6LuxjOj5/dblQGTRmGTXCHQekKeC80zqS3xqwXsx96OAybUr0/sEbViaMG4zpNDWsA7W7W5O9ICxPKFFUJIJWLZOnzhUAzMcM8hWJ5jwPeQA/fkSRi9WAk97D7xsPA64qzoaixYPa3O35sWINbWEdeBiJTE6DUreXCWL95M7co0NBSY1ccADp8tR9ppTwvQolNMYx2NvoiEK3ZBX0d5zIJ3r1CSODGOHxdNsXvmLh8Gi04xmRYgSxErwviLuG2iF3juNQOnUcRAftv6HtwfqUtruahixRHGIUsRy2kBGlSy8MrYOveJZW9UH95uBFvtW3HJ4Tr+LtwfrksP0muP3bM8ehSManko6wDhn2y+3vUZmLRvxAH9qfOTDd+LeDYBMMnFS+IuhgT9a9EEN3oOxrn93uDn4i52b8LFmSQJiCjSTJS4v7OWZjdJsE2XSjMLtxpgafJUMn38ZgGTds2K37eVidPMTALNaMm29DFYk1eMbfo6UTeIEvVYbyUY1HL4Rr8Xrp2rgNuXq2HsUhWcaXon5mLcS50g8eXO1VC4alDL96S3YNXunUmlboERB6iSier5lhIIitAU9pPR8z1DGmDUMmmlDgUHnH6b0i9sFrDAJyeFGSb6VNDN7ANHfQEfd5ggF01KnrifeOyi2Su03lXrfr+kKiLspPl2a4Beb7emsFF1bLkfhIR2y32N5hsFQ3X+i5IB8lak5CdxwHkaDStDyb/K2UzLz2nIiUFHWVLLn8rdkLbltye3/O0fhPAOfYXimYwB8lZUkbtYmvDc6fo0YWj6EkIPDGtTnAReDC2wcTGXlaEpKjgaIkjekolj5ziOnXoIL3J8VeDLotfOr/mxc6Y5CRieMegoC7Ea0tNCyV7JyYbgV+KwjfEiTBxfhuoeoNeGJA05vmXLJQrGCU5fOOD0W5V+rJ0+icCQ565Y9wfX/vogmzYdc1IEv5zTklakBldjwSqWqLkfDvPFHrsg7EpwjbX1xpnyCFYIfNZEk/aMqWRLQLW5O3CGYDWk3axTTGEnYlDlh1FxjXtmmmgz1siKJFeIbdmWnP+e/A2CtlECYRvWqgAAAABJRU5ErkJggg==" alt="cheap-2">
+                    <h3>Total Points</h3>
+                </div>
+                <h4>0</h4>
+            </div>
+
+            <div id="third-info">
+                <img style="width: 5rem; height: 5rem;" src="data:image/png;base64,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" alt="treasure-chest">
+                <div>
+                    <h3>Next Badge</h3>
+                    <h4>First step: Read your first story.</h4>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="badges-sec" style="text-align: center;">
+            <div class="sec-head">
+                <span class="line"></span>
+                <h2>Badge Collection</h2>
+                <span class="line"></span>
+            </div>
+
+
+            <div class="badges">
+                <div class="badge-card">
+                    <img src="f-badge.png" alt="Badge">
+                    <h3>First Steps</h3>
+                    <p>Read your first story.</p>
+                </div>
+        
+                <div class="badge-card">
+                    <img src="sec-badge.png" alt="Badge">
+                    <h3>Story Reader</h3>
+                    <p>Read 5 stories.</p>
+                </div>
+        
+                <div class="badge-card">
+                    <img src="th-badge.png" alt="Badge">
+                    <h3>History Lover</h3>
+                    <p>Read 10 stories.</p>
+                </div>
+
+                <div class="badge-card">
+                    <img src="fo-badge.png" alt="Badge">
+                    <h3>Explorer</h3>
+                    <p>Visit every category.</p>
+                </div>
+        
+                <div class="badge-card">
+                    <img src="fif-badge.png" alt="Badge">
+                    <h3>Ancient Expert</h3>
+                    <p>Read 20 stories.</p>
+                </div>
+
+                <div class="badge-card">
+                    <img src="si-badge.png" alt="Badge">
+                    <h3>Dedicated Learner</h3>
+                    <p>Visit the website 7 days.</p>
+                </div>
+
+                <div class="badge-card locked">
+                    <img src="se-badge.png" alt="Badge">
+                    <h3>Legend of Egypt</h3>
+                    <p>Earn every badge.</p>
+                    <span class="locked-text">Locked</span>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="add-cards">
+            <div class="add-card" id="first-c">
+                <h3>Recently Earned</h3>
+                <small class="ay-note">Read stories to earn Badges.</small>
+            </div>
+
+            <div class="add-card" id="sec-car">
+                <h3 style="position: absolute; top: 5rem; left: 5rem;">Keep going, Explorer!</h3>
+                <span style="width: 15vw; position: absolute; top: 8rem; left: 8rem;">The more you learn, the more badges you earn!</span>
+            </div>
+
+            <div class="add-card" id="third-c">
+                <h3>What are badges?</h3>
+                <p style="width: 15vw; position:absolute; left: 2rem; top: 3rem;">Badges are rewards for your achievements! They show how much you've learnt and how brave an explorer you are!</p>
+                <p style="position: absolute; top: 12rem; width: 12vw; left: 1rem;">Collect badges, earn points, and become a true Ancient Egypt expert</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p data-i18n="footer.quote">The past is full of stories, and every story is a journey</p>
+        <small data-i18n="footer.author">- Ay</small>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFPklEQVR4nO1YTWwbRRi1KqgQIIE4ABIcECckOHCDA6iq7cSxk911Yq9/E9s7s5gk9c46sRPHcZqtm6RJ49kAUgWqBJcKwQVROBQJ8SOoQFAkEEIg8VMoBVIQDVREDSpJ6kGzJJG93nXqNNlIyE+ai/ftfO/Nznzf57HZmmiiiSaa2E2MRliU9bkWEOMoy6yjnAt2nJE57nYzfj7OObK8+7zMOq4i1l7OBTpOKzy/17YbGAmxz6KO/UTSjYyv7VfFZtuj5xciXA8VrecPB9q/sl68wD6CGLsmYDTMkqP9cTLd20Oyfvd/v0WYpyv5SnfnnWlvywo1XIhyGn+mL0YGu1xrfG+vpQZyvOcjGnisu5OoCG4MLAEyEmRIpqvtjyrDQeYk5RcFvoo/258gaa+TDPs9Zy01MNjVujjkbyO4QkyliUyna1XPz4fZGq6KIJmAITLgbVm21AA9hFPJqKEgOg4l+JVKfpp1lGcPJAy5GEF6bq5aamDY7142E0/HTF+sagsVot66/EMCb+0XKILgl/UEqRL8tpI/3dv9Sz3+0f74BUsNqAhM1hOEEXxTx39nE/5blhqYSwv3YwRMtwVGoFhlQILjdb9YCozZrAZG4BmT1SyXEHiomis8Vmf1yziVfMByA8eTyZsxAmcMRL2g5yqKsoeeC0MDEnxlx0QqEe7hId59HjH2Ms3V+TB7ovL5TDJ5G5bgcxjBBRXBeRXBkqIY9zZzksgZiD832x+/e51T6u6+ZSTEvDvQ2bJC+6tcoONDo7bk2sRHA4+mWeeqvnfJBTo+3tKEdCtJAKgI/qhK4KKK4Al1IHZPpfhsl+uiPt5ImDvWuHhFuYFWT61d6OkkpVRC611oNaW/FSJc1rbNGOI932z0Vn0xrbdCrINkfW2XGp4sH2ZLdLKDMV/Nni1EvSTrc/2+neILUXaQNnpKIlAdK8ISmbWXG54w62v7LRdsNylSgGS6qnud68HxZPLGQW/LlXGDxSoKQUK73oYnHWCdq/QzmqW+STH8z3YZKES5I8OBdsPGcFIM00av8VgjIXalbuWU4Dmj95R4/KZckDmV9jqX6coNdLZeHg1zE/ViDQfafzJr9KiBHO/5tGEDE2Lou00MvFojHrbekfG1LeizCN3buTD7klmsYiKwaBbnMAitHgx79zVsACPRsMqujzkE41XieX5vxu+ep4LTrFNbuVIKELqvNSOMnYzFONEoVumAcMUszpEnoydtW8FTcvw+LMG/TSaep1ulkp8LeL6gQmXWTqZ7u2syCX1GC+EUDN1Vu1jwc+M44M8ZSbx3Swa0iVMgQfsUXQZaKaUEd7V45g1tqzB2MvVExGC7AZp2NRNDvPt7fRxVFmIGzeCSKoH9Wxa/MTmCHtrvaBMi+BmWRVfl83yQeXH9ZuIwCJluOVoEZcaxVlk7nq9ZLCQmVQTOqhJcxBI4pW8GdwS5APPe+iFVEn7zVnnjQAY1Lv1StFDadgv04mqI9/ygHVivk0yI5iuvHxMwvPElsn7Pz4UoE7ZUPL3fGexy/ZVmHVqGwSlwzeLXB835tN9Ba/dKNPWORVlgiYFhvv0T2tDNpoSGhetHKSWQohDQ7pFkzml4NrYd4zH+0vUKNy6MgIzH/I13nY2iJAlLO2FA1VI0vLzjBjACH+yUAWzFzcRcSnycFrNNtsMFVYLvYwm+jBF4DSNweu0vZ913SlbkfgpVEvapEnxbKzoILGEJfq1K8HWMgDyXFh80e4/+98UItqiSkKb3Spjeakgwr8qQP9bff6sl4ptoookmmvhf4V900pk2tcCsTgAAAABJRU5ErkJggg==" alt="cat-footprint" class="cat">
+        <img src="AY.png" alt="Ay">
+    </footer>
+</body>
+</html>
