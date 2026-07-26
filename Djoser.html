@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Stories | Djoser</title>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo">
+
+        <ul>
+            <a href="index.html" data-i18n="nav.home">Home</a>
+            <a href="story.html" data-i18n="nav.stories"></a>
+            <a href="badges.html" data-i18n="nav.badges">Badges</a>
+            <a href="parents.html" data-i18n="nav.parents">Parents</a>
+        </ul>
+        <button data-i18n="btn.login" id="login-btn">Log In</button>
+    </header>
+
+
+
+    <main>
+        <section class="hero-sec">
+            <div class="hero-txt">
+                <h1>Djoser</h1>
+                <p>The King Who Built the First Pyramid.</p>
+            </div>
+            <div class="progress-sec">
+                <span>Progress</span>
+                <div class="progress-container"><div id="fill" class="progress-content">.</div></div>
+                <span id="percentLabel">0%</span>
+            </div>
+        </section>
+
+
+        <section class="narmer-page">
+            <div class="narmer-container">
+                <div style="display: flex; justify-content: space-evenly; width: 100%; margin-bottom: 1rem;">
+                    <div>
+                        <small>Text size</small>
+                        <button id="smallFont" class="smaller" ><small>A</small></button>
+                        <button id="defaultFont" class="def">A</button>
+                        <button id="largeFont" class="larger">A</button>
+                    </div>
+        
+                    <div style="display: flex; gap: 0.5rem; align-items: center;">
+                        <small>Read Aloud</small>
+                        <button class="read-aloud" id="readAloud">
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAADeUlEQVR4nO2aPWgUQRSAV8VfUGMh/qGdVpbaaeMfgcR774Srglyy7+VCCiWJGBHELTS5eacS0sXKStSAiiiiIghGLQxEW7VQlNhoBCOiEmJkdvfM5m5vvUvuZ+/Mg21mZnfmm/fezJs3axjz8p9Jsr1hjRBcU4xfhfBpL+M2o9pEJWKrFeOwME6lH8XwxKgmETOyUjE880LYD+GEUS1iJRpXCOOjLAj3MapB+o/ULxWCu7kgqgLEisWWKILbQRChB7mYSCxWhLf+BRFqkMFYbJEQXMkHIrQggxqC8XK+EIWAJDm652wiuqH0PmFZCxXhpUIg8gURM7JRCL8Iw+cUR6Ilg5gyjAXCOFAoRL4gPXRw3d+Fg2BSMXSUBEQY+mcDUaiPCMExDeJEBdhVVAhFkJotxGycXTjaZMMQTBbNzBTBmblABIFY2ucYW/WmmtUvY5cbq41p/wnczIRRhOBjUOdzhQgCUQwdTht4qRKNW7In0dmnFOPNgJlGlU/nJQVJ4C4heOU6+IdMmFQ8tl4xjuv63tbozhyzgaOVBtHSF4c6Rfg4rZlMMxOGXlsrhDe85Z4G+XVeahAt/U31qxTBa9eMLCNjWdZHAWH4pQ9tRlhAzpnR7anWyD5fM2MbZDxzwEJ4z9VKPBQgTrSMLxyfwNPZY4IHzoChzX9RwIFQgFzojC0XhhOOqeBUysQD3jGlGJr9VimPtoZDAeL55nFnYHDfW64TFW75u6w4zAEZDRVIT0tsrWvzn7zljsb0O/DDW27F48v8yisOovcHPxDLOftr//meT3nFQRRBd5BpCeHbGZpqa9gUKtPSpqMIT6adXVF0/0zASIufswvDbgcQnodv+WU8laUpxocuSOuMsVKkM1TLb3pDFBP2Zo8H7FnXqVYdtoR6Q8wlfXGoE8Y3fiGKvTAQTijCn74hSliCxmR7wxqdH3bbjmjzy9BU0qmD674fmG5QORBxzCmtiffnm2Gzt15nVITgm2L8LWZkR8DBCpK5NFMOEDUdQ41kQtj1bjIiZwgftqOulWFOGWHMWNFyXWVPPphwOJ18EBOwKBDlTgcpgm7bJ/S7FOk0qjFBJwx3HACYVBQ9alR7yjTJCEappSaS2DV1rVBTFz01dfVWU5ehNXU9XVM/DAT9wiEEQ0Y1StI+X+BV56caGJK2Q1srPaZ5McogfwAP7RA+Cv2pdwAAAABJRU5ErkJggg==" alt="room-sound">
+                        </button>
+                        <audio id="storySound" src="djoser-story.mp3"></audio>
+                    </div>
+                    <button onclick="window.location.href='khufu.html'" class="next">Next</button>
+                </div>
+                <div class="narmer-story">
+        
+                    <h2 id="kingName">❊ King Djoser ❊</h2>
+                    <h3 id="kingDescribe">The King Who Built the First Pyramid.</h3>
+                    <br>
+                    <span>✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧✧</span>
+                    <br>
+                    <img style="width: 50vw;" src="Djoser.png" alt="King Djoser">
+                    <article>
+                        <p class="storyText">Long ago, after the time of Narmer, Egypt had a wise king named <strong>Djoser</strong>. He ruled during the <strong>Third Dynasty</strong>, about <strong>4,600 years ago</strong>.</p>
+                        <br>
+                        <p class="storyText">Djoser wanted to create something that had never been built before. He asked his talented architect, <strong>Imhotep</strong>, to design a special tomb.</p>
+                        <br>
+                        <p class="storyText">Instead of building a flat tomb like the ones before, Imhotep stacked several stone structures on top of each other. This created the <strong>Step Pyramid</strong>, the world's <strong>first pyramid</strong> and the first giant building made entirely of stone.</p>
+                        <br>
+                        <p class="storyText">The Step Pyramid was built at <strong>Saqqara</strong>, near the ancient city of Memphis. It became the center of a large complex with temples, courtyards, and walls where important ceremonies took place.</p>
+                        <br>
+                        <p class="storyText">Djoser's pyramid changed history. It inspired the great pyramids that were built many years later, including the famous pyramids at Giza.</p>
+                        <br>
+                        <p class="storyText">Today, people from around the world visit the Step Pyramid to see the beginning of Egypt's amazing pyramid-building tradition.</p>
+                    </article>
+                </div>
+            </div>
+        
+        
+            <div>
+                <div class="dyk-sec">
+                    <h3>Did You Know?</h3>
+                    <p>His architect, <strong>Imhotep</strong>, was one of the most famous builders in history.</p>
+                </div>
+
+                <div class="dyk-sec">
+                    <h3>Did You Know?</h3>
+                    <p>The Step Pyramid was the <strong>first pyramid ever built</strong>.</p>
+                </div>
+
+                <div class="new-words">
+                    <div class="heading">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADgElEQVR4nO1ZTWhUVxQeFaVQ6A921YWL/kSl1WUprbioBZUiNa26KYKL7rSWFgqmRcWt3bpwpUjduFYp1k1jbBpKEG3T5J3zkg6J75x7zsSmgjFQpd5y7hvjZJJJZt4kNNL7wSXDy73f+b73zr3DfK9UioiIiFiWEIaflPFvYZhQwhEl+E0JfhaCC8J4vOLSvc6lb3jvVxat4b1faRzGZZzGrYR9eS38I9QOGrCnZXJl9E0NAhWGM8rwUblcfmYhXpujjB8L4Vlb22ydwgaIkpcqt4dfdw7eUkq3q4MDQvitMFwRQq4tIgROCY9MTIw8X89n15SgSwlk5hrkKtdJ47YaVstqWu22DSw0z7nhN02YMNyYIYrSDx/PEUp215oNcwm6bO1i6ViUhZIl26xfa9rrRBjTwrHH5iy6DgmPEL5v14DBe79CCT4Twgc1T+SBEhyy/7XKp3PoUIKLNuafVPTRVSEEnULwT3V0FuXRZrQthQGDHY/KuKcdDv0vDSwGNBpoA+HUKfItulwMLBWHRgNNIhooRQMYDWg0gNFAYUQDpWgAowGNBrA9A3lEAsPC0C+E3fZjWghPqYOvKi7dJzK0yXu/qlUD3vevltvJZiH8RBiPKuHp/Mc6/qKEv4Y0kHG8sIEZ8cgCQwjvCcGPQvB1JRvsaMSriq8KwzfCeN0iQ22Wn/Faywbyu+RX3B0dfTHLBteKwCvj2dB655L3QjoXskw8pwS/W/JQV7CnwrB1lgGG0RrTD6t563chseN0v3Ezw0aikXVW969y+YWmnmy7vXrnDj5XcfCBZaTVQNZixkf1vBWCw9Z+LsNdzt18tmi9hgbs8Yvg2ybGIpHpwclOu65j6WvWu/ORmzAh/FwZ/2z1xnjfv9pqBA2c7JyhwW6QXc8GOxoaaLLfH9qmrqZjXUrJuwMDA2vqxYyPDr1svW6p31xibY1SssX2jRBeCgeFtVULWqbJbJMo4aQwYMjnGa8qww/53/C5N4hmmJqTjHAy7+V0e6MTKb/DfpVyukMZzivD/bmFwVS1Vm9N/VwLYZ8wpEErYXepCGxjhXYiOJRn/DhYt4FJGL+ofVdgn4WTL+vjeLUDwN4tuOSgcTbatEsOOznsVDJBT4zAmFDyaRgMYzWiB4Tx2DglG0rLEbYnhPDy7DaDi5ql75SeFkgG7yvjLRutvhOIiIj4H+FfsWsXQPVkDaoAAAAASUVORK5CYII=" alt="open-book" class="icon">
+                        <h3>New words</h3>
+                    </div>
+
+                    <div class="word-card">
+                        <h4>Step Pyramid</h4>
+                        <span><i>A pyramid with flat steps instead of smooth sides.</i></span>
+                    </div>
+
+                    <div class="word-card">
+                        <h4>Artifact</h4>
+                        <span><i>A person who designs buildings.</i></span>
+                    </div>
+
+                    <div class="word-card">
+                        <h4>Tomb</h4>
+                        <span><i>A place where a person is buried.</i></span>
+                    </div>
+
+                    <div class="word-card">
+                        <h4>Monument</h4>
+                        <span><i>A building or structure made to remember an important person or event.</i></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="art-ay">
+            <div class="art">
+                <img src="step-pyramid.png" alt="step pyramid">
+                <div>
+                    <h3>The Step Pyramid of Djoser</h3>
+                    <p>The <strong>Step Pyramid</strong> at Saqqara is the <strong>oldest pyramid in Egypt</strong>. It was designed by <strong>Imhotep</strong> and was the first massive building made entirely of stone.</p>
+                </div>
+            </div>
+
+            <div class="Ay-msg">
+                <h3>Ay wants to know if you like the story of the king Djoser!</h3>
+                <img src="AY3.png" alt="Ay" class="ay-msg-img">
+                <div class="stars">
+                    <div class="stars" id="stars">
+                        <span class="star" data-value="1">★</span>
+                        <span class="star" data-value="2">★</span>
+                        <span class="star" data-value="3">★</span>
+                        <span class="star" data-value="4">★</span>
+                        <span class="star" data-value="5">★</span>
+                    </div>
+                    <div class="result" id="result"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quiz">
+            <h3>Ready to gain your treasure?</h3>
+            <div class="quiz-container">
+                <div class="Question">
+                    <small>First Question</small>
+                    <small> | </small>
+                    <small style="color: var(--Golden);">10 points</small>
+                    <div>
+                        <p>Who designed the Step Pyramid?</p>
+                        <ol>
+                            <li><button class="quest answers">Khufu.</button></li>
+                            <li><button class="quest answers">Narmer.</button></li>
+                            <li><button id="right-answer" class="quest">Imhotep.</button></li>
+                            <li><button class="quest answers">Ramses II.</button></li>
+                        </ol>
+                        <small id="status"></small>
+                    </div>
+                </div>
+    
+                <div class="Question" style="width: 30rem;">
+                    <small>Second Question</small>
+                    <small> | </small>
+                    <small style="color: var(--Golden);">5 points</small>
+                    <div>
+                        <p>Think Like a Pharaoh... <br> <br> If you wanted to build a monument that would last for thousands of years, what would you build? Why?</p>
+                        <div class="answer">
+                            <input type="text" placeholder="Write whatever you want here...">
+                            <button>
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFJUlEQVR4nO2aa2gcVRSA1/cDH/jARxW0oqDiC0VERf+I9IcvBFGkKsRnEVQQBBF1RW0y50xSiP6IS2PmnNlGdNE/vlBrrRZBhFoqVk1rk517N7W0SVrtM6amK2c2yT46k527uzcR8cL9tXNmz3ce955z76RS/4//yFibyRylffcRTbhGMW5XjLs04Rea3JuTyBcIr9CEPZrhV824XxEWFOObg+8sPTM1V0P1wgLF+J1mLNZORfC3ZnwqTraYTh+uCF6dei5KfqTgu9dZh9iWS5+gCNdHKVGhzMGA4fYoeUXwxmyyujT/CHx3oVUQRdiZQJGiYtCburuPqZJluC+JrJZJsMoaRN7DszTDRFJlAoYHp2UFShP8nhiEsWgtxBTjsyaKKMIPpmULhA+YyOqSV7qsgGiGjw1BVNkI8L4xCMNaKyCyRBoqMl4Bok1BFME2KyCy3hsqsq8sC+MNeGTCCogi3N2oRTXDzgZAdloBmdqFTZQZLBsBNjaQ7EN2QAg8w2T/uiyLa8xzBD+xAhKQc4+ZRbGnAqSnAY+8bgUk76WP1YQ7EluUYUkZxGkzBQl85wYrICWFMJ0w0Q9q6jpnWi7ILjtbMU4ahJWSAtMayGDGOTnRfhJRKymGbxJ7w3OfbkpRzc4iSVJZamUTkx5BrFmlkO/cGleGl0IKJ6PqJEVwZ0JvbtS5ruOqZTuv0YQ5RTiqGPfK4hF4cEsMBLbHvHgk8PDGqmcJ7leEB6JCShE8E/X+YrF4mHiqDsS+YQ+vqvmvF6PCUoypGO+qgYDn6oTKn3mv8+IqGd+9TBN8KN1hqUOEleKt2TwuHaAmCGI8uX2Y8foa475UB3xEeqTw4YLfceVsoVLxR9+LVVNNjs2+e4ZmeEszbFUEezTBOsXwyjC3n1bjiUcT5RQ5bdMCqwyS8LbUHIxCH1yUuLYj/CiVZ+eScKlMuiwyrpgLEE2wMqlOmmGzNEuvJRcIcyWwDuHBYuMq27wGKvcYNkYxXNnwFzMQHJXVaquh0G6bIJqdRWaGDaPkZ/HIX422r3EWVeTeWzqsk7oMxmWDUwyuHF7UB8GMMQhjRsqGMUOQz2KVWN51qmb8Mn6hgLHY3XhqKIKfTEGkYmikT2iPUiAsChMoEe4bfe61repCNeNgMZc7Itz+my2tVX/HKSYJKi2wHLtGgjDuMgOBh0PBQtY5N6pmigmr32pL6w259NGKYbVxODB8GlUlKIYfE7+H8IfQGzOxzdCdRLDA+Nghic2QNYWosOaTtSCaoCOZIXCvbOZVwpuy3SfVCw0p7Wu9oRmXNg5R2sik8KzySC8skAK1ji4HlO/eEZlkea/jfFmPYwTX195bSOPTDETF3HBI7+GH/c6eGF1G61XYqZFeOFERvCAvF9cpwgFpbWfK5HIovtwiiOlYf7e4On1klaF8d6FiXK4Yhkt7EQ7IillbITc0xHKKoL+lEOV8+Vb3OZenbA9Z3eRQ2Q7ETAJPygl+kIWrrUAMrXDPMz/AbtpDn8s9Y8sgtmTSxzdwVNoqmAlpwVsCohifnx8ILE8PFjcNYjsvEk2Cdc17xLyIszH3z/nljo2pGMaa94hJEWcNBL9qHqS0088vCOFDrfrSYWDeQAhzLTuVV293XBAWd4n+GIbCvpucNinu5BRTjkHlYC/8CIdxWamfr/vxQF6+aanqN1oxphqoJXIqGXZ44f0H7iiV//Be+JvffqHJO7f0d56usnCTJrxbET6hCB6XW7Eg615q9W7k3zz+ATH+RBKosUosAAAAAElFTkSuQmCC" alt="cat-footprint" class="icon">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p data-i18n="footer.quote">The past is full of stories, and every story is a journey</p>
+        <small data-i18n="footer.author">- Ay</small>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFPklEQVR4nO1YTWwbRRi1KqgQIIE4ABIcECckOHCDA6iq7cSxk911Yq9/E9s7s5gk9c46sRPHcZqtm6RJ49kAUgWqBJcKwQVROBQJ8SOoQFAkEEIg8VMoBVIQDVREDSpJ6kGzJJG93nXqNNlIyE+ai/ftfO/Nznzf57HZmmiiiSaa2E2MRliU9bkWEOMoy6yjnAt2nJE57nYzfj7OObK8+7zMOq4i1l7OBTpOKzy/17YbGAmxz6KO/UTSjYyv7VfFZtuj5xciXA8VrecPB9q/sl68wD6CGLsmYDTMkqP9cTLd20Oyfvd/v0WYpyv5SnfnnWlvywo1XIhyGn+mL0YGu1xrfG+vpQZyvOcjGnisu5OoCG4MLAEyEmRIpqvtjyrDQeYk5RcFvoo/258gaa+TDPs9Zy01MNjVujjkbyO4QkyliUyna1XPz4fZGq6KIJmAITLgbVm21AA9hFPJqKEgOg4l+JVKfpp1lGcPJAy5GEF6bq5aamDY7142E0/HTF+sagsVot66/EMCb+0XKILgl/UEqRL8tpI/3dv9Sz3+0f74BUsNqAhM1hOEEXxTx39nE/5blhqYSwv3YwRMtwVGoFhlQILjdb9YCozZrAZG4BmT1SyXEHiomis8Vmf1yziVfMByA8eTyZsxAmcMRL2g5yqKsoeeC0MDEnxlx0QqEe7hId59HjH2Ms3V+TB7ovL5TDJ5G5bgcxjBBRXBeRXBkqIY9zZzksgZiD832x+/e51T6u6+ZSTEvDvQ2bJC+6tcoONDo7bk2sRHA4+mWeeqvnfJBTo+3tKEdCtJAKgI/qhK4KKK4Al1IHZPpfhsl+uiPt5ImDvWuHhFuYFWT61d6OkkpVRC611oNaW/FSJc1rbNGOI932z0Vn0xrbdCrINkfW2XGp4sH2ZLdLKDMV/Nni1EvSTrc/2+neILUXaQNnpKIlAdK8ISmbWXG54w62v7LRdsNylSgGS6qnud68HxZPLGQW/LlXGDxSoKQUK73oYnHWCdq/QzmqW+STH8z3YZKES5I8OBdsPGcFIM00av8VgjIXalbuWU4Dmj95R4/KZckDmV9jqX6coNdLZeHg1zE/ViDQfafzJr9KiBHO/5tGEDE2Lou00MvFojHrbekfG1LeizCN3buTD7klmsYiKwaBbnMAitHgx79zVsACPRsMqujzkE41XieX5vxu+ep4LTrFNbuVIKELqvNSOMnYzFONEoVumAcMUszpEnoydtW8FTcvw+LMG/TSaep1ulkp8LeL6gQmXWTqZ7u2syCX1GC+EUDN1Vu1jwc+M44M8ZSbx3Swa0iVMgQfsUXQZaKaUEd7V45g1tqzB2MvVExGC7AZp2NRNDvPt7fRxVFmIGzeCSKoH9Wxa/MTmCHtrvaBMi+BmWRVfl83yQeXH9ZuIwCJluOVoEZcaxVlk7nq9ZLCQmVQTOqhJcxBI4pW8GdwS5APPe+iFVEn7zVnnjQAY1Lv1StFDadgv04mqI9/ygHVivk0yI5iuvHxMwvPElsn7Pz4UoE7ZUPL3fGexy/ZVmHVqGwSlwzeLXB835tN9Ba/dKNPWORVlgiYFhvv0T2tDNpoSGhetHKSWQohDQ7pFkzml4NrYd4zH+0vUKNy6MgIzH/I13nY2iJAlLO2FA1VI0vLzjBjACH+yUAWzFzcRcSnycFrNNtsMFVYLvYwm+jBF4DSNweu0vZ913SlbkfgpVEvapEnxbKzoILGEJfq1K8HWMgDyXFh80e4/+98UItqiSkKb3Spjeakgwr8qQP9bff6sl4ptoookmmvhf4V900pk2tcCsTgAAAABJRU5ErkJggg==" alt="cat-footprint" class="cat">
+        <img src="AY.png" alt="Ay">
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
