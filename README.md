@@ -1,0 +1,2 @@
+# journey-with-ay
+A website that helps kids to learn about Ancient Egypt by reading stories and answering questions. Ay is the explorer cat that guide the user. Parents can see their kids' progress and review their answers over the questions. The kid earns a badge and points after finishing a story or answering a question. AI helped in making pictures, stories, and ensure the accuracy, and I used it in some parts of JS.
