@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Ay's Stories</title>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Logo">
+        <ul>
+            <a href="index.html" data-i18n="nav.home">Home</a>
+            <a href="badges.html" data-i18n="nav.badges">Badges</a>
+            <a href="parents.html" data-i18n="nav.parents">Parents</a>
+        </ul>
+        <button data-i18n="btn.login" id="login-btn">Log In</button>
+    </header>
+
+
+    <main>
+        <section class="hero-sec">
+            <div class="hero-txt">
+                <h1 data-i18n="hero2.title">Read A New Story!</h1>
+                <p data-i18n="hero2.desc">Discover amazing stories from Ancient Egypt.</p>
+                <input type="search" name="Search" id="Search" data-i18n-placeholder="search.placeholder">
+            </div>
+        </section>
+
+        <section>
+            <div class="demo-card" id="nav-patterns" style="display: flex;">
+                <button id="Phar-card">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAADiUlEQVR4nO2Y30tTYRzGH4Qs6CIo6C5ndVEX9QfUpT9Cs6uCuqyL6qqSrqJu7KaINg2UAiHImy0IQbKQze09U7cZllCZywrcxrZ05XmnRnWxiW+8x80dPWfbOduxNTpfeEAO7/k+n+e87/cdCJhllllbUumPaEtNI54KIpYOohXVVqkgYqkgWEZRVFulqj1AOojWTIhoehotqLaiAs6JBGGRIEQJzqKaKulGHRXwiwpgkgh+L7lxoNJciDnQFrMjHnUgFnua/2YRBQyuw+f0vNy+ZV95koEDjCtqVx9M6kWLCrykpBenSu1bkFPrjVHMiA1hOyX4ki+AKGA27MUOvX2LcmoNwLeXm3GTqEN5s1CC2/ngZSE69PYtyqnnyvPfxyWfFXTMhkb58ySBZcPg5pPKQI/Z0Mh7+m24WMi7IKdIcF0UIIoCHEsEB/MGsOG93wbGDV89QH2Rwc23C4PZ90Zt2Oe34jvv6bfiXT5fzsTZMoztigWUYGbdgCBFBfTMu7BXviZghUUyyshnxcR0B2r5cGqFlw/0ZC+2+W3wy3uOWrFf7skZOEuGKbuLM4oAIsEHFaOfIsG9pBu7+BqfDe1yM67xLjwsNLiFBjrQhUeb+wWsuJYB30kF3KAClhXvEkwpAwgYL2Am8maBTng3G3626wOX65N9Yy9JnSBUwGVKMF+AJ6A8QgJcxQwTTqwG+3JmE91goqf0AKIH7HV3rt/UY7D5IawWfY/AqTYD/VqNv74Ee9sLFhkoHT6ryMBaL95T83sE/WoB+sqF+WsieKJ2hHoqDiZoVrdagLtGmiwQsDnXmvjfBu/AHbVb6JZ80ZxzTaUYJFw1bPHNYZYON7J0qIEtTh5iieGaknrNqXCIBDfVfgeuZhf8mLSwlUgzi49a2De3/i/PgVn85AbxZws6b6zEMCQGzsKZ1gN4cEUZwIsL2QUrkSbJNDXbxMKDOr+YC9KX3xyAP9O7o+EXYKnQGstKuCkXQMB5tSN0xrAAoQZlgFCDcQEITqsdoROKIzRSZ+wRIuUcoTr5EWpW+x04Xmx4tBvXSMD8q68Pscu4IaZuHFMESI7gaCkGeXfCkzM3/Br14ogiwKIX9YaabKGSBBZFgGU39lQajGrUkhO7FQHYM9RWGoxqFGdVBIjaEcj+Z6AK5FME+AegmB6ZAWJmABgewFdpqJhW2TGmCGCWWWaZZdZ/WX8AS5xBursuar0AAAAASUVORK5CYII=" alt="crown" class="btn-icon">
+                    <span data-i18n="tab.pharaohs">Pharaohs</span>
+                </button>
+
+                <button id="Queens-card">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAACKUlEQVR4nO2Wz2vUUBDH44+LilfBS0EE6UX0b9CDSCso4q2gluXNxJt49LAi7d2LnivoZWEzszkUC9IKvYjgUQo60y39gaK1qKB4kEZekpJsspqX/hKkDx5s3s73+5l5vxLP22sOTdkfUsJlZVySAC96u9WUcUkZo6TD4u6BCT/lwB+3dRqFYEUDHN4Yj5rN/ULmvDI8zaBJF8In0sFzNiZLzlyKPVyXQ3PTKIQf4kSCxiklmO6FwQ1h/2ZPEjbGxrI/lGhrLIckWUZ/7QQTWWUwUR2Py25TzbCaZjopBK+EcD1n8ub91MiRjXj7247lZmndaqw29Vi1npXgpGoci00Yxu3zQtscV8KGMD58G5iTxXg7Zv+zMTY29mAYTxMZc4Kmoisp+JmzqOwxZT3ekX/ZWaShGdjqUbHa2CM0AzWFyZptHrxJvf5rsG6x14Iutm4fUsYv2wB+Xq9awscuxkI4p4RXu3TrrBC0es57eualjcecoPNtOFMyyBkp4QMN/BF7NZYSDnBYGD/36uCRW7UM90uVxWZut8884YWCXhzBOFsCd/C6kzh9ixWW47srWIrghU7jhDO4de1AcamiyNtXDSb4WgSvhOZw/Vsve2nMzDQPVgqF4UdpU/XZSH8EM9wtbMjXbsI+FSvBvSrdHI8eVcI7SvhNCNbiDUkw3Q3NoBNYGF70Af+0nz3eTrZuaAaF8KUw/sqgsBZ/4NkzTOb0jiaw1/6b9hvwAhSGJf26QQAAAABJRU5ErkJggg==" alt="moderator-female" class="btn-icon">
+                    <span data-i18n="tab.queens">Queens</span>
+                </button>
+
+                <button id="Battles-card">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAGKklEQVR4nO1ZXWgcVRSe1qr4hwga1GpBUalV8Aesij6oD4JV0Je8+VM1zDmTUurPg75FqA8iKiKIlD6kVSg0dffe3cTfB4OmldD2RZuYZPfe3aRqg7/YPytWXTkz5+7emcxMdifrJkIOhDZ3zj3/5zv33jjOMi3TMmUiLXFEC5xRAl+vFvCOWs1Z4XSYajVnBekmG9iWz1sWoiRWtcRa/adDTtUixts2kE0tC/QFsQNRge12Ks14bemn7y0LJ8FGUK2vb2WKogMzQ95FWZ2gvUrA/sRA9fWtNDrp90xRihNgR09JPMKK9x4eePacVnXQHr8Xg7I5EpflUECzZt+UV1JKZ+Smy5WE6cAQGBwe7lvVrOzaQPcZWmCOs/CtLrprEmx4g+W/5mSlejQkHE6KhhqEa7WEH1jZu81EjXiUhO0s++dq3rs+hW+a+CrSvT2zI7agtPrUeVivBJ4ISgC2zidXCXyZHf9dFeCuhQSybeVlSEvvQS3gNPM+kyhPusg98VdZeI80pVsuoKyiUaFmnBqE1emKYaMS+I+S8Hel4HVHv9MaffN5BGxMkzU1CKsNmGRCq9jyYnikMqsW3bXpzngvcIn9oQp4n1kvS+9eWuPmfjFNRrXorq2DiID9bRvAPtZL+IIF/5pW15FheqxcdG+lNV30btMSjiuJb6ft1QHfj1yio5NF92KnnUSYrwQUWMEJJWBDEq8/xCTuYsdnp973rqb1Sg5uom9J+5SADUrgSd5XyDKbmsd+CdtMs2qBPUm8B7e5ZyoJH3MpqepQ76VpsisCH9MS/+Sy3NHKTMpMpg+oabWAl5L4vi+652qJX3KEv9ID7oWx8iRsIRDQAdS+0tGTtpa4qaEc30oqGapxJWCSI/1Z6cPNZ4ePQfBqIyj4vLMYRHBqIdGusYHus+L4qEeoVwyfcdrMFJIRB9cdJYJYLeAoR/XTsYHe8+P4ShJvMXxa4JuNPsLdNkwvKqkc3qgFfsc1flDlsCuOryzgHiXwVDOzZNFoutBzlZIwxc5oOkzG8ZUL8DAhHgPF085SotlPHj2P/qVMUEbM/KiK3puTgIJ74zSd0ZylQDoP6+kYr/L4gHFKC/yIM3O8kvfuj90nYKs5Aeu8e/d/aqQKIrxPSfimLOFxGoj2d7pH0H2CG/gds07oZSZ7EiLNdycZHu5bRTqVwAm6Tif13bxUGth8iZb4degVQ2BFCc8lJeHbIRajk3jOjJDuc6m3RAKLoruGoNk/JZvZ09A9MZ1zL2vZEVPrWsIhMl4LLFmPAyU/UsHvI9EzETlhpjOhU+BIcOmKTm3/3i5wL/fV5Fw9pBvGzEPHwhzJYZdJdUhRUONb7GxQlKlklID3aE7QGt096pcuCdttfvo/yYi8opRIl/8tKO9DmR0JCWBnjOK5DsE+WufoSi6Fk/Y9m9AperKlPbQ3zgEnxYa2OWM7ZG5xHNUR07zlvHtnVB6t1cFB4ojJBMmwHajrNiW1ECcMhVMLY1GBfnYij2tJryJ1pIs88pGMOTpFG50wpAXubBgadsYvDy4zAoBSrueK+eQRT+NEjKXkTCB939kWJ/xG5ZpvIFU4SvWsCCxFZ00cMeyWotlQlhOky+qp1IeKealc6L3BvFeRMHu22LjuIxVHOFomscEp4BOc3XJcYyuBE3SjVNJ70lytyZZMTvBRY9xcPetG5LArLjN2VtKuqXYpGqfnZCLXyDbpZrnj5kzXEmmJ/YxGUxPyqQvMOh8bgldFKzPNZiWajegJQgk8RWgWG1CJ/U0ZHzQh7qFnnAaqBKfTQCBHh5swCs3+FOboJQaIjSLeKLzrMKjsMBnQeXzI0nuMjjVJ14TACYm/hKA02PhT8BxqDPCfgvzmm2NIo8ZHEzMicDTKb5eoCl4r+R0Zx30nfBvCdpGtsS+ffib4zwPEQD9awFDEqfGShHWhfSFn5sf9ZvhLEtZZ5VRLsouuyXEp98vJ9rIsvCstYf1JzRY0Kx5o9rjdDP8slTL3aYpdv8U4EjwM2AMtdUOHSLdqV+NeAEO0iX60xA+45vd02oHMdul8z3XWgS7UVOVC7zXOIpHOYhf/TWK3n04BR8njxXRiqdu1TMvk/I/oXwRRipDWMe42AAAAAElFTkSuQmCC" alt="battle" class="btn-icon">
+                    <span data-i18n="tab.battles">Battles</span>
+                </button>
+
+                <button id="Myths-card">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAACXBIWXMAAAsTAAALEwEAmpwYAAABbElEQVR4nMVVzUoDMRDem3+X6iP4TOpJaEXpZC1SvPYR9k1cxUlFBOnBi6fFF6gkLRZEsOID6KHlaxO63e7SrDV0YBmSbL5v5stkEgTrsN4tHXkDf7+rb2tJnx+PxzteCBC9lmLUa4eHXggUi2sQKKb430AhCyIGqJbiBwTwGGMe63n7NNP5UnAAaBZDA5r/sRhmJevehPua6RfeSwaaKZqSUxSUMUMyUlJcFf0ziC+3tKQvc1bfRRIWSzbJgA4Kg5DhSVpCxVRzJkD9L7sHiikxwB3jE2cCm0V2rv9U3USkFhwSvd2HuympEqzjv1Jk3Wm1RBbIgmsWZ1iHX1yjyKm6tBQNlGJG706fm5W57LhZsXLNSnuyr7HeDNL2+nCxYS7lsy3PQXy6NwOnF8Vh3alklzU6tUoVubRrxVSbO5e2qLqDs2iZ/tMqSjd9k+Ex/lvT48Umt1Ivcs2gdDct2yoCY07vQZ55ey592BhI39a1lbfFPwAAAABJRU5ErkJggg==" alt="sparkling" class="btn-icon">
+                    <span data-i18n="tab.myths">Myths</span>
+                </button>
+            </div>
+
+
+            <div class="tab-content">
+                <div class="tabs" id="tabPharaohs" role="tabpanel">
+                    <div class="story-">
+                        <img src="Narmer.png" alt="Narmer">
+                        <div class="p-body">
+                            <h3 data-i18n="king.narmer">King Narmer</h3>
+                            <button class="read-btn" onclick="window.location.href='Narmer.html'">
+                                <span data-i18n="btn.read">Read</span>
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE70lEQVR4nO2aWYhcVRCGe9wVF1xwiYJGFFTcUERU9EXEBzUiiCIuEHcEFQRBxA2X+OAC6sMoPvigggZ9cUON0SiCCDFE1GSCJiajGCYzk+lbdW/91ROTkro9Pd5p+07fM91nRsQD92nuf6e+qjrnVJ3Ttdr/4z8yzGxPgG5R8FcK3gZhUqFPReiiKvpGg09X4UEIr4cQFPSbCr3EzEfU5mtkWbZIwd8o2NofCP0J8N1lWjPbDeDH/b1OegWPZllybnQIs5H9IbS2xIgWzC7V5PJOehV6cTat5nquAxOLo4IA9Gw3Q5oPDZvZ3kVtQ/jaalo2FVoZDSJN0yMhNFnVGJH0xpbWoRT0R2UQsEVLMRW+L8QQgN9taUX4hhCt5np6LgoIhD8IM4a2TGvB78wBZHUUkHyJDDFESAva4VAQBY1EAWmu90EgUtBqcESEJiOBMM/VoxCeCAfhiVgg64OMEd5Y0G4ITi3hTVFAVPi1QGNWTWubpUxoan0YBySjqwM9OlhwwmAwCPjJKCBmtg/A26sbQne2tECyNBREJDm/Fmuo0KMV02JXlmVHt3Rpmh4FoZ0BC8UWLzCjgZhtP6jSftKhVlLwl5VBlO/pyVAgvdQnaXOppWHvEdybM9/hS2Ypwz0aOzvVSarJkmrR5A1mtm9RO5llZwO8XMFjEMp88QD44hIIXlby8VERuqD4bkP4Ogjt6JRSqnxvp++b2YBHqktKSiNNz5zhAKGHOqVl7kylK2d6S5L7u3gpUaWTZsA0+FQIv+fd4VSHuMKjNVvEvQNU0OaS/7NNJDmvDeLhLhEc9R5pyqD0jNlSpbAcfuterfU4mPlwFX5ZQVshnAK0BuDHkiQ5tPgeQLdWWx2TpS3qldUnYXJZbR6GanJi1doOwu/XVOnkPK8rggD0xryACK2o7FzhX3yCP1FZkD+0OTaECF8fXGWH1kDFHiPGMLMBCK8Lcy6PecOzNQyEOSYImvuYBdr0kzc8jbm2r2UebQhf44d1Xpd5BH2DA+gZP7zoBqLCr4SCuMbnyHiYiD4uhajXD1Ghz8oXCh4v3Y1bERH6IRhEkyXhcwS8rJMBU0VhVyN835jMsnP61oUKbzSz3fPtv9fS2ur1g8MmKI34sWsJCIU5Nrk5F2ZZdkynmqmE/uf20trM9lKhL0LTAUIfdaoSIPR9dQj6Lo9GQfxCReFtbRADCno9OKf//t5d/wABP13REZlv5jNTw8YOrJAaq9qjAfBTc4WYMka88Cx+M8uyRXmBOrtuh2pyRedJhonjfD0uEa5tv7fwxqcXiMK3f2zvPZD3O5yWaMa6Vdg1s9EDVOhB/7iHDsJD3tpOl8ktCKFH+gFRSLG3zGyPNscuVuFXFfT71F405Ctme4U8p+GeA+jNfkIUnq8bDT6tFnvkqxtodSSIVprt9BP8RpqeFQVCRI4NPcDu+RH6xO8Z+wZhZvsFH5X2L0KT3oL3BUSFHlgICC083p/0DBJ7XlSKDGjNAlwlREkxzPvlTpyI8Hg/QCoXcdEeoc97BvGdfqFBRNKb+vRLBx5awLRa3rdTeaB+vNdf1dKAN3kP7ad/Xtz5KaYfg/rBnv8IB6DnvZ/v+uMB4V/9Ny0z+o1+DG+g/OKmeSpJI36o1zxc4HUAve1/A+onhHyTiA4ToQs1o6sAugOg2/NbMaVTot6N/JvHX7mX2GRK15C1AAAAAElFTkSuQmCC" alt="cat-footprint">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="story-">
+                        <img src="Djoser.png" alt="Djoser">
+                        <div class="p-body">
+                            <h3 data-i18n="king.djoser">King Djoser</h3>
+                            <button class="read-btn" onclick="window.location.href='Djoser.html'">
+                                <span data-i18n="btn.read">Read</span>
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE70lEQVR4nO2aWYhcVRCGe9wVF1xwiYJGFFTcUERU9EXEBzUiiCIuEHcEFQRBxA2X+OAC6sMoPvigggZ9cUON0SiCCDFE1GSCJiajGCYzk+lbdW/91ROTkro9Pd5p+07fM91nRsQD92nuf6e+qjrnVJ3Ttdr/4z8yzGxPgG5R8FcK3gZhUqFPReiiKvpGg09X4UEIr4cQFPSbCr3EzEfU5mtkWbZIwd8o2NofCP0J8N1lWjPbDeDH/b1OegWPZllybnQIs5H9IbS2xIgWzC7V5PJOehV6cTat5nquAxOLo4IA9Gw3Q5oPDZvZ3kVtQ/jaalo2FVoZDSJN0yMhNFnVGJH0xpbWoRT0R2UQsEVLMRW+L8QQgN9taUX4hhCt5np6LgoIhD8IM4a2TGvB78wBZHUUkHyJDDFESAva4VAQBY1EAWmu90EgUtBqcESEJiOBMM/VoxCeCAfhiVgg64OMEd5Y0G4ITi3hTVFAVPi1QGNWTWubpUxoan0YBySjqwM9OlhwwmAwCPjJKCBmtg/A26sbQne2tECyNBREJDm/Fmuo0KMV02JXlmVHt3Rpmh4FoZ0BC8UWLzCjgZhtP6jSftKhVlLwl5VBlO/pyVAgvdQnaXOppWHvEdybM9/hS2Ypwz0aOzvVSarJkmrR5A1mtm9RO5llZwO8XMFjEMp88QD44hIIXlby8VERuqD4bkP4Ogjt6JRSqnxvp++b2YBHqktKSiNNz5zhAKGHOqVl7kylK2d6S5L7u3gpUaWTZsA0+FQIv+fd4VSHuMKjNVvEvQNU0OaS/7NNJDmvDeLhLhEc9R5pyqD0jNlSpbAcfuterfU4mPlwFX5ZQVshnAK0BuDHkiQ5tPgeQLdWWx2TpS3qldUnYXJZbR6GanJi1doOwu/XVOnkPK8rggD0xryACK2o7FzhX3yCP1FZkD+0OTaECF8fXGWH1kDFHiPGMLMBCK8Lcy6PecOzNQyEOSYImvuYBdr0kzc8jbm2r2UebQhf44d1Xpd5BH2DA+gZP7zoBqLCr4SCuMbnyHiYiD4uhajXD1Ghz8oXCh4v3Y1bERH6IRhEkyXhcwS8rJMBU0VhVyN835jMsnP61oUKbzSz3fPtv9fS2ur1g8MmKI34sWsJCIU5Nrk5F2ZZdkynmqmE/uf20trM9lKhL0LTAUIfdaoSIPR9dQj6Lo9GQfxCReFtbRADCno9OKf//t5d/wABP13REZlv5jNTw8YOrJAaq9qjAfBTc4WYMka88Cx+M8uyRXmBOrtuh2pyRedJhonjfD0uEa5tv7fwxqcXiMK3f2zvPZD3O5yWaMa6Vdg1s9EDVOhB/7iHDsJD3tpOl8ktCKFH+gFRSLG3zGyPNscuVuFXFfT71F405Ctme4U8p+GeA+jNfkIUnq8bDT6tFnvkqxtodSSIVprt9BP8RpqeFQVCRI4NPcDu+RH6xO8Z+wZhZvsFH5X2L0KT3oL3BUSFHlgICC083p/0DBJ7XlSKDGjNAlwlREkxzPvlTpyI8Hg/QCoXcdEeoc97BvGdfqFBRNKb+vRLBx5awLRa3rdTeaB+vNdf1dKAN3kP7ad/Xtz5KaYfg/rBnv8IB6DnvZ/v+uMB4V/9Ny0z+o1+DG+g/OKmeSpJI36o1zxc4HUAve1/A+onhHyTiA4ToQs1o6sAugOg2/NbMaVTot6N/JvHX7mX2GRK15C1AAAAAElFTkSuQmCC" alt="cat-footprint">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="story-">
+                        <img src="Kufu.png" alt="Khufu">
+                        <div class="p-body">
+                            <h3 data-i18n="king.khufu">King Khufu</h3>
+                            <button class="read-btn" onclick="window.location.href='khufu.html'">
+                                <span data-i18n="btn.read">Read</span>
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE70lEQVR4nO2aWYhcVRCGe9wVF1xwiYJGFFTcUERU9EXEBzUiiCIuEHcEFQRBxA2X+OAC6sMoPvigggZ9cUON0SiCCDFE1GSCJiajGCYzk+lbdW/91ROTkro9Pd5p+07fM91nRsQD92nuf6e+qjrnVJ3Ttdr/4z8yzGxPgG5R8FcK3gZhUqFPReiiKvpGg09X4UEIr4cQFPSbCr3EzEfU5mtkWbZIwd8o2NofCP0J8N1lWjPbDeDH/b1OegWPZllybnQIs5H9IbS2xIgWzC7V5PJOehV6cTat5nquAxOLo4IA9Gw3Q5oPDZvZ3kVtQ/jaalo2FVoZDSJN0yMhNFnVGJH0xpbWoRT0R2UQsEVLMRW+L8QQgN9taUX4hhCt5np6LgoIhD8IM4a2TGvB78wBZHUUkHyJDDFESAva4VAQBY1EAWmu90EgUtBqcESEJiOBMM/VoxCeCAfhiVgg64OMEd5Y0G4ITi3hTVFAVPi1QGNWTWubpUxoan0YBySjqwM9OlhwwmAwCPjJKCBmtg/A26sbQne2tECyNBREJDm/Fmuo0KMV02JXlmVHt3Rpmh4FoZ0BC8UWLzCjgZhtP6jSftKhVlLwl5VBlO/pyVAgvdQnaXOppWHvEdybM9/hS2Ypwz0aOzvVSarJkmrR5A1mtm9RO5llZwO8XMFjEMp88QD44hIIXlby8VERuqD4bkP4Ogjt6JRSqnxvp++b2YBHqktKSiNNz5zhAKGHOqVl7kylK2d6S5L7u3gpUaWTZsA0+FQIv+fd4VSHuMKjNVvEvQNU0OaS/7NNJDmvDeLhLhEc9R5pyqD0jNlSpbAcfuterfU4mPlwFX5ZQVshnAK0BuDHkiQ5tPgeQLdWWx2TpS3qldUnYXJZbR6GanJi1doOwu/XVOnkPK8rggD0xryACK2o7FzhX3yCP1FZkD+0OTaECF8fXGWH1kDFHiPGMLMBCK8Lcy6PecOzNQyEOSYImvuYBdr0kzc8jbm2r2UebQhf44d1Xpd5BH2DA+gZP7zoBqLCr4SCuMbnyHiYiD4uhajXD1Ghz8oXCh4v3Y1bERH6IRhEkyXhcwS8rJMBU0VhVyN835jMsnP61oUKbzSz3fPtv9fS2ur1g8MmKI34sWsJCIU5Nrk5F2ZZdkynmqmE/uf20trM9lKhL0LTAUIfdaoSIPR9dQj6Lo9GQfxCReFtbRADCno9OKf//t5d/wABP13REZlv5jNTw8YOrJAaq9qjAfBTc4WYMka88Cx+M8uyRXmBOrtuh2pyRedJhonjfD0uEa5tv7fwxqcXiMK3f2zvPZD3O5yWaMa6Vdg1s9EDVOhB/7iHDsJD3tpOl8ktCKFH+gFRSLG3zGyPNscuVuFXFfT71F405Ctme4U8p+GeA+jNfkIUnq8bDT6tFnvkqxtodSSIVprt9BP8RpqeFQVCRI4NPcDu+RH6xO8Z+wZhZvsFH5X2L0KT3oL3BUSFHlgICC083p/0DBJ7XlSKDGjNAlwlREkxzPvlTpyI8Hg/QCoXcdEeoc97BvGdfqFBRNKb+vRLBx5awLRa3rdTeaB+vNdf1dKAN3kP7ad/Xtz5KaYfg/rBnv8IB6DnvZ/v+uMB4V/9Ny0z+o1+DG+g/OKmeSpJI36o1zxc4HUAve1/A+onhHyTiA4ToQs1o6sAugOg2/NbMaVTot6N/JvHX7mX2GRK15C1AAAAAElFTkSuQmCC" alt="cat-footprint">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="story-">
+                        <img src="Senusret.png" alt="Senusret">
+                        <div class="p-body">
+                            <h3 data-i18n="king.senusret">King Senusret III</h3>
+                            <button class="read-btn" onclick="window.location.href='Senusret.html'">
+                                <span data-i18n="btn.read">Read</span>
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE70lEQVR4nO2aWYhcVRCGe9wVF1xwiYJGFFTcUERU9EXEBzUiiCIuEHcEFQRBxA2X+OAC6sMoPvigggZ9cUON0SiCCDFE1GSCJiajGCYzk+lbdW/91ROTkro9Pd5p+07fM91nRsQD92nuf6e+qjrnVJ3Ttdr/4z8yzGxPgG5R8FcK3gZhUqFPReiiKvpGg09X4UEIr4cQFPSbCr3EzEfU5mtkWbZIwd8o2NofCP0J8N1lWjPbDeDH/b1OegWPZllybnQIs5H9IbS2xIgWzC7V5PJOehV6cTat5nquAxOLo4IA9Gw3Q5oPDZvZ3kVtQ/jaalo2FVoZDSJN0yMhNFnVGJH0xpbWoRT0R2UQsEVLMRW+L8QQgN9taUX4hhCt5np6LgoIhD8IM4a2TGvB78wBZHUUkHyJDDFESAva4VAQBY1EAWmu90EgUtBqcESEJiOBMM/VoxCeCAfhiVgg64OMEd5Y0G4ITi3hTVFAVPi1QGNWTWubpUxoan0YBySjqwM9OlhwwmAwCPjJKCBmtg/A26sbQne2tECyNBREJDm/Fmuo0KMV02JXlmVHt3Rpmh4FoZ0BC8UWLzCjgZhtP6jSftKhVlLwl5VBlO/pyVAgvdQnaXOppWHvEdybM9/hS2Ypwz0aOzvVSarJkmrR5A1mtm9RO5llZwO8XMFjEMp88QD44hIIXlby8VERuqD4bkP4Ogjt6JRSqnxvp++b2YBHqktKSiNNz5zhAKGHOqVl7kylK2d6S5L7u3gpUaWTZsA0+FQIv+fd4VSHuMKjNVvEvQNU0OaS/7NNJDmvDeLhLhEc9R5pyqD0jNlSpbAcfuterfU4mPlwFX5ZQVshnAK0BuDHkiQ5tPgeQLdWWx2TpS3qldUnYXJZbR6GanJi1doOwu/XVOnkPK8rggD0xryACK2o7FzhX3yCP1FZkD+0OTaECF8fXGWH1kDFHiPGMLMBCK8Lcy6PecOzNQyEOSYImvuYBdr0kzc8jbm2r2UebQhf44d1Xpd5BH2DA+gZP7zoBqLCr4SCuMbnyHiYiD4uhajXD1Ghz8oXCh4v3Y1bERH6IRhEkyXhcwS8rJMBU0VhVyN835jMsnP61oUKbzSz3fPtv9fS2ur1g8MmKI34sWsJCIU5Nrk5F2ZZdkynmqmE/uf20trM9lKhL0LTAUIfdaoSIPR9dQj6Lo9GQfxCReFtbRADCno9OKf//t5d/wABP13REZlv5jNTw8YOrJAaq9qjAfBTc4WYMka88Cx+M8uyRXmBOrtuh2pyRedJhonjfD0uEa5tv7fwxqcXiMK3f2zvPZD3O5yWaMa6Vdg1s9EDVOhB/7iHDsJD3tpOl8ktCKFH+gFRSLG3zGyPNscuVuFXFfT71F405Ctme4U8p+GeA+jNfkIUnq8bDT6tFnvkqxtodSSIVprt9BP8RpqeFQVCRI4NPcDu+RH6xO8Z+wZhZvsFH5X2L0KT3oL3BUSFHlgICC083p/0DBJ7XlSKDGjNAlwlREkxzPvlTpyI8Hg/QCoXcdEeoc97BvGdfqFBRNKb+vRLBx5awLRa3rdTeaB+vNdf1dKAN3kP7ad/Xtz5KaYfg/rBnv8IB6DnvZ/v+uMB4V/9Ny0z+o1+DG+g/OKmeSpJI36o1zxc4HUAve1/A+onhHyTiA4ToQs1o6sAugOg2/NbMaVTot6N/JvHX7mX2GRK15C1AAAAAElFTkSuQmCC" alt="cat-footprint">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="story-">
+                        <img src="Tutankhamun.png" alt="Tutankhamun">
+                        <div class="p-body">
+                            <h3 data-i18n="king.tut">The young king Tutankhamun</h3>
+                            <button class="read-btn" onclick="window.location.href='Tutankhamun.html'">
+                                <span data-i18n="btn.read">Read</span>
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE70lEQVR4nO2aWYhcVRCGe9wVF1xwiYJGFFTcUERU9EXEBzUiiCIuEHcEFQRBxA2X+OAC6sMoPvigggZ9cUON0SiCCDFE1GSCJiajGCYzk+lbdW/91ROTkro9Pd5p+07fM91nRsQD92nuf6e+qjrnVJ3Ttdr/4z8yzGxPgG5R8FcK3gZhUqFPReiiKvpGg09X4UEIr4cQFPSbCr3EzEfU5mtkWbZIwd8o2NofCP0J8N1lWjPbDeDH/b1OegWPZllybnQIs5H9IbS2xIgWzC7V5PJOehV6cTat5nquAxOLo4IA9Gw3Q5oPDZvZ3kVtQ/jaalo2FVoZDSJN0yMhNFnVGJH0xpbWoRT0R2UQsEVLMRW+L8QQgN9taUX4hhCt5np6LgoIhD8IM4a2TGvB78wBZHUUkHyJDDFESAva4VAQBY1EAWmu90EgUtBqcESEJiOBMM/VoxCeCAfhiVgg64OMEd5Y0G4ITi3hTVFAVPi1QGNWTWubpUxoan0YBySjqwM9OlhwwmAwCPjJKCBmtg/A26sbQne2tECyNBREJDm/Fmuo0KMV02JXlmVHt3Rpmh4FoZ0BC8UWLzCjgZhtP6jSftKhVlLwl5VBlO/pyVAgvdQnaXOppWHvEdybM9/hS2Ypwz0aOzvVSarJkmrR5A1mtm9RO5llZwO8XMFjEMp88QD44hIIXlby8VERuqD4bkP4Ogjt6JRSqnxvp++b2YBHqktKSiNNz5zhAKGHOqVl7kylK2d6S5L7u3gpUaWTZsA0+FQIv+fd4VSHuMKjNVvEvQNU0OaS/7NNJDmvDeLhLhEc9R5pyqD0jNlSpbAcfuterfU4mPlwFX5ZQVshnAK0BuDHkiQ5tPgeQLdWWx2TpS3qldUnYXJZbR6GanJi1doOwu/XVOnkPK8rggD0xryACK2o7FzhX3yCP1FZkD+0OTaECF8fXGWH1kDFHiPGMLMBCK8Lcy6PecOzNQyEOSYImvuYBdr0kzc8jbm2r2UebQhf44d1Xpd5BH2DA+gZP7zoBqLCr4SCuMbnyHiYiD4uhajXD1Ghz8oXCh4v3Y1bERH6IRhEkyXhcwS8rJMBU0VhVyN835jMsnP61oUKbzSz3fPtv9fS2ur1g8MmKI34sWsJCIU5Nrk5F2ZZdkynmqmE/uf20trM9lKhL0LTAUIfdaoSIPR9dQj6Lo9GQfxCReFtbRADCno9OKf//t5d/wABP13REZlv5jNTw8YOrJAaq9qjAfBTc4WYMka88Cx+M8uyRXmBOrtuh2pyRedJhonjfD0uEa5tv7fwxqcXiMK3f2zvPZD3O5yWaMa6Vdg1s9EDVOhB/7iHDsJD3tpOl8ktCKFH+gFRSLG3zGyPNscuVuFXFfT71F405Ctme4U8p+GeA+jNfkIUnq8bDT6tFnvkqxtodSSIVprt9BP8RpqeFQVCRI4NPcDu+RH6xO8Z+wZhZvsFH5X2L0KT3oL3BUSFHlgICC083p/0DBJ7XlSKDGjNAlwlREkxzPvlTpyI8Hg/QCoXcdEeoc97BvGdfqFBRNKb+vRLBx5awLRa3rdTeaB+vNdf1dKAN3kP7ad/Xtz5KaYfg/rBnv8IB6DnvZ/v+uMB4V/9Ny0z+o1+DG+g/OKmeSpJI36o1zxc4HUAve1/A+onhHyTiA4ToQs1o6sAugOg2/NbMaVTot6N/JvHX7mX2GRK15C1AAAAAElFTkSuQmCC" alt="cat-footprint">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="story-">
+                        <img src="Seqenenre.png" alt="Seqenenre">
+                        <div class="p-body">
+                            <h3 data-i18n="king.seqenenre">King Seqenenre</h3>
+                            <button class="read-btn" onclick="window.location.href='Seqenenre.html'">
+                                <span data-i18n="btn.read">Read</span>
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE70lEQVR4nO2aWYhcVRCGe9wVF1xwiYJGFFTcUERU9EXEBzUiiCIuEHcEFQRBxA2X+OAC6sMoPvigggZ9cUON0SiCCDFE1GSCJiajGCYzk+lbdW/91ROTkro9Pd5p+07fM91nRsQD92nuf6e+qjrnVJ3Ttdr/4z8yzGxPgG5R8FcK3gZhUqFPReiiKvpGg09X4UEIr4cQFPSbCr3EzEfU5mtkWbZIwd8o2NofCP0J8N1lWjPbDeDH/b1OegWPZllybnQIs5H9IbS2xIgWzC7V5PJOehV6cTat5nquAxOLo4IA9Gw3Q5oPDZvZ3kVtQ/jaalo2FVoZDSJN0yMhNFnVGJH0xpbWoRT0R2UQsEVLMRW+L8QQgN9taUX4hhCt5np6LgoIhD8IM4a2TGvB78wBZHUUkHyJDDFESAva4VAQBY1EAWmu90EgUtBqcESEJiOBMM/VoxCeCAfhiVgg64OMEd5Y0G4ITi3hTVFAVPi1QGNWTWubpUxoan0YBySjqwM9OlhwwmAwCPjJKCBmtg/A26sbQne2tECyNBREJDm/Fmuo0KMV02JXlmVHt3Rpmh4FoZ0BC8UWLzCjgZhtP6jSftKhVlLwl5VBlO/pyVAgvdQnaXOppWHvEdybM9/hS2Ypwz0aOzvVSarJkmrR5A1mtm9RO5llZwO8XMFjEMp88QD44hIIXlby8VERuqD4bkP4Ogjt6JRSqnxvp++b2YBHqktKSiNNz5zhAKGHOqVl7kylK2d6S5L7u3gpUaWTZsA0+FQIv+fd4VSHuMKjNVvEvQNU0OaS/7NNJDmvDeLhLhEc9R5pyqD0jNlSpbAcfuterfU4mPlwFX5ZQVshnAK0BuDHkiQ5tPgeQLdWWx2TpS3qldUnYXJZbR6GanJi1doOwu/XVOnkPK8rggD0xryACK2o7FzhX3yCP1FZkD+0OTaECF8fXGWH1kDFHiPGMLMBCK8Lcy6PecOzNQyEOSYImvuYBdr0kzc8jbm2r2UebQhf44d1Xpd5BH2DA+gZP7zoBqLCr4SCuMbnyHiYiD4uhajXD1Ghz8oXCh4v3Y1bERH6IRhEkyXhcwS8rJMBU0VhVyN835jMsnP61oUKbzSz3fPtv9fS2ur1g8MmKI34sWsJCIU5Nrk5F2ZZdkynmqmE/uf20trM9lKhL0LTAUIfdaoSIPR9dQj6Lo9GQfxCReFtbRADCno9OKf//t5d/wABP13REZlv5jNTw8YOrJAaq9qjAfBTc4WYMka88Cx+M8uyRXmBOrtuh2pyRedJhonjfD0uEa5tv7fwxqcXiMK3f2zvPZD3O5yWaMa6Vdg1s9EDVOhB/7iHDsJD3tpOl8ktCKFH+gFRSLG3zGyPNscuVuFXFfT71F405Ctme4U8p+GeA+jNfkIUnq8bDT6tFnvkqxtodSSIVprt9BP8RpqeFQVCRI4NPcDu+RH6xO8Z+wZhZvsFH5X2L0KT3oL3BUSFHlgICC083p/0DBJ7XlSKDGjNAlwlREkxzPvlTpyI8Hg/QCoXcdEeoc97BvGdfqFBRNKb+vRLBx5awLRa3rdTeaB+vNdf1dKAN3kP7ad/Xtz5KaYfg/rBnv8IB6DnvZ/v+uMB4V/9Ny0z+o1+DG+g/OKmeSpJI36o1zxc4HUAve1/A+onhHyTiA4ToQs1o6sAugOg2/NbMaVTot6N/JvHX7mX2GRK15C1AAAAAElFTkSuQmCC" alt="cat-footprint">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="story-">
+                        <img src="Ahmose.png" alt="Ahmose">
+                        <div class="p-body">
+                            <h3 data-i18n="king.ahmose">King Ahmose</h3>
+                            <button class="read-btn" onclick="window.location.href='Ahmos.html'">
+                                <span data-i18n="btn.read">Read</span>
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE70lEQVR4nO2aWYhcVRCGe9wVF1xwiYJGFFTcUERU9EXEBzUiiCIuEHcEFQRBxA2X+OAC6sMoPvigggZ9cUON0SiCCDFE1GSCJiajGCYzk+lbdW/91ROTkro9Pd5p+07fM91nRsQD92nuf6e+qjrnVJ3Ttdr/4z8yzGxPgG5R8FcK3gZhUqFPReiiKvpGg09X4UEIr4cQFPSbCr3EzEfU5mtkWbZIwd8o2NofCP0J8N1lWjPbDeDH/b1OegWPZllybnQIs5H9IbS2xIgWzC7V5PJOehV6cTat5nquAxOLo4IA9Gw3Q5oPDZvZ3kVtQ/jaalo2FVoZDSJN0yMhNFnVGJH0xpbWoRT0R2UQsEVLMRW+L8QQgN9taUX4hhCt5np6LgoIhD8IM4a2TGvB78wBZHUUkHyJDDFESAva4VAQBY1EAWmu90EgUtBqcESEJiOBMM/VoxCeCAfhiVgg64OMEd5Y0G4ITi3hTVFAVPi1QGNWTWubpUxoan0YBySjqwM9OlhwwmAwCPjJKCBmtg/A26sbQne2tECyNBREJDm/Fmuo0KMV02JXlmVHt3Rpmh4FoZ0BC8UWLzCjgZhtP6jSftKhVlLwl5VBlO/pyVAgvdQnaXOppWHvEdybM9/hS2Ypwz0aOzvVSarJkmrR5A1mtm9RO5llZwO8XMFjEMp88QD44hIIXlby8VERuqD4bkP4Ogjt6JRSqnxvp++b2YBHqktKSiNNz5zhAKGHOqVl7kylK2d6S5L7u3gpUaWTZsA0+FQIv+fd4VSHuMKjNVvEvQNU0OaS/7NNJDmvDeLhLhEc9R5pyqD0jNlSpbAcfuterfU4mPlwFX5ZQVshnAK0BuDHkiQ5tPgeQLdWWx2TpS3qldUnYXJZbR6GanJi1doOwu/XVOnkPK8rggD0xryACK2o7FzhX3yCP1FZkD+0OTaECF8fXGWH1kDFHiPGMLMBCK8Lcy6PecOzNQyEOSYImvuYBdr0kzc8jbm2r2UebQhf44d1Xpd5BH2DA+gZP7zoBqLCr4SCuMbnyHiYiD4uhajXD1Ghz8oXCh4v3Y1bERH6IRhEkyXhcwS8rJMBU0VhVyN835jMsnP61oUKbzSz3fPtv9fS2ur1g8MmKI34sWsJCIU5Nrk5F2ZZdkynmqmE/uf20trM9lKhL0LTAUIfdaoSIPR9dQj6Lo9GQfxCReFtbRADCno9OKf//t5d/wABP13REZlv5jNTw8YOrJAaq9qjAfBTc4WYMka88Cx+M8uyRXmBOrtuh2pyRedJhonjfD0uEa5tv7fwxqcXiMK3f2zvPZD3O5yWaMa6Vdg1s9EDVOhB/7iHDsJD3tpOl8ktCKFH+gFRSLG3zGyPNscuVuFXFfT71F405Ctme4U8p+GeA+jNfkIUnq8bDT6tFnvkqxtodSSIVprt9BP8RpqeFQVCRI4NPcDu+RH6xO8Z+wZhZvsFH5X2L0KT3oL3BUSFHlgICC083p/0DBJ7XlSKDGjNAlwlREkxzPvlTpyI8Hg/QCoXcdEeoc97BvGdfqFBRNKb+vRLBx5awLRa3rdTeaB+vNdf1dKAN3kP7ad/Xtz5KaYfg/rBnv8IB6DnvZ/v+uMB4V/9Ny0z+o1+DG+g/OKmeSpJI36o1zxc4HUAve1/A+onhHyTiA4ToQs1o6sAugOg2/NbMaVTot6N/JvHX7mX2GRK15C1AAAAAElFTkSuQmCC" alt="cat-footprint">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="story-">
+                        <img src="Thutmose.png" alt="Thutmose">
+                        <div class="p-body">
+                            <h3 data-i18n="king.thutmose">King Thutmose III</h3>
+                            <button class="read-btn" onclick="window.location.href='Thutmose.html'">
+                                <span data-i18n="btn.read">Read</span>
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE70lEQVR4nO2aWYhcVRCGe9wVF1xwiYJGFFTcUERU9EXEBzUiiCIuEHcEFQRBxA2X+OAC6sMoPvigggZ9cUON0SiCCDFE1GSCJiajGCYzk+lbdW/91ROTkro9Pd5p+07fM91nRsQD92nuf6e+qjrnVJ3Ttdr/4z8yzGxPgG5R8FcK3gZhUqFPReiiKvpGg09X4UEIr4cQFPSbCr3EzEfU5mtkWbZIwd8o2NofCP0J8N1lWjPbDeDH/b1OegWPZllybnQIs5H9IbS2xIgWzC7V5PJOehV6cTat5nquAxOLo4IA9Gw3Q5oPDZvZ3kVtQ/jaalo2FVoZDSJN0yMhNFnVGJH0xpbWoRT0R2UQsEVLMRW+L8QQgN9taUX4hhCt5np6LgoIhD8IM4a2TGvB78wBZHUUkHyJDDFESAva4VAQBY1EAWmu90EgUtBqcESEJiOBMM/VoxCeCAfhiVgg64OMEd5Y0G4ITi3hTVFAVPi1QGNWTWubpUxoan0YBySjqwM9OlhwwmAwCPjJKCBmtg/A26sbQne2tECyNBREJDm/Fmuo0KMV02JXlmVHt3Rpmh4FoZ0BC8UWLzCjgZhtP6jSftKhVlLwl5VBlO/pyVAgvdQnaXOppWHvEdybM9/hS2Ypwz0aOzvVSarJkmrR5A1mtm9RO5llZwO8XMFjEMp88QD44hIIXlby8VERuqD4bkP4Ogjt6JRSqnxvp++b2YBHqktKSiNNz5zhAKGHOqVl7kylK2d6S5L7u3gpUaWTZsA0+FQIv+fd4VSHuMKjNVvEvQNU0OaS/7NNJDmvDeLhLhEc9R5pyqD0jNlSpbAcfuterfU4mPlwFX5ZQVshnAK0BuDHkiQ5tPgeQLdWWx2TpS3qldUnYXJZbR6GanJi1doOwu/XVOnkPK8rggD0xryACK2o7FzhX3yCP1FZkD+0OTaECF8fXGWH1kDFHiPGMLMBCK8Lcy6PecOzNQyEOSYImvuYBdr0kzc8jbm2r2UebQhf44d1Xpd5BH2DA+gZP7zoBqLCr4SCuMbnyHiYiD4uhajXD1Ghz8oXCh4v3Y1bERH6IRhEkyXhcwS8rJMBU0VhVyN835jMsnP61oUKbzSz3fPtv9fS2ur1g8MmKI34sWsJCIU5Nrk5F2ZZdkynmqmE/uf20trM9lKhL0LTAUIfdaoSIPR9dQj6Lo9GQfxCReFtbRADCno9OKf//t5d/wABP13REZlv5jNTw8YOrJAaq9qjAfBTc4WYMka88Cx+M8uyRXmBOrtuh2pyRedJhonjfD0uEa5tv7fwxqcXiMK3f2zvPZD3O5yWaMa6Vdg1s9EDVOhB/7iHDsJD3tpOl8ktCKFH+gFRSLG3zGyPNscuVuFXFfT71F405Ctme4U8p+GeA+jNfkIUnq8bDT6tFnvkqxtodSSIVprt9BP8RpqeFQVCRI4NPcDu+RH6xO8Z+wZhZvsFH5X2L0KT3oL3BUSFHlgICC083p/0DBJ7XlSKDGjNAlwlREkxzPvlTpyI8Hg/QCoXcdEeoc97BvGdfqFBRNKb+vRLBx5awLRa3rdTeaB+vNdf1dKAN3kP7ad/Xtz5KaYfg/rBnv8IB6DnvZ/v+uMB4V/9Ny0z+o1+DG+g/OKmeSpJI36o1zxc4HUAve1/A+onhHyTiA4ToQs1o6sAugOg2/NbMaVTot6N/JvHX7mX2GRK15C1AAAAAElFTkSuQmCC" alt="cat-footprint">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="story-">
+                        <img src="Ramses.png" alt="Ramses">
+                        <div class="p-body">
+                            <h3 data-i18n="king.ramses">King Ramses II</h3>
+                            <button class="read-btn" onclick="window.location.href='Ramsis.html'">
+                                <span data-i18n="btn.read">Read</span>
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE70lEQVR4nO2aWYhcVRCGe9wVF1xwiYJGFFTcUERU9EXEBzUiiCIuEHcEFQRBxA2X+OAC6sMoPvigggZ9cUON0SiCCDFE1GSCJiajGCYzk+lbdW/91ROTkro9Pd5p+07fM91nRsQD92nuf6e+qjrnVJ3Ttdr/4z8yzGxPgG5R8FcK3gZhUqFPReiiKvpGg09X4UEIr4cQFPSbCr3EzEfU5mtkWbZIwd8o2NofCP0J8N1lWjPbDeDH/b1OegWPZllybnQIs5H9IbS2xIgWzC7V5PJOehV6cTat5nquAxOLo4IA9Gw3Q5oPDZvZ3kVtQ/jaalo2FVoZDSJN0yMhNFnVGJH0xpbWoRT0R2UQsEVLMRW+L8QQgN9taUX4hhCt5np6LgoIhD8IM4a2TGvB78wBZHUUkHyJDDFESAva4VAQBY1EAWmu90EgUtBqcESEJiOBMM/VoxCeCAfhiVgg64OMEd5Y0G4ITi3hTVFAVPi1QGNWTWubpUxoan0YBySjqwM9OlhwwmAwCPjJKCBmtg/A26sbQne2tECyNBREJDm/Fmuo0KMV02JXlmVHt3Rpmh4FoZ0BC8UWLzCjgZhtP6jSftKhVlLwl5VBlO/pyVAgvdQnaXOppWHvEdybM9/hS2Ypwz0aOzvVSarJkmrR5A1mtm9RO5llZwO8XMFjEMp88QD44hIIXlby8VERuqD4bkP4Ogjt6JRSqnxvp++b2YBHqktKSiNNz5zhAKGHOqVl7kylK2d6S5L7u3gpUaWTZsA0+FQIv+fd4VSHuMKjNVvEvQNU0OaS/7NNJDmvDeLhLhEc9R5pyqD0jNlSpbAcfuterfU4mPlwFX5ZQVshnAK0BuDHkiQ5tPgeQLdWWx2TpS3qldUnYXJZbR6GanJi1doOwu/XVOnkPK8rggD0xryACK2o7FzhX3yCP1FZkD+0OTaECF8fXGWH1kDFHiPGMLMBCK8Lcy6PecOzNQyEOSYImvuYBdr0kzc8jbm2r2UebQhf44d1Xpd5BH2DA+gZP7zoBqLCr4SCuMbnyHiYiD4uhajXD1Ghz8oXCh4v3Y1bERH6IRhEkyXhcwS8rJMBU0VhVyN835jMsnP61oUKbzSz3fPtv9fS2ur1g8MmKI34sWsJCIU5Nrk5F2ZZdkynmqmE/uf20trM9lKhL0LTAUIfdaoSIPR9dQj6Lo9GQfxCReFtbRADCno9OKf//t5d/wABP13REZlv5jNTw8YOrJAaq9qjAfBTc4WYMka88Cx+M8uyRXmBOrtuh2pyRedJhonjfD0uEa5tv7fwxqcXiMK3f2zvPZD3O5yWaMa6Vdg1s9EDVOhB/7iHDsJD3tpOl8ktCKFH+gFRSLG3zGyPNscuVuFXFfT71F405Ctme4U8p+GeA+jNfkIUnq8bDT6tFnvkqxtodSSIVprt9BP8RpqeFQVCRI4NPcDu+RH6xO8Z+wZhZvsFH5X2L0KT3oL3BUSFHlgICC083p/0DBJ7XlSKDGjNAlwlREkxzPvlTpyI8Hg/QCoXcdEeoc97BvGdfqFBRNKb+vRLBx5awLRa3rdTeaB+vNdf1dKAN3kP7ad/Xtz5KaYfg/rBnv8IB6DnvZ/v+uMB4V/9Ny0z+o1+DG+g/OKmeSpJI36o1zxc4HUAve1/A+onhHyTiA4ToQs1o6sAugOg2/NbMaVTot6N/JvHX7mX2GRK15C1AAAAAElFTkSuQmCC" alt="cat-footprint">
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="story-">
+                        <img src="Akhenaten.png" alt="Akhenaten">
+                        <div class="p-body">
+                            <h3 data-i18n="king.akhenaten">King Akhenaten</h3>
+                            <button class="read-btn" onclick="window.location.href='Akhenaten.html'">
+                                <span data-i18n="btn.read">Read</span>
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE70lEQVR4nO2aWYhcVRCGe9wVF1xwiYJGFFTcUERU9EXEBzUiiCIuEHcEFQRBxA2X+OAC6sMoPvigggZ9cUON0SiCCDFE1GSCJiajGCYzk+lbdW/91ROTkro9Pd5p+07fM91nRsQD92nuf6e+qjrnVJ3Ttdr/4z8yzGxPgG5R8FcK3gZhUqFPReiiKvpGg09X4UEIr4cQFPSbCr3EzEfU5mtkWbZIwd8o2NofCP0J8N1lWjPbDeDH/b1OegWPZllybnQIs5H9IbS2xIgWzC7V5PJOehV6cTat5nquAxOLo4IA9Gw3Q5oPDZvZ3kVtQ/jaalo2FVoZDSJN0yMhNFnVGJH0xpbWoRT0R2UQsEVLMRW+L8QQgN9taUX4hhCt5np6LgoIhD8IM4a2TGvB78wBZHUUkHyJDDFESAva4VAQBY1EAWmu90EgUtBqcESEJiOBMM/VoxCeCAfhiVgg64OMEd5Y0G4ITi3hTVFAVPi1QGNWTWubpUxoan0YBySjqwM9OlhwwmAwCPjJKCBmtg/A26sbQne2tECyNBREJDm/Fmuo0KMV02JXlmVHt3Rpmh4FoZ0BC8UWLzCjgZhtP6jSftKhVlLwl5VBlO/pyVAgvdQnaXOppWHvEdybM9/hS2Ypwz0aOzvVSarJkmrR5A1mtm9RO5llZwO8XMFjEMp88QD44hIIXlby8VERuqD4bkP4Ogjt6JRSqnxvp++b2YBHqktKSiNNz5zhAKGHOqVl7kylK2d6S5L7u3gpUaWTZsA0+FQIv+fd4VSHuMKjNVvEvQNU0OaS/7NNJDmvDeLhLhEc9R5pyqD0jNlSpbAcfuterfU4mPlwFX5ZQVshnAK0BuDHkiQ5tPgeQLdWWx2TpS3qldUnYXJZbR6GanJi1doOwu/XVOnkPK8rggD0xryACK2o7FzhX3yCP1FZkD+0OTaECF8fXGWH1kDFHiPGMLMBCK8Lcy6PecOzNQyEOSYImvuYBdr0kzc8jbm2r2UebQhf44d1Xpd5BH2DA+gZP7zoBqLCr4SCuMbnyHiYiD4uhajXD1Ghz8oXCh4v3Y1bERH6IRhEkyXhcwS8rJMBU0VhVyN835jMsnP61oUKbzSz3fPtv9fS2ur1g8MmKI34sWsJCIU5Nrk5F2ZZdkynmqmE/uf20trM9lKhL0LTAUIfdaoSIPR9dQj6Lo9GQfxCReFtbRADCno9OKf//t5d/wABP13REZlv5jNTw8YOrJAaq9qjAfBTc4WYMka88Cx+M8uyRXmBOrtuh2pyRedJhonjfD0uEa5tv7fwxqcXiMK3f2zvPZD3O5yWaMa6Vdg1s9EDVOhB/7iHDsJD3tpOl8ktCKFH+gFRSLG3zGyPNscuVuFXFfT71F405Ctme4U8p+GeA+jNfkIUnq8bDT6tFnvkqxtodSSIVprt9BP8RpqeFQVCRI4NPcDu+RH6xO8Z+wZhZvsFH5X2L0KT3oL3BUSFHlgICC083p/0DBJ7XlSKDGjNAlwlREkxzPvlTpyI8Hg/QCoXcdEeoc97BvGdfqFBRNKb+vRLBx5awLRa3rdTeaB+vNdf1dKAN3kP7ad/Xtz5KaYfg/rBnv8IB6DnvZ/v+uMB4V/9Ny0z+o1+DG+g/OKmeSpJI36o1zxc4HUAve1/A+onhHyTiA4ToQs1o6sAugOg2/NbMaVTot6N/JvHX7mX2GRK15C1AAAAAElFTkSuQmCC" alt="cat-footprint">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tabs" id="tabQueens" role="tabpanel">
+                    <div class="story-">
+                        <img src="Ahhotep.png" alt="Ahhotep">
+                        <div class="p-body">
+                            <h3 data-i18n="queen.ahhotep">Queen Ahhotep</h3>
+                            <button class="read-btn" onclick="window.location.href='Ahhotep.html'">
+                                <span data-i18n="btn.read">Read</span>
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE70lEQVR4nO2aWYhcVRCGe9wVF1xwiYJGFFTcUERU9EXEBzUiiCIuEHcEFQRBxA2X+OAC6sMoPvigggZ9cUON0SiCCDFE1GSCJiajGCYzk+lbdW/91ROTkro9Pd5p+07fM91nRsQD92nuf6e+qjrnVJ3Ttdr/4z8yzGxPgG5R8FcK3gZhUqFPReiiKvpGg09X4UEIr4cQFPSbCr3EzEfU5mtkWbZIwd8o2NofCP0J8N1lWjPbDeDH/b1OegWPZllybnQIs5H9IbS2xIgWzC7V5PJOehV6cTat5nquAxOLo4IA9Gw3Q5oPDZvZ3kVtQ/jaalo2FVoZDSJN0yMhNFnVGJH0xpbWoRT0R2UQsEVLMRW+L8QQgN9taUX4hhCt5np6LgoIhD8IM4a2TGvB78wBZHUUkHyJDDFESAva4VAQBY1EAWmu90EgUtBqcESEJiOBMM/VoxCeCAfhiVgg64OMEd5Y0G4ITi3hTVFAVPi1QGNWTWubpUxoan0YBySjqwM9OlhwwmAwCPjJKCBmtg/A26sbQne2tECyNBREJDm/Fmuo0KMV02JXlmVHt3Rpmh4FoZ0BC8UWLzCjgZhtP6jSftKhVlLwl5VBlO/pyVAgvdQnaXOppWHvEdybM9/hS2Ypwz0aOzvVSarJkmrR5A1mtm9RO5llZwO8XMFjEMp88QD44hIIXlby8VERuqD4bkP4Ogjt6JRSqnxvp++b2YBHqktKSiNNz5zhAKGHOqVl7kylK2d6S5L7u3gpUaWTZsA0+FQIv+fd4VSHuMKjNVvEvQNU0OaS/7NNJDmvDeLhLhEc9R5pyqD0jNlSpbAcfuterfU4mPlwFX5ZQVshnAK0BuDHkiQ5tPgeQLdWWx2TpS3qldUnYXJZbR6GanJi1doOwu/XVOnkPK8rggD0xryACK2o7FzhX3yCP1FZkD+0OTaECF8fXGWH1kDFHiPGMLMBCK8Lcy6PecOzNQyEOSYImvuYBdr0kzc8jbm2r2UebQhf44d1Xpd5BH2DA+gZP7zoBqLCr4SCuMbnyHiYiD4uhajXD1Ghz8oXCh4v3Y1bERH6IRhEkyXhcwS8rJMBU0VhVyN835jMsnP61oUKbzSz3fPtv9fS2ur1g8MmKI34sWsJCIU5Nrk5F2ZZdkynmqmE/uf20trM9lKhL0LTAUIfdaoSIPR9dQj6Lo9GQfxCReFtbRADCno9OKf//t5d/wABP13REZlv5jNTw8YOrJAaq9qjAfBTc4WYMka88Cx+M8uyRXmBOrtuh2pyRedJhonjfD0uEa5tv7fwxqcXiMK3f2zvPZD3O5yWaMa6Vdg1s9EDVOhB/7iHDsJD3tpOl8ktCKFH+gFRSLG3zGyPNscuVuFXFfT71F405Ctme4U8p+GeA+jNfkIUnq8bDT6tFnvkqxtodSSIVprt9BP8RpqeFQVCRI4NPcDu+RH6xO8Z+wZhZvsFH5X2L0KT3oL3BUSFHlgICC083p/0DBJ7XlSKDGjNAlwlREkxzPvlTpyI8Hg/QCoXcdEeoc97BvGdfqFBRNKb+vRLBx5awLRa3rdTeaB+vNdf1dKAN3kP7ad/Xtz5KaYfg/rBnv8IB6DnvZ/v+uMB4V/9Ny0z+o1+DG+g/OKmeSpJI36o1zxc4HUAve1/A+onhHyTiA4ToQs1o6sAugOg2/NbMaVTot6N/JvHX7mX2GRK15C1AAAAAElFTkSuQmCC" alt="cat-footprint">
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="story-">
+                        <img src="Hatshepsut.png" alt="Hatshepsut">
+                        <div class="p-body">
+                            <h3 data-i18n="queen.hatshepsut">Queen Hatshepsut</h3>
+                            <button class="read-btn" onclick="window.location.href='Hatshepsut.html'">
+                                <span data-i18n="btn.read">Read</span>
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE70lEQVR4nO2aWYhcVRCGe9wVF1xwiYJGFFTcUERU9EXEBzUiiCIuEHcEFQRBxA2X+OAC6sMoPvigggZ9cUON0SiCCDFE1GSCJiajGCYzk+lbdW/91ROTkro9Pd5p+07fM91nRsQD92nuf6e+qjrnVJ3Ttdr/4z8yzGxPgG5R8FcK3gZhUqFPReiiKvpGg09X4UEIr4cQFPSbCr3EzEfU5mtkWbZIwd8o2NofCP0J8N1lWjPbDeDH/b1OegWPZllybnQIs5H9IbS2xIgWzC7V5PJOehV6cTat5nquAxOLo4IA9Gw3Q5oPDZvZ3kVtQ/jaalo2FVoZDSJN0yMhNFnVGJH0xpbWoRT0R2UQsEVLMRW+L8QQgN9taUX4hhCt5np6LgoIhD8IM4a2TGvB78wBZHUUkHyJDDFESAva4VAQBY1EAWmu90EgUtBqcESEJiOBMM/VoxCeCAfhiVgg64OMEd5Y0G4ITi3hTVFAVPi1QGNWTWubpUxoan0YBySjqwM9OlhwwmAwCPjJKCBmtg/A26sbQne2tECyNBREJDm/Fmuo0KMV02JXlmVHt3Rpmh4FoZ0BC8UWLzCjgZhtP6jSftKhVlLwl5VBlO/pyVAgvdQnaXOppWHvEdybM9/hS2Ypwz0aOzvVSarJkmrR5A1mtm9RO5llZwO8XMFjEMp88QD44hIIXlby8VERuqD4bkP4Ogjt6JRSqnxvp++b2YBHqktKSiNNz5zhAKGHOqVl7kylK2d6S5L7u3gpUaWTZsA0+FQIv+fd4VSHuMKjNVvEvQNU0OaS/7NNJDmvDeLhLhEc9R5pyqD0jNlSpbAcfuterfU4mPlwFX5ZQVshnAK0BuDHkiQ5tPgeQLdWWx2TpS3qldUnYXJZbR6GanJi1doOwu/XVOnkPK8rggD0xryACK2o7FzhX3yCP1FZkD+0OTaECF8fXGWH1kDFHiPGMLMBCK8Lcy6PecOzNQyEOSYImvuYBdr0kzc8jbm2r2UebQhf44d1Xpd5BH2DA+gZP7zoBqLCr4SCuMbnyHiYiD4uhajXD1Ghz8oXCh4v3Y1bERH6IRhEkyXhcwS8rJMBU0VhVyN835jMsnP61oUKbzSz3fPtv9fS2ur1g8MmKI34sWsJCIU5Nrk5F2ZZdkynmqmE/uf20trM9lKhL0LTAUIfdaoSIPR9dQj6Lo9GQfxCReFtbRADCno9OKf//t5d/wABP13REZlv5jNTw8YOrJAaq9qjAfBTc4WYMka88Cx+M8uyRXmBOrtuh2pyRedJhonjfD0uEa5tv7fwxqcXiMK3f2zvPZD3O5yWaMa6Vdg1s9EDVOhB/7iHDsJD3tpOl8ktCKFH+gFRSLG3zGyPNscuVuFXFfT71F405Ctme4U8p+GeA+jNfkIUnq8bDT6tFnvkqxtodSSIVprt9BP8RpqeFQVCRI4NPcDu+RH6xO8Z+wZhZvsFH5X2L0KT3oL3BUSFHlgICC083p/0DBJ7XlSKDGjNAlwlREkxzPvlTpyI8Hg/QCoXcdEeoc97BvGdfqFBRNKb+vRLBx5awLRa3rdTeaB+vNdf1dKAN3kP7ad/Xtz5KaYfg/rBnv8IB6DnvZ/v+uMB4V/9Ny0z+o1+DG+g/OKmeSpJI36o1zxc4HUAve1/A+onhHyTiA4ToQs1o6sAugOg2/NbMaVTot6N/JvHX7mX2GRK15C1AAAAAElFTkSuQmCC" alt="cat-footprint">
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="story-">
+                        <img src="Nefertiti.png" alt="Nefertiti">
+                        <div class="p-body">
+                            <h3 data-i18n="queen.nefertiti">Queen Nefertiti</h3>
+                            <button class="read-btn" onclick="window.location.href='Nefertiti.html'">
+                                <span data-i18n="btn.read">Read</span>
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE70lEQVR4nO2aWYhcVRCGe9wVF1xwiYJGFFTcUERU9EXEBzUiiCIuEHcEFQRBxA2X+OAC6sMoPvigggZ9cUON0SiCCDFE1GSCJiajGCYzk+lbdW/91ROTkro9Pd5p+07fM91nRsQD92nuf6e+qjrnVJ3Ttdr/4z8yzGxPgG5R8FcK3gZhUqFPReiiKvpGg09X4UEIr4cQFPSbCr3EzEfU5mtkWbZIwd8o2NofCP0J8N1lWjPbDeDH/b1OegWPZllybnQIs5H9IbS2xIgWzC7V5PJOehV6cTat5nquAxOLo4IA9Gw3Q5oPDZvZ3kVtQ/jaalo2FVoZDSJN0yMhNFnVGJH0xpbWoRT0R2UQsEVLMRW+L8QQgN9taUX4hhCt5np6LgoIhD8IM4a2TGvB78wBZHUUkHyJDDFESAva4VAQBY1EAWmu90EgUtBqcESEJiOBMM/VoxCeCAfhiVgg64OMEd5Y0G4ITi3hTVFAVPi1QGNWTWubpUxoan0YBySjqwM9OlhwwmAwCPjJKCBmtg/A26sbQne2tECyNBREJDm/Fmuo0KMV02JXlmVHt3Rpmh4FoZ0BC8UWLzCjgZhtP6jSftKhVlLwl5VBlO/pyVAgvdQnaXOppWHvEdybM9/hS2Ypwz0aOzvVSarJkmrR5A1mtm9RO5llZwO8XMFjEMp88QD44hIIXlby8VERuqD4bkP4Ogjt6JRSqnxvp++b2YBHqktKSiNNz5zhAKGHOqVl7kylK2d6S5L7u3gpUaWTZsA0+FQIv+fd4VSHuMKjNVvEvQNU0OaS/7NNJDmvDeLhLhEc9R5pyqD0jNlSpbAcfuterfU4mPlwFX5ZQVshnAK0BuDHkiQ5tPgeQLdWWx2TpS3qldUnYXJZbR6GanJi1doOwu/XVOnkPK8rggD0xryACK2o7FzhX3yCP1FZkD+0OTaECF8fXGWH1kDFHiPGMLMBCK8Lcy6PecOzNQyEOSYImvuYBdr0kzc8jbm2r2UebQhf44d1Xpd5BH2DA+gZP7zoBqLCr4SCuMbnyHiYiD4uhajXD1Ghz8oXCh4v3Y1bERH6IRhEkyXhcwS8rJMBU0VhVyN835jMsnP61oUKbzSz3fPtv9fS2ur1g8MmKI34sWsJCIU5Nrk5F2ZZdkynmqmE/uf20trM9lKhL0LTAUIfdaoSIPR9dQj6Lo9GQfxCReFtbRADCno9OKf//t5d/wABP13REZlv5jNTw8YOrJAaq9qjAfBTc4WYMka88Cx+M8uyRXmBOrtuh2pyRedJhonjfD0uEa5tv7fwxqcXiMK3f2zvPZD3O5yWaMa6Vdg1s9EDVOhB/7iHDsJD3tpOl8ktCKFH+gFRSLG3zGyPNscuVuFXFfT71F405Ctme4U8p+GeA+jNfkIUnq8bDT6tFnvkqxtodSSIVprt9BP8RpqeFQVCRI4NPcDu+RH6xO8Z+wZhZvsFH5X2L0KT3oL3BUSFHlgICC083p/0DBJ7XlSKDGjNAlwlREkxzPvlTpyI8Hg/QCoXcdEeoc97BvGdfqFBRNKb+vRLBx5awLRa3rdTeaB+vNdf1dKAN3kP7ad/Xtz5KaYfg/rBnv8IB6DnvZ/v+uMB4V/9Ny0z+o1+DG+g/OKmeSpJI36o1zxc4HUAve1/A+onhHyTiA4ToQs1o6sAugOg2/NbMaVTot6N/JvHX7mX2GRK15C1AAAAAElFTkSuQmCC" alt="cat-footprint">
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="story-">
+                        <img src="Tiye.png" alt="Tiye">
+                        <div class="p-body">
+                            <h3 data-i18n="queen.tiye">Queen Tiye</h3>
+                            <button class="read-btn" onclick="window.location.href='Tiye.html'">
+                                <span data-i18n="btn.read">Read</span>
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE70lEQVR4nO2aWYhcVRCGe9wVF1xwiYJGFFTcUERU9EXEBzUiiCIuEHcEFQRBxA2X+OAC6sMoPvigggZ9cUON0SiCCDFE1GSCJiajGCYzk+lbdW/91ROTkro9Pd5p+07fM91nRsQD92nuf6e+qjrnVJ3Ttdr/4z8yzGxPgG5R8FcK3gZhUqFPReiiKvpGg09X4UEIr4cQFPSbCr3EzEfU5mtkWbZIwd8o2NofCP0J8N1lWjPbDeDH/b1OegWPZllybnQIs5H9IbS2xIgWzC7V5PJOehV6cTat5nquAxOLo4IA9Gw3Q5oPDZvZ3kVtQ/jaalo2FVoZDSJN0yMhNFnVGJH0xpbWoRT0R2UQsEVLMRW+L8QQgN9taUX4hhCt5np6LgoIhD8IM4a2TGvB78wBZHUUkHyJDDFESAva4VAQBY1EAWmu90EgUtBqcESEJiOBMM/VoxCeCAfhiVgg64OMEd5Y0G4ITi3hTVFAVPi1QGNWTWubpUxoan0YBySjqwM9OlhwwmAwCPjJKCBmtg/A26sbQne2tECyNBREJDm/Fmuo0KMV02JXlmVHt3Rpmh4FoZ0BC8UWLzCjgZhtP6jSftKhVlLwl5VBlO/pyVAgvdQnaXOppWHvEdybM9/hS2Ypwz0aOzvVSarJkmrR5A1mtm9RO5llZwO8XMFjEMp88QD44hIIXlby8VERuqD4bkP4Ogjt6JRSqnxvp++b2YBHqktKSiNNz5zhAKGHOqVl7kylK2d6S5L7u3gpUaWTZsA0+FQIv+fd4VSHuMKjNVvEvQNU0OaS/7NNJDmvDeLhLhEc9R5pyqD0jNlSpbAcfuterfU4mPlwFX5ZQVshnAK0BuDHkiQ5tPgeQLdWWx2TpS3qldUnYXJZbR6GanJi1doOwu/XVOnkPK8rggD0xryACK2o7FzhX3yCP1FZkD+0OTaECF8fXGWH1kDFHiPGMLMBCK8Lcy6PecOzNQyEOSYImvuYBdr0kzc8jbm2r2UebQhf44d1Xpd5BH2DA+gZP7zoBqLCr4SCuMbnyHiYiD4uhajXD1Ghz8oXCh4v3Y1bERH6IRhEkyXhcwS8rJMBU0VhVyN835jMsnP61oUKbzSz3fPtv9fS2ur1g8MmKI34sWsJCIU5Nrk5F2ZZdkynmqmE/uf20trM9lKhL0LTAUIfdaoSIPR9dQj6Lo9GQfxCReFtbRADCno9OKf//t5d/wABP13REZlv5jNTw8YOrJAaq9qjAfBTc4WYMka88Cx+M8uyRXmBOrtuh2pyRedJhonjfD0uEa5tv7fwxqcXiMK3f2zvPZD3O5yWaMa6Vdg1s9EDVOhB/7iHDsJD3tpOl8ktCKFH+gFRSLG3zGyPNscuVuFXFfT71F405Ctme4U8p+GeA+jNfkIUnq8bDT6tFnvkqxtodSSIVprt9BP8RpqeFQVCRI4NPcDu+RH6xO8Z+wZhZvsFH5X2L0KT3oL3BUSFHlgICC083p/0DBJ7XlSKDGjNAlwlREkxzPvlTpyI8Hg/QCoXcdEeoc97BvGdfqFBRNKb+vRLBx5awLRa3rdTeaB+vNdf1dKAN3kP7ad/Xtz5KaYfg/rBnv8IB6DnvZ/v+uMB4V/9Ny0z+o1+DG+g/OKmeSpJI36o1zxc4HUAve1/A+onhHyTiA4ToQs1o6sAugOg2/NbMaVTot6N/JvHX7mX2GRK15C1AAAAAElFTkSuQmCC" alt="cat-footprint">
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="story-">
+                        <img src="Nefertari.png" alt="Nefertari">
+                        <div class="p-body">
+                            <h3 data-i18n="queen.nefertari">Queen Nefertari</h3>
+                            <button class="read-btn" onclick="window.location.href='Nefertari.html'">
+                                <span data-i18n="btn.read">Read</span>
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE70lEQVR4nO2aWYhcVRCGe9wVF1xwiYJGFFTcUERU9EXEBzUiiCIuEHcEFQRBxA2X+OAC6sMoPvigggZ9cUON0SiCCDFE1GSCJiajGCYzk+lbdW/91ROTkro9Pd5p+07fM91nRsQD92nuf6e+qjrnVJ3Ttdr/4z8yzGxPgG5R8FcK3gZhUqFPReiiKvpGg09X4UEIr4cQFPSbCr3EzEfU5mtkWbZIwd8o2NofCP0J8N1lWjPbDeDH/b1OegWPZllybnQIs5H9IbS2xIgWzC7V5PJOehV6cTat5nquAxOLo4IA9Gw3Q5oPDZvZ3kVtQ/jaalo2FVoZDSJN0yMhNFnVGJH0xpbWoRT0R2UQsEVLMRW+L8QQgN9taUX4hhCt5np6LgoIhD8IM4a2TGvB78wBZHUUkHyJDDFESAva4VAQBY1EAWmu90EgUtBqcESEJiOBMM/VoxCeCAfhiVgg64OMEd5Y0G4ITi3hTVFAVPi1QGNWTWubpUxoan0YBySjqwM9OlhwwmAwCPjJKCBmtg/A26sbQne2tECyNBREJDm/Fmuo0KMV02JXlmVHt3Rpmh4FoZ0BC8UWLzCjgZhtP6jSftKhVlLwl5VBlO/pyVAgvdQnaXOppWHvEdybM9/hS2Ypwz0aOzvVSarJkmrR5A1mtm9RO5llZwO8XMFjEMp88QD44hIIXlby8VERuqD4bkP4Ogjt6JRSqnxvp++b2YBHqktKSiNNz5zhAKGHOqVl7kylK2d6S5L7u3gpUaWTZsA0+FQIv+fd4VSHuMKjNVvEvQNU0OaS/7NNJDmvDeLhLhEc9R5pyqD0jNlSpbAcfuterfU4mPlwFX5ZQVshnAK0BuDHkiQ5tPgeQLdWWx2TpS3qldUnYXJZbR6GanJi1doOwu/XVOnkPK8rggD0xryACK2o7FzhX3yCP1FZkD+0OTaECF8fXGWH1kDFHiPGMLMBCK8Lcy6PecOzNQyEOSYImvuYBdr0kzc8jbm2r2UebQhf44d1Xpd5BH2DA+gZP7zoBqLCr4SCuMbnyHiYiD4uhajXD1Ghz8oXCh4v3Y1bERH6IRhEkyXhcwS8rJMBU0VhVyN835jMsnP61oUKbzSz3fPtv9fS2ur1g8MmKI34sWsJCIU5Nrk5F2ZZdkynmqmE/uf20trM9lKhL0LTAUIfdaoSIPR9dQj6Lo9GQfxCReFtbRADCno9OKf//t5d/wABP13REZlv5jNTw8YOrJAaq9qjAfBTc4WYMka88Cx+M8uyRXmBOrtuh2pyRedJhonjfD0uEa5tv7fwxqcXiMK3f2zvPZD3O5yWaMa6Vdg1s9EDVOhB/7iHDsJD3tpOl8ktCKFH+gFRSLG3zGyPNscuVuFXFfT71F405Ctme4U8p+GeA+jNfkIUnq8bDT6tFnvkqxtodSSIVprt9BP8RpqeFQVCRI4NPcDu+RH6xO8Z+wZhZvsFH5X2L0KT3oL3BUSFHlgICC083p/0DBJ7XlSKDGjNAlwlREkxzPvlTpyI8Hg/QCoXcdEeoc97BvGdfqFBRNKb+vRLBx5awLRa3rdTeaB+vNdf1dKAN3kP7ad/Xtz5KaYfg/rBnv8IB6DnvZ/v+uMB4V/9Ny0z+o1+DG+g/OKmeSpJI36o1zxc4HUAve1/A+onhHyTiA4ToQs1o6sAugOg2/NbMaVTot6N/JvHX7mX2GRK15C1AAAAAElFTkSuQmCC" alt="cat-footprint">
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="story-">
+                        <img src="Sobekneferu.png" alt="Sobekneferu">
+                        <div class="p-body">
+                            <h3 data-i18n="queen.sobekneferu">Queen Sobekneferu</h3>
+                            <button class="read-btn" onclick="window.location.href='Sobekneferu.html'">
+                                <span data-i18n="btn.read">Read</span>
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE70lEQVR4nO2aWYhcVRCGe9wVF1xwiYJGFFTcUERU9EXEBzUiiCIuEHcEFQRBxA2X+OAC6sMoPvigggZ9cUON0SiCCDFE1GSCJiajGCYzk+lbdW/91ROTkro9Pd5p+07fM91nRsQD92nuf6e+qjrnVJ3Ttdr/4z8yzGxPgG5R8FcK3gZhUqFPReiiKvpGg09X4UEIr4cQFPSbCr3EzEfU5mtkWbZIwd8o2NofCP0J8N1lWjPbDeDH/b1OegWPZllybnQIs5H9IbS2xIgWzC7V5PJOehV6cTat5nquAxOLo4IA9Gw3Q5oPDZvZ3kVtQ/jaalo2FVoZDSJN0yMhNFnVGJH0xpbWoRT0R2UQsEVLMRW+L8QQgN9taUX4hhCt5np6LgoIhD8IM4a2TGvB78wBZHUUkHyJDDFESAva4VAQBY1EAWmu90EgUtBqcESEJiOBMM/VoxCeCAfhiVgg64OMEd5Y0G4ITi3hTVFAVPi1QGNWTWubpUxoan0YBySjqwM9OlhwwmAwCPjJKCBmtg/A26sbQne2tECyNBREJDm/Fmuo0KMV02JXlmVHt3Rpmh4FoZ0BC8UWLzCjgZhtP6jSftKhVlLwl5VBlO/pyVAgvdQnaXOppWHvEdybM9/hS2Ypwz0aOzvVSarJkmrR5A1mtm9RO5llZwO8XMFjEMp88QD44hIIXlby8VERuqD4bkP4Ogjt6JRSqnxvp++b2YBHqktKSiNNz5zhAKGHOqVl7kylK2d6S5L7u3gpUaWTZsA0+FQIv+fd4VSHuMKjNVvEvQNU0OaS/7NNJDmvDeLhLhEc9R5pyqD0jNlSpbAcfuterfU4mPlwFX5ZQVshnAK0BuDHkiQ5tPgeQLdWWx2TpS3qldUnYXJZbR6GanJi1doOwu/XVOnkPK8rggD0xryACK2o7FzhX3yCP1FZkD+0OTaECF8fXGWH1kDFHiPGMLMBCK8Lcy6PecOzNQyEOSYImvuYBdr0kzc8jbm2r2UebQhf44d1Xpd5BH2DA+gZP7zoBqLCr4SCuMbnyHiYiD4uhajXD1Ghz8oXCh4v3Y1bERH6IRhEkyXhcwS8rJMBU0VhVyN835jMsnP61oUKbzSz3fPtv9fS2ur1g8MmKI34sWsJCIU5Nrk5F2ZZdkynmqmE/uf20trM9lKhL0LTAUIfdaoSIPR9dQj6Lo9GQfxCReFtbRADCno9OKf//t5d/wABP13REZlv5jNTw8YOrJAaq9qjAfBTc4WYMka88Cx+M8uyRXmBOrtuh2pyRedJhonjfD0uEa5tv7fwxqcXiMK3f2zvPZD3O5yWaMa6Vdg1s9EDVOhB/7iHDsJD3tpOl8ktCKFH+gFRSLG3zGyPNscuVuFXFfT71F405Ctme4U8p+GeA+jNfkIUnq8bDT6tFnvkqxtodSSIVprt9BP8RpqeFQVCRI4NPcDu+RH6xO8Z+wZhZvsFH5X2L0KT3oL3BUSFHlgICC083p/0DBJ7XlSKDGjNAlwlREkxzPvlTpyI8Hg/QCoXcdEeoc97BvGdfqFBRNKb+vRLBx5awLRa3rdTeaB+vNdf1dKAN3kP7ad/Xtz5KaYfg/rBnv8IB6DnvZ/v+uMB4V/9Ny0z+o1+DG+g/OKmeSpJI36o1zxc4HUAve1/A+onhHyTiA4ToQs1o6sAugOg2/NbMaVTot6N/JvHX7mX2GRK15C1AAAAAElFTkSuQmCC" alt="cat-footprint">
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="story-">
+                        <img src="Cleopatra.png" alt="Cleopatra">
+                        <div class="p-body">
+                            <h3 data-i18n="queen.cleopatra">Queen Cleopatra VII</h3>
+                            <button class="read-btn" onclick="window.location.href='Cleopatra.html'">
+                                <span data-i18n="btn.read">Read</span>
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE70lEQVR4nO2aWYhcVRCGe9wVF1xwiYJGFFTcUERU9EXEBzUiiCIuEHcEFQRBxA2X+OAC6sMoPvigggZ9cUON0SiCCDFE1GSCJiajGCYzk+lbdW/91ROTkro9Pd5p+07fM91nRsQD92nuf6e+qjrnVJ3Ttdr/4z8yzGxPgG5R8FcK3gZhUqFPReiiKvpGg09X4UEIr4cQFPSbCr3EzEfU5mtkWbZIwd8o2NofCP0J8N1lWjPbDeDH/b1OegWPZllybnQIs5H9IbS2xIgWzC7V5PJOehV6cTat5nquAxOLo4IA9Gw3Q5oPDZvZ3kVtQ/jaalo2FVoZDSJN0yMhNFnVGJH0xpbWoRT0R2UQsEVLMRW+L8QQgN9taUX4hhCt5np6LgoIhD8IM4a2TGvB78wBZHUUkHyJDDFESAva4VAQBY1EAWmu90EgUtBqcESEJiOBMM/VoxCeCAfhiVgg64OMEd5Y0G4ITi3hTVFAVPi1QGNWTWubpUxoan0YBySjqwM9OlhwwmAwCPjJKCBmtg/A26sbQne2tECyNBREJDm/Fmuo0KMV02JXlmVHt3Rpmh4FoZ0BC8UWLzCjgZhtP6jSftKhVlLwl5VBlO/pyVAgvdQnaXOppWHvEdybM9/hS2Ypwz0aOzvVSarJkmrR5A1mtm9RO5llZwO8XMFjEMp88QD44hIIXlby8VERuqD4bkP4Ogjt6JRSqnxvp++b2YBHqktKSiNNz5zhAKGHOqVl7kylK2d6S5L7u3gpUaWTZsA0+FQIv+fd4VSHuMKjNVvEvQNU0OaS/7NNJDmvDeLhLhEc9R5pyqD0jNlSpbAcfuterfU4mPlwFX5ZQVshnAK0BuDHkiQ5tPgeQLdWWx2TpS3qldUnYXJZbR6GanJi1doOwu/XVOnkPK8rggD0xryACK2o7FzhX3yCP1FZkD+0OTaECF8fXGWH1kDFHiPGMLMBCK8Lcy6PecOzNQyEOSYImvuYBdr0kzc8jbm2r2UebQhf44d1Xpd5BH2DA+gZP7zoBqLCr4SCuMbnyHiYiD4uhajXD1Ghz8oXCh4v3Y1bERH6IRhEkyXhcwS8rJMBU0VhVyN835jMsnP61oUKbzSz3fPtv9fS2ur1g8MmKI34sWsJCIU5Nrk5F2ZZdkynmqmE/uf20trM9lKhL0LTAUIfdaoSIPR9dQj6Lo9GQfxCReFtbRADCno9OKf//t5d/wABP13REZlv5jNTw8YOrJAaq9qjAfBTc4WYMka88Cx+M8uyRXmBOrtuh2pyRedJhonjfD0uEa5tv7fwxqcXiMK3f2zvPZD3O5yWaMa6Vdg1s9EDVOhB/7iHDsJD3tpOl8ktCKFH+gFRSLG3zGyPNscuVuFXFfT71F405Ctme4U8p+GeA+jNfkIUnq8bDT6tFnvkqxtodSSIVprt9BP8RpqeFQVCRI4NPcDu+RH6xO8Z+wZhZvsFH5X2L0KT3oL3BUSFHlgICC083p/0DBJ7XlSKDGjNAlwlREkxzPvlTpyI8Hg/QCoXcdEeoc97BvGdfqFBRNKb+vRLBx5awLRa3rdTeaB+vNdf1dKAN3kP7ad/Xtz5KaYfg/rBnv8IB6DnvZ/v+uMB4V/9Ny0z+o1+DG+g/OKmeSpJI36o1zxc4HUAve1/A+onhHyTiA4ToQs1o6sAugOg2/NbMaVTot6N/JvHX7mX2GRK15C1AAAAAElFTkSuQmCC" alt="cat-footprint">
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="story-">
+                        <img src="Merneith.png" alt="Merneith">
+                        <div class="p-body">
+                            <h3 data-i18n="queen.merneith">Queen Merneith</h3>
+                            <button class="read-btn" onclick="window.location.href='Merneith.html'">
+                                <span data-i18n="btn.read">Read</span>
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE70lEQVR4nO2aWYhcVRCGe9wVF1xwiYJGFFTcUERU9EXEBzUiiCIuEHcEFQRBxA2X+OAC6sMoPvigggZ9cUON0SiCCDFE1GSCJiajGCYzk+lbdW/91ROTkro9Pd5p+07fM91nRsQD92nuf6e+qjrnVJ3Ttdr/4z8yzGxPgG5R8FcK3gZhUqFPReiiKvpGg09X4UEIr4cQFPSbCr3EzEfU5mtkWbZIwd8o2NofCP0J8N1lWjPbDeDH/b1OegWPZllybnQIs5H9IbS2xIgWzC7V5PJOehV6cTat5nquAxOLo4IA9Gw3Q5oPDZvZ3kVtQ/jaalo2FVoZDSJN0yMhNFnVGJH0xpbWoRT0R2UQsEVLMRW+L8QQgN9taUX4hhCt5np6LgoIhD8IM4a2TGvB78wBZHUUkHyJDDFESAva4VAQBY1EAWmu90EgUtBqcESEJiOBMM/VoxCeCAfhiVgg64OMEd5Y0G4ITi3hTVFAVPi1QGNWTWubpUxoan0YBySjqwM9OlhwwmAwCPjJKCBmtg/A26sbQne2tECyNBREJDm/Fmuo0KMV02JXlmVHt3Rpmh4FoZ0BC8UWLzCjgZhtP6jSftKhVlLwl5VBlO/pyVAgvdQnaXOppWHvEdybM9/hS2Ypwz0aOzvVSarJkmrR5A1mtm9RO5llZwO8XMFjEMp88QD44hIIXlby8VERuqD4bkP4Ogjt6JRSqnxvp++b2YBHqktKSiNNz5zhAKGHOqVl7kylK2d6S5L7u3gpUaWTZsA0+FQIv+fd4VSHuMKjNVvEvQNU0OaS/7NNJDmvDeLhLhEc9R5pyqD0jNlSpbAcfuterfU4mPlwFX5ZQVshnAK0BuDHkiQ5tPgeQLdWWx2TpS3qldUnYXJZbR6GanJi1doOwu/XVOnkPK8rggD0xryACK2o7FzhX3yCP1FZkD+0OTaECF8fXGWH1kDFHiPGMLMBCK8Lcy6PecOzNQyEOSYImvuYBdr0kzc8jbm2r2UebQhf44d1Xpd5BH2DA+gZP7zoBqLCr4SCuMbnyHiYiD4uhajXD1Ghz8oXCh4v3Y1bERH6IRhEkyXhcwS8rJMBU0VhVyN835jMsnP61oUKbzSz3fPtv9fS2ur1g8MmKI34sWsJCIU5Nrk5F2ZZdkynmqmE/uf20trM9lKhL0LTAUIfdaoSIPR9dQj6Lo9GQfxCReFtbRADCno9OKf//t5d/wABP13REZlv5jNTw8YOrJAaq9qjAfBTc4WYMka88Cx+M8uyRXmBOrtuh2pyRedJhonjfD0uEa5tv7fwxqcXiMK3f2zvPZD3O5yWaMa6Vdg1s9EDVOhB/7iHDsJD3tpOl8ktCKFH+gFRSLG3zGyPNscuVuFXFfT71F405Ctme4U8p+GeA+jNfkIUnq8bDT6tFnvkqxtodSSIVprt9BP8RpqeFQVCRI4NPcDu+RH6xO8Z+wZhZvsFH5X2L0KT3oL3BUSFHlgICC083p/0DBJ7XlSKDGjNAlwlREkxzPvlTpyI8Hg/QCoXcdEeoc97BvGdfqFBRNKb+vRLBx5awLRa3rdTeaB+vNdf1dKAN3kP7ad/Xtz5KaYfg/rBnv8IB6DnvZ/v+uMB4V/9Ny0z+o1+DG+g/OKmeSpJI36o1zxc4HUAve1/A+onhHyTiA4ToQs1o6sAugOg2/NbMaVTot6N/JvHX7mX2GRK15C1AAAAAElFTkSuQmCC" alt="cat-footprint">
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="story-">
+                        <img src="Khentkaus.png" alt="Khentkaus">
+                        <div class="p-body">
+                            <h3 data-i18n="queen.khentkaus">Queen Khentkaus I</h3>
+                            <button class="read-btn" onclick="window.location.href='Khentkaus.html'">
+                                <span data-i18n="btn.read">Read</span>
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE70lEQVR4nO2aWYhcVRCGe9wVF1xwiYJGFFTcUERU9EXEBzUiiCIuEHcEFQRBxA2X+OAC6sMoPvigggZ9cUON0SiCCDFE1GSCJiajGCYzk+lbdW/91ROTkro9Pd5p+07fM91nRsQD92nuf6e+qjrnVJ3Ttdr/4z8yzGxPgG5R8FcK3gZhUqFPReiiKvpGg09X4UEIr4cQFPSbCr3EzEfU5mtkWbZIwd8o2NofCP0J8N1lWjPbDeDH/b1OegWPZllybnQIs5H9IbS2xIgWzC7V5PJOehV6cTat5nquAxOLo4IA9Gw3Q5oPDZvZ3kVtQ/jaalo2FVoZDSJN0yMhNFnVGJH0xpbWoRT0R2UQsEVLMRW+L8QQgN9taUX4hhCt5np6LgoIhD8IM4a2TGvB78wBZHUUkHyJDDFESAva4VAQBY1EAWmu90EgUtBqcESEJiOBMM/VoxCeCAfhiVgg64OMEd5Y0G4ITi3hTVFAVPi1QGNWTWubpUxoan0YBySjqwM9OlhwwmAwCPjJKCBmtg/A26sbQne2tECyNBREJDm/Fmuo0KMV02JXlmVHt3Rpmh4FoZ0BC8UWLzCjgZhtP6jSftKhVlLwl5VBlO/pyVAgvdQnaXOppWHvEdybM9/hS2Ypwz0aOzvVSarJkmrR5A1mtm9RO5llZwO8XMFjEMp88QD44hIIXlby8VERuqD4bkP4Ogjt6JRSqnxvp++b2YBHqktKSiNNz5zhAKGHOqVl7kylK2d6S5L7u3gpUaWTZsA0+FQIv+fd4VSHuMKjNVvEvQNU0OaS/7NNJDmvDeLhLhEc9R5pyqD0jNlSpbAcfuterfU4mPlwFX5ZQVshnAK0BuDHkiQ5tPgeQLdWWx2TpS3qldUnYXJZbR6GanJi1doOwu/XVOnkPK8rggD0xryACK2o7FzhX3yCP1FZkD+0OTaECF8fXGWH1kDFHiPGMLMBCK8Lcy6PecOzNQyEOSYImvuYBdr0kzc8jbm2r2UebQhf44d1Xpd5BH2DA+gZP7zoBqLCr4SCuMbnyHiYiD4uhajXD1Ghz8oXCh4v3Y1bERH6IRhEkyXhcwS8rJMBU0VhVyN835jMsnP61oUKbzSz3fPtv9fS2ur1g8MmKI34sWsJCIU5Nrk5F2ZZdkynmqmE/uf20trM9lKhL0LTAUIfdaoSIPR9dQj6Lo9GQfxCReFtbRADCno9OKf//t5d/wABP13REZlv5jNTw8YOrJAaq9qjAfBTc4WYMka88Cx+M8uyRXmBOrtuh2pyRedJhonjfD0uEa5tv7fwxqcXiMK3f2zvPZD3O5yWaMa6Vdg1s9EDVOhB/7iHDsJD3tpOl8ktCKFH+gFRSLG3zGyPNscuVuFXFfT71F405Ctme4U8p+GeA+jNfkIUnq8bDT6tFnvkqxtodSSIVprt9BP8RpqeFQVCRI4NPcDu+RH6xO8Z+wZhZvsFH5X2L0KT3oL3BUSFHlgICC083p/0DBJ7XlSKDGjNAlwlREkxzPvlTpyI8Hg/QCoXcdEeoc97BvGdfqFBRNKb+vRLBx5awLRa3rdTeaB+vNdf1dKAN3kP7ad/Xtz5KaYfg/rBnv8IB6DnvZ/v+uMB4V/9Ny0z+o1+DG+g/OKmeSpJI36o1zxc4HUAve1/A+onhHyTiA4ToQs1o6sAugOg2/NbMaVTot6N/JvHX7mX2GRK15C1AAAAAElFTkSuQmCC" alt="cat-footprint">
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="story-">
+                        <img src="Ankhnesmeryre.png" alt="Ankhnesmeryre">
+                        <div class="p-body">
+                            <h3 data-i18n="queen.ankhnesmeryre">Queen Ankhnesmeryre II</h3>
+                            <button class="read-btn" onclick="window.location.href='Ankhnesmeryre.html'">
+                                <span data-i18n="btn.read">Read</span>
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE70lEQVR4nO2aWYhcVRCGe9wVF1xwiYJGFFTcUERU9EXEBzUiiCIuEHcEFQRBxA2X+OAC6sMoPvigggZ9cUON0SiCCDFE1GSCJiajGCYzk+lbdW/91ROTkro9Pd5p+07fM91nRsQD92nuf6e+qjrnVJ3Ttdr/4z8yzGxPgG5R8FcK3gZhUqFPReiiKvpGg09X4UEIr4cQFPSbCr3EzEfU5mtkWbZIwd8o2NofCP0J8N1lWjPbDeDH/b1OegWPZllybnQIs5H9IbS2xIgWzC7V5PJOehV6cTat5nquAxOLo4IA9Gw3Q5oPDZvZ3kVtQ/jaalo2FVoZDSJN0yMhNFnVGJH0xpbWoRT0R2UQsEVLMRW+L8QQgN9taUX4hhCt5np6LgoIhD8IM4a2TGvB78wBZHUUkHyJDDFESAva4VAQBY1EAWmu90EgUtBqcESEJiOBMM/VoxCeCAfhiVgg64OMEd5Y0G4ITi3hTVFAVPi1QGNWTWubpUxoan0YBySjqwM9OlhwwmAwCPjJKCBmtg/A26sbQne2tECyNBREJDm/Fmuo0KMV02JXlmVHt3Rpmh4FoZ0BC8UWLzCjgZhtP6jSftKhVlLwl5VBlO/pyVAgvdQnaXOppWHvEdybM9/hS2Ypwz0aOzvVSarJkmrR5A1mtm9RO5llZwO8XMFjEMp88QD44hIIXlby8VERuqD4bkP4Ogjt6JRSqnxvp++b2YBHqktKSiNNz5zhAKGHOqVl7kylK2d6S5L7u3gpUaWTZsA0+FQIv+fd4VSHuMKjNVvEvQNU0OaS/7NNJDmvDeLhLhEc9R5pyqD0jNlSpbAcfuterfU4mPlwFX5ZQVshnAK0BuDHkiQ5tPgeQLdWWx2TpS3qldUnYXJZbR6GanJi1doOwu/XVOnkPK8rggD0xryACK2o7FzhX3yCP1FZkD+0OTaECF8fXGWH1kDFHiPGMLMBCK8Lcy6PecOzNQyEOSYImvuYBdr0kzc8jbm2r2UebQhf44d1Xpd5BH2DA+gZP7zoBqLCr4SCuMbnyHiYiD4uhajXD1Ghz8oXCh4v3Y1bERH6IRhEkyXhcwS8rJMBU0VhVyN835jMsnP61oUKbzSz3fPtv9fS2ur1g8MmKI34sWsJCIU5Nrk5F2ZZdkynmqmE/uf20trM9lKhL0LTAUIfdaoSIPR9dQj6Lo9GQfxCReFtbRADCno9OKf//t5d/wABP13REZlv5jNTw8YOrJAaq9qjAfBTc4WYMka88Cx+M8uyRXmBOrtuh2pyRedJhonjfD0uEa5tv7fwxqcXiMK3f2zvPZD3O5yWaMa6Vdg1s9EDVOhB/7iHDsJD3tpOl8ktCKFH+gFRSLG3zGyPNscuVuFXFfT71F405Ctme4U8p+GeA+jNfkIUnq8bDT6tFnvkqxtodSSIVprt9BP8RpqeFQVCRI4NPcDu+RH6xO8Z+wZhZvsFH5X2L0KT3oL3BUSFHlgICC083p/0DBJ7XlSKDGjNAlwlREkxzPvlTpyI8Hg/QCoXcdEeoc97BvGdfqFBRNKb+vRLBx5awLRa3rdTeaB+vNdf1dKAN3kP7ad/Xtz5KaYfg/rBnv8IB6DnvZ/v+uMB4V/9Ny0z+o1+DG+g/OKmeSpJI36o1zxc4HUAve1/A+onhHyTiA4ToQs1o6sAugOg2/NbMaVTot6N/JvHX7mX2GRK15C1AAAAAElFTkSuQmCC" alt="cat-footprint">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tabs" id="tabBattles" role="tabpanel">
+                    <div class="story-">
+                        <img src="Megiddo.png" alt="Megiddo">
+                        <div class="p-body">
+                            <h3 data-i18n="battle.megiddo">Battle of Megiddo</h3>
+                            <button class="read-btn" onclick="window.location.href='Megiddo.html'">
+                                <span data-i18n="btn.read">Read</span>
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE70lEQVR4nO2aWYhcVRCGe9wVF1xwiYJGFFTcUERU9EXEBzUiiCIuEHcEFQRBxA2X+OAC6sMoPvigggZ9cUON0SiCCDFE1GSCJiajGCYzk+lbdW/91ROTkro9Pd5p+07fM91nRsQD92nuf6e+qjrnVJ3Ttdr/4z8yzGxPgG5R8FcK3gZhUqFPReiiKvpGg09X4UEIr4cQFPSbCr3EzEfU5mtkWbZIwd8o2NofCP0J8N1lWjPbDeDH/b1OegWPZllybnQIs5H9IbS2xIgWzC7V5PJOehV6cTat5nquAxOLo4IA9Gw3Q5oPDZvZ3kVtQ/jaalo2FVoZDSJN0yMhNFnVGJH0xpbWoRT0R2UQsEVLMRW+L8QQgN9taUX4hhCt5np6LgoIhD8IM4a2TGvB78wBZHUUkHyJDDFESAva4VAQBY1EAWmu90EgUtBqcESEJiOBMM/VoxCeCAfhiVgg64OMEd5Y0G4ITi3hTVFAVPi1QGNWTWubpUxoan0YBySjqwM9OlhwwmAwCPjJKCBmtg/A26sbQne2tECyNBREJDm/Fmuo0KMV02JXlmVHt3Rpmh4FoZ0BC8UWLzCjgZhtP6jSftKhVlLwl5VBlO/pyVAgvdQnaXOppWHvEdybM9/hS2Ypwz0aOzvVSarJkmrR5A1mtm9RO5llZwO8XMFjEMp88QD44hIIXlby8VERuqD4bkP4Ogjt6JRSqnxvp++b2YBHqktKSiNNz5zhAKGHOqVl7kylK2d6S5L7u3gpUaWTZsA0+FQIv+fd4VSHuMKjNVvEvQNU0OaS/7NNJDmvDeLhLhEc9R5pyqD0jNlSpbAcfuterfU4mPlwFX5ZQVshnAK0BuDHkiQ5tPgeQLdWWx2TpS3qldUnYXJZbR6GanJi1doOwu/XVOnkPK8rggD0xryACK2o7FzhX3yCP1FZkD+0OTaECF8fXGWH1kDFHiPGMLMBCK8Lcy6PecOzNQyEOSYImvuYBdr0kzc8jbm2r2UebQhf44d1Xpd5BH2DA+gZP7zoBqLCr4SCuMbnyHiYiD4uhajXD1Ghz8oXCh4v3Y1bERH6IRhEkyXhcwS8rJMBU0VhVyN835jMsnP61oUKbzSz3fPtv9fS2ur1g8MmKI34sWsJCIU5Nrk5F2ZZdkynmqmE/uf20trM9lKhL0LTAUIfdaoSIPR9dQj6Lo9GQfxCReFtbRADCno9OKf//t5d/wABP13REZlv5jNTw8YOrJAaq9qjAfBTc4WYMka88Cx+M8uyRXmBOrtuh2pyRedJhonjfD0uEa5tv7fwxqcXiMK3f2zvPZD3O5yWaMa6Vdg1s9EDVOhB/7iHDsJD3tpOl8ktCKFH+gFRSLG3zGyPNscuVuFXFfT71F405Ctme4U8p+GeA+jNfkIUnq8bDT6tFnvkqxtodSSIVprt9BP8RpqeFQVCRI4NPcDu+RH6xO8Z+wZhZvsFH5X2L0KT3oL3BUSFHlgICC083p/0DBJ7XlSKDGjNAlwlREkxzPvlTpyI8Hg/QCoXcdEeoc97BvGdfqFBRNKb+vRLBx5awLRa3rdTeaB+vNdf1dKAN3kP7ad/Xtz5KaYfg/rBnv8IB6DnvZ/v+uMB4V/9Ny0z+o1+DG+g/OKmeSpJI36o1zxc4HUAve1/A+onhHyTiA4ToQs1o6sAugOg2/NbMaVTot6N/JvHX7mX2GRK15C1AAAAAElFTkSuQmCC" alt="cat-footprint">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="story-">
+                        <img src="Kadesh.png" alt="Kadesh">
+                        <div class="p-body">
+                            <h3 data-i18n="battle.kadesh">Battle of Kadesh</h3>
+                            <button class="read-btn" onclick="window.location.href='Kadesh.html'">
+                                <span data-i18n="btn.read">Read</span>
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE70lEQVR4nO2aWYhcVRCGe9wVF1xwiYJGFFTcUERU9EXEBzUiiCIuEHcEFQRBxA2X+OAC6sMoPvigggZ9cUON0SiCCDFE1GSCJiajGCYzk+lbdW/91ROTkro9Pd5p+07fM91nRsQD92nuf6e+qjrnVJ3Ttdr/4z8yzGxPgG5R8FcK3gZhUqFPReiiKvpGg09X4UEIr4cQFPSbCr3EzEfU5mtkWbZIwd8o2NofCP0J8N1lWjPbDeDH/b1OegWPZllybnQIs5H9IbS2xIgWzC7V5PJOehV6cTat5nquAxOLo4IA9Gw3Q5oPDZvZ3kVtQ/jaalo2FVoZDSJN0yMhNFnVGJH0xpbWoRT0R2UQsEVLMRW+L8QQgN9taUX4hhCt5np6LgoIhD8IM4a2TGvB78wBZHUUkHyJDDFESAva4VAQBY1EAWmu90EgUtBqcESEJiOBMM/VoxCeCAfhiVgg64OMEd5Y0G4ITi3hTVFAVPi1QGNWTWubpUxoan0YBySjqwM9OlhwwmAwCPjJKCBmtg/A26sbQne2tECyNBREJDm/Fmuo0KMV02JXlmVHt3Rpmh4FoZ0BC8UWLzCjgZhtP6jSftKhVlLwl5VBlO/pyVAgvdQnaXOppWHvEdybM9/hS2Ypwz0aOzvVSarJkmrR5A1mtm9RO5llZwO8XMFjEMp88QD44hIIXlby8VERuqD4bkP4Ogjt6JRSqnxvp++b2YBHqktKSiNNz5zhAKGHOqVl7kylK2d6S5L7u3gpUaWTZsA0+FQIv+fd4VSHuMKjNVvEvQNU0OaS/7NNJDmvDeLhLhEc9R5pyqD0jNlSpbAcfuterfU4mPlwFX5ZQVshnAK0BuDHkiQ5tPgeQLdWWx2TpS3qldUnYXJZbR6GanJi1doOwu/XVOnkPK8rggD0xryACK2o7FzhX3yCP1FZkD+0OTaECF8fXGWH1kDFHiPGMLMBCK8Lcy6PecOzNQyEOSYImvuYBdr0kzc8jbm2r2UebQhf44d1Xpd5BH2DA+gZP7zoBqLCr4SCuMbnyHiYiD4uhajXD1Ghz8oXCh4v3Y1bERH6IRhEkyXhcwS8rJMBU0VhVyN835jMsnP61oUKbzSz3fPtv9fS2ur1g8MmKI34sWsJCIU5Nrk5F2ZZdkynmqmE/uf20trM9lKhL0LTAUIfdaoSIPR9dQj6Lo9GQfxCReFtbRADCno9OKf//t5d/wABP13REZlv5jNTw8YOrJAaq9qjAfBTc4WYMka88Cx+M8uyRXmBOrtuh2pyRedJhonjfD0uEa5tv7fwxqcXiMK3f2zvPZD3O5yWaMa6Vdg1s9EDVOhB/7iHDsJD3tpOl8ktCKFH+gFRSLG3zGyPNscuVuFXFfT71F405Ctme4U8p+GeA+jNfkIUnq8bDT6tFnvkqxtodSSIVprt9BP8RpqeFQVCRI4NPcDu+RH6xO8Z+wZhZvsFH5X2L0KT3oL3BUSFHlgICC083p/0DBJ7XlSKDGjNAlwlREkxzPvlTpyI8Hg/QCoXcdEeoc97BvGdfqFBRNKb+vRLBx5awLRa3rdTeaB+vNdf1dKAN3kP7ad/Xtz5KaYfg/rBnv8IB6DnvZ/v+uMB4V/9Ny0z+o1+DG+g/OKmeSpJI36o1zxc4HUAve1/A+onhHyTiA4ToQs1o6sAugOg2/NbMaVTot6N/JvHX7mX2GRK15C1AAAAAElFTkSuQmCC" alt="cat-footprint">
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="story-">
+                        <img src="Hyksos.png" alt="Hyksos">
+                        <div class="p-body">
+                            <h3 data-i18n="battle.hyksos">Battle of Expelling the Hyksos</h3>
+                            <button class="read-btn" onclick="window.location.href='Hyksos.html'">
+                                <span data-i18n="btn.read">Read</span>
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE70lEQVR4nO2aWYhcVRCGe9wVF1xwiYJGFFTcUERU9EXEBzUiiCIuEHcEFQRBxA2X+OAC6sMoPvigggZ9cUON0SiCCDFE1GSCJiajGCYzk+lbdW/91ROTkro9Pd5p+07fM91nRsQD92nuf6e+qjrnVJ3Ttdr/4z8yzGxPgG5R8FcK3gZhUqFPReiiKvpGg09X4UEIr4cQFPSbCr3EzEfU5mtkWbZIwd8o2NofCP0J8N1lWjPbDeDH/b1OegWPZllybnQIs5H9IbS2xIgWzC7V5PJOehV6cTat5nquAxOLo4IA9Gw3Q5oPDZvZ3kVtQ/jaalo2FVoZDSJN0yMhNFnVGJH0xpbWoRT0R2UQsEVLMRW+L8QQgN9taUX4hhCt5np6LgoIhD8IM4a2TGvB78wBZHUUkHyJDDFESAva4VAQBY1EAWmu90EgUtBqcESEJiOBMM/VoxCeCAfhiVgg64OMEd5Y0G4ITi3hTVFAVPi1QGNWTWubpUxoan0YBySjqwM9OlhwwmAwCPjJKCBmtg/A26sbQne2tECyNBREJDm/Fmuo0KMV02JXlmVHt3Rpmh4FoZ0BC8UWLzCjgZhtP6jSftKhVlLwl5VBlO/pyVAgvdQnaXOppWHvEdybM9/hS2Ypwz0aOzvVSarJkmrR5A1mtm9RO5llZwO8XMFjEMp88QD44hIIXlby8VERuqD4bkP4Ogjt6JRSqnxvp++b2YBHqktKSiNNz5zhAKGHOqVl7kylK2d6S5L7u3gpUaWTZsA0+FQIv+fd4VSHuMKjNVvEvQNU0OaS/7NNJDmvDeLhLhEc9R5pyqD0jNlSpbAcfuterfU4mPlwFX5ZQVshnAK0BuDHkiQ5tPgeQLdWWx2TpS3qldUnYXJZbR6GanJi1doOwu/XVOnkPK8rggD0xryACK2o7FzhX3yCP1FZkD+0OTaECF8fXGWH1kDFHiPGMLMBCK8Lcy6PecOzNQyEOSYImvuYBdr0kzc8jbm2r2UebQhf44d1Xpd5BH2DA+gZP7zoBqLCr4SCuMbnyHiYiD4uhajXD1Ghz8oXCh4v3Y1bERH6IRhEkyXhcwS8rJMBU0VhVyN835jMsnP61oUKbzSz3fPtv9fS2ur1g8MmKI34sWsJCIU5Nrk5F2ZZdkynmqmE/uf20trM9lKhL0LTAUIfdaoSIPR9dQj6Lo9GQfxCReFtbRADCno9OKf//t5d/wABP13REZlv5jNTw8YOrJAaq9qjAfBTc4WYMka88Cx+M8uyRXmBOrtuh2pyRedJhonjfD0uEa5tv7fwxqcXiMK3f2zvPZD3O5yWaMa6Vdg1s9EDVOhB/7iHDsJD3tpOl8ktCKFH+gFRSLG3zGyPNscuVuFXFfT71F405Ctme4U8p+GeA+jNfkIUnq8bDT6tFnvkqxtodSSIVprt9BP8RpqeFQVCRI4NPcDu+RH6xO8Z+wZhZvsFH5X2L0KT3oL3BUSFHlgICC083p/0DBJ7XlSKDGjNAlwlREkxzPvlTpyI8Hg/QCoXcdEeoc97BvGdfqFBRNKb+vRLBx5awLRa3rdTeaB+vNdf1dKAN3kP7ad/Xtz5KaYfg/rBnv8IB6DnvZ/v+uMB4V/9Ny0z+o1+DG+g/OKmeSpJI36o1zxc4HUAve1/A+onhHyTiA4ToQs1o6sAugOg2/NbMaVTot6N/JvHX7mX2GRK15C1AAAAAElFTkSuQmCC" alt="cat-footprint">
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="story-">
+                        <img src="Sherden.png" alt="Sherden">
+                        <div class="p-body">
+                            <h3 data-i18n="battle.sherden">Battle of the Sherden</h3>
+                            <button class="read-btn" onclick="window.location.href='Sherden.html'">
+                                <span data-i18n="btn.read">Read</span>
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE70lEQVR4nO2aWYhcVRCGe9wVF1xwiYJGFFTcUERU9EXEBzUiiCIuEHcEFQRBxA2X+OAC6sMoPvigggZ9cUON0SiCCDFE1GSCJiajGCYzk+lbdW/91ROTkro9Pd5p+07fM91nRsQD92nuf6e+qjrnVJ3Ttdr/4z8yzGxPgG5R8FcK3gZhUqFPReiiKvpGg09X4UEIr4cQFPSbCr3EzEfU5mtkWbZIwd8o2NofCP0J8N1lWjPbDeDH/b1OegWPZllybnQIs5H9IbS2xIgWzC7V5PJOehV6cTat5nquAxOLo4IA9Gw3Q5oPDZvZ3kVtQ/jaalo2FVoZDSJN0yMhNFnVGJH0xpbWoRT0R2UQsEVLMRW+L8QQgN9taUX4hhCt5np6LgoIhD8IM4a2TGvB78wBZHUUkHyJDDFESAva4VAQBY1EAWmu90EgUtBqcESEJiOBMM/VoxCeCAfhiVgg64OMEd5Y0G4ITi3hTVFAVPi1QGNWTWubpUxoan0YBySjqwM9OlhwwmAwCPjJKCBmtg/A26sbQne2tECyNBREJDm/Fmuo0KMV02JXlmVHt3Rpmh4FoZ0BC8UWLzCjgZhtP6jSftKhVlLwl5VBlO/pyVAgvdQnaXOppWHvEdybM9/hS2Ypwz0aOzvVSarJkmrR5A1mtm9RO5llZwO8XMFjEMp88QD44hIIXlby8VERuqD4bkP4Ogjt6JRSqnxvp++b2YBHqktKSiNNz5zhAKGHOqVl7kylK2d6S5L7u3gpUaWTZsA0+FQIv+fd4VSHuMKjNVvEvQNU0OaS/7NNJDmvDeLhLhEc9R5pyqD0jNlSpbAcfuterfU4mPlwFX5ZQVshnAK0BuDHkiQ5tPgeQLdWWx2TpS3qldUnYXJZbR6GanJi1doOwu/XVOnkPK8rggD0xryACK2o7FzhX3yCP1FZkD+0OTaECF8fXGWH1kDFHiPGMLMBCK8Lcy6PecOzNQyEOSYImvuYBdr0kzc8jbm2r2UebQhf44d1Xpd5BH2DA+gZP7zoBqLCr4SCuMbnyHiYiD4uhajXD1Ghz8oXCh4v3Y1bERH6IRhEkyXhcwS8rJMBU0VhVyN835jMsnP61oUKbzSz3fPtv9fS2ur1g8MmKI34sWsJCIU5Nrk5F2ZZdkynmqmE/uf20trM9lKhL0LTAUIfdaoSIPR9dQj6Lo9GQfxCReFtbRADCno9OKf//t5d/wABP13REZlv5jNTw8YOrJAaq9qjAfBTc4WYMka88Cx+M8uyRXmBOrtuh2pyRedJhonjfD0uEa5tv7fwxqcXiMK3f2zvPZD3O5yWaMa6Vdg1s9EDVOhB/7iHDsJD3tpOl8ktCKFH+gFRSLG3zGyPNscuVuFXFfT71F405Ctme4U8p+GeA+jNfkIUnq8bDT6tFnvkqxtodSSIVprt9BP8RpqeFQVCRI4NPcDu+RH6xO8Z+wZhZvsFH5X2L0KT3oL3BUSFHlgICC083p/0DBJ7XlSKDGjNAlwlREkxzPvlTpyI8Hg/QCoXcdEeoc97BvGdfqFBRNKb+vRLBx5awLRa3rdTeaB+vNdf1dKAN3kP7ad/Xtz5KaYfg/rBnv8IB6DnvZ/v+uMB4V/9Ny0z+o1+DG+g/OKmeSpJI36o1zxc4HUAve1/A+onhHyTiA4ToQs1o6sAugOg2/NbMaVTot6N/JvHX7mX2GRK15C1AAAAAElFTkSuQmCC" alt="cat-footprint">
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="story-">
+                        <img src="Delta.png" alt="Delta">
+                        <div class="p-body">
+                            <h3 data-i18n="battle.delta">Battle of the Delta</h3>
+                            <button class="read-btn" onclick="window.location.href='Delta.html'">
+                                <span data-i18n="btn.read">Read</span>
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE70lEQVR4nO2aWYhcVRCGe9wVF1xwiYJGFFTcUERU9EXEBzUiiCIuEHcEFQRBxA2X+OAC6sMoPvigggZ9cUON0SiCCDFE1GSCJiajGCYzk+lbdW/91ROTkro9Pd5p+07fM91nRsQD92nuf6e+qjrnVJ3Ttdr/4z8yzGxPgG5R8FcK3gZhUqFPReiiKvpGg09X4UEIr4cQFPSbCr3EzEfU5mtkWbZIwd8o2NofCP0J8N1lWjPbDeDH/b1OegWPZllybnQIs5H9IbS2xIgWzC7V5PJOehV6cTat5nquAxOLo4IA9Gw3Q5oPDZvZ3kVtQ/jaalo2FVoZDSJN0yMhNFnVGJH0xpbWoRT0R2UQsEVLMRW+L8QQgN9taUX4hhCt5np6LgoIhD8IM4a2TGvB78wBZHUUkHyJDDFESAva4VAQBY1EAWmu90EgUtBqcESEJiOBMM/VoxCeCAfhiVgg64OMEd5Y0G4ITi3hTVFAVPi1QGNWTWubpUxoan0YBySjqwM9OlhwwmAwCPjJKCBmtg/A26sbQne2tECyNBREJDm/Fmuo0KMV02JXlmVHt3Rpmh4FoZ0BC8UWLzCjgZhtP6jSftKhVlLwl5VBlO/pyVAgvdQnaXOppWHvEdybM9/hS2Ypwz0aOzvVSarJkmrR5A1mtm9RO5llZwO8XMFjEMp88QD44hIIXlby8VERuqD4bkP4Ogjt6JRSqnxvp++b2YBHqktKSiNNz5zhAKGHOqVl7kylK2d6S5L7u3gpUaWTZsA0+FQIv+fd4VSHuMKjNVvEvQNU0OaS/7NNJDmvDeLhLhEc9R5pyqD0jNlSpbAcfuterfU4mPlwFX5ZQVshnAK0BuDHkiQ5tPgeQLdWWx2TpS3qldUnYXJZbR6GanJi1doOwu/XVOnkPK8rggD0xryACK2o7FzhX3yCP1FZkD+0OTaECF8fXGWH1kDFHiPGMLMBCK8Lcy6PecOzNQyEOSYImvuYBdr0kzc8jbm2r2UebQhf44d1Xpd5BH2DA+gZP7zoBqLCr4SCuMbnyHiYiD4uhajXD1Ghz8oXCh4v3Y1bERH6IRhEkyXhcwS8rJMBU0VhVyN835jMsnP61oUKbzSz3fPtv9fS2ur1g8MmKI34sWsJCIU5Nrk5F2ZZdkynmqmE/uf20trM9lKhL0LTAUIfdaoSIPR9dQj6Lo9GQfxCReFtbRADCno9OKf//t5d/wABP13REZlv5jNTw8YOrJAaq9qjAfBTc4WYMka88Cx+M8uyRXmBOrtuh2pyRedJhonjfD0uEa5tv7fwxqcXiMK3f2zvPZD3O5yWaMa6Vdg1s9EDVOhB/7iHDsJD3tpOl8ktCKFH+gFRSLG3zGyPNscuVuFXFfT71F405Ctme4U8p+GeA+jNfkIUnq8bDT6tFnvkqxtodSSIVprt9BP8RpqeFQVCRI4NPcDu+RH6xO8Z+wZhZvsFH5X2L0KT3oL3BUSFHlgICC083p/0DBJ7XlSKDGjNAlwlREkxzPvlTpyI8Hg/QCoXcdEeoc97BvGdfqFBRNKb+vRLBx5awLRa3rdTeaB+vNdf1dKAN3kP7ad/Xtz5KaYfg/rBnv8IB6DnvZ/v+uMB4V/9Ny0z+o1+DG+g/OKmeSpJI36o1zxc4HUAve1/A+onhHyTiA4ToQs1o6sAugOg2/NbMaVTot6N/JvHX7mX2GRK15C1AAAAAElFTkSuQmCC" alt="cat-footprint">
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tabs" id="tabMyths" role="tabpanel">
+                    <div class="story-">
+                        <img src="Isis.png" alt="">
+                        <div class="p-body">
+                            <h3 data-i18n="myth.isis">The Legend of Isis and Osiris</h3>
+                            <button class="read-btn" onclick="window.location.href='Isis.html'">
+                                <span data-i18n="btn.read">Read</span>
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE70lEQVR4nO2aWYhcVRCGe9wVF1xwiYJGFFTcUERU9EXEBzUiiCIuEHcEFQRBxA2X+OAC6sMoPvigggZ9cUON0SiCCDFE1GSCJiajGCYzk+lbdW/91ROTkro9Pd5p+07fM91nRsQD92nuf6e+qjrnVJ3Ttdr/4z8yzGxPgG5R8FcK3gZhUqFPReiiKvpGg09X4UEIr4cQFPSbCr3EzEfU5mtkWbZIwd8o2NofCP0J8N1lWjPbDeDH/b1OegWPZllybnQIs5H9IbS2xIgWzC7V5PJOehV6cTat5nquAxOLo4IA9Gw3Q5oPDZvZ3kVtQ/jaalo2FVoZDSJN0yMhNFnVGJH0xpbWoRT0R2UQsEVLMRW+L8QQgN9taUX4hhCt5np6LgoIhD8IM4a2TGvB78wBZHUUkHyJDDFESAva4VAQBY1EAWmu90EgUtBqcESEJiOBMM/VoxCeCAfhiVgg64OMEd5Y0G4ITi3hTVFAVPi1QGNWTWubpUxoan0YBySjqwM9OlhwwmAwCPjJKCBmtg/A26sbQne2tECyNBREJDm/Fmuo0KMV02JXlmVHt3Rpmh4FoZ0BC8UWLzCjgZhtP6jSftKhVlLwl5VBlO/pyVAgvdQnaXOppWHvEdybM9/hS2Ypwz0aOzvVSarJkmrR5A1mtm9RO5llZwO8XMFjEMp88QD44hIIXlby8VERuqD4bkP4Ogjt6JRSqnxvp++b2YBHqktKSiNNz5zhAKGHOqVl7kylK2d6S5L7u3gpUaWTZsA0+FQIv+fd4VSHuMKjNVvEvQNU0OaS/7NNJDmvDeLhLhEc9R5pyqD0jNlSpbAcfuterfU4mPlwFX5ZQVshnAK0BuDHkiQ5tPgeQLdWWx2TpS3qldUnYXJZbR6GanJi1doOwu/XVOnkPK8rggD0xryACK2o7FzhX3yCP1FZkD+0OTaECF8fXGWH1kDFHiPGMLMBCK8Lcy6PecOzNQyEOSYImvuYBdr0kzc8jbm2r2UebQhf44d1Xpd5BH2DA+gZP7zoBqLCr4SCuMbnyHiYiD4uhajXD1Ghz8oXCh4v3Y1bERH6IRhEkyXhcwS8rJMBU0VhVyN835jMsnP61oUKbzSz3fPtv9fS2ur1g8MmKI34sWsJCIU5Nrk5F2ZZdkynmqmE/uf20trM9lKhL0LTAUIfdaoSIPR9dQj6Lo9GQfxCReFtbRADCno9OKf//t5d/wABP13REZlv5jNTw8YOrJAaq9qjAfBTc4WYMka88Cx+M8uyRXmBOrtuh2pyRedJhonjfD0uEa5tv7fwxqcXiMK3f2zvPZD3O5yWaMa6Vdg1s9EDVOhB/7iHDsJD3tpOl8ktCKFH+gFRSLG3zGyPNscuVuFXFfT71F405Ctme4U8p+GeA+jNfkIUnq8bDT6tFnvkqxtodSSIVprt9BP8RpqeFQVCRI4NPcDu+RH6xO8Z+wZhZvsFH5X2L0KT3oL3BUSFHlgICC083p/0DBJ7XlSKDGjNAlwlREkxzPvlTpyI8Hg/QCoXcdEeoc97BvGdfqFBRNKb+vRLBx5awLRa3rdTeaB+vNdf1dKAN3kP7ad/Xtz5KaYfg/rBnv8IB6DnvZ/v+uMB4V/9Ny0z+o1+DG+g/OKmeSpJI36o1zxc4HUAve1/A+onhHyTiA4ToQs1o6sAugOg2/NbMaVTot6N/JvHX7mX2GRK15C1AAAAAElFTkSuQmCC" alt="cat-footprint">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="story-">
+                        <img src="Ra.png" alt="">
+                        <div class="p-body">
+                            <h3 data-i18n="myth.ra">The Legend of Ra's Golden Ship</h3>
+                            <button class="read-btn" onclick="window.location.href='Ra.html'">
+                                <span data-i18n="btn.read">Read</span>
+                                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE70lEQVR4nO2aWYhcVRCGe9wVF1xwiYJGFFTcUERU9EXEBzUiiCIuEHcEFQRBxA2X+OAC6sMoPvigggZ9cUON0SiCCDFE1GSCJiajGCYzk+lbdW/91ROTkro9Pd5p+07fM91nRsQD92nuf6e+qjrnVJ3Ttdr/4z8yzGxPgG5R8FcK3gZhUqFPReiiKvpGg09X4UEIr4cQFPSbCr3EzEfU5mtkWbZIwd8o2NofCP0J8N1lWjPbDeDH/b1OegWPZllybnQIs5H9IbS2xIgWzC7V5PJOehV6cTat5nquAxOLo4IA9Gw3Q5oPDZvZ3kVtQ/jaalo2FVoZDSJN0yMhNFnVGJH0xpbWoRT0R2UQsEVLMRW+L8QQgN9taUX4hhCt5np6LgoIhD8IM4a2TGvB78wBZHUUkHyJDDFESAva4VAQBY1EAWmu90EgUtBqcESEJiOBMM/VoxCeCAfhiVgg64OMEd5Y0G4ITi3hTVFAVPi1QGNWTWubpUxoan0YBySjqwM9OlhwwmAwCPjJKCBmtg/A26sbQne2tECyNBREJDm/Fmuo0KMV02JXlmVHt3Rpmh4FoZ0BC8UWLzCjgZhtP6jSftKhVlLwl5VBlO/pyVAgvdQnaXOppWHvEdybM9/hS2Ypwz0aOzvVSarJkmrR5A1mtm9RO5llZwO8XMFjEMp88QD44hIIXlby8VERuqD4bkP4Ogjt6JRSqnxvp++b2YBHqktKSiNNz5zhAKGHOqVl7kylK2d6S5L7u3gpUaWTZsA0+FQIv+fd4VSHuMKjNVvEvQNU0OaS/7NNJDmvDeLhLhEc9R5pyqD0jNlSpbAcfuterfU4mPlwFX5ZQVshnAK0BuDHkiQ5tPgeQLdWWx2TpS3qldUnYXJZbR6GanJi1doOwu/XVOnkPK8rggD0xryACK2o7FzhX3yCP1FZkD+0OTaECF8fXGWH1kDFHiPGMLMBCK8Lcy6PecOzNQyEOSYImvuYBdr0kzc8jbm2r2UebQhf44d1Xpd5BH2DA+gZP7zoBqLCr4SCuMbnyHiYiD4uhajXD1Ghz8oXCh4v3Y1bERH6IRhEkyXhcwS8rJMBU0VhVyN835jMsnP61oUKbzSz3fPtv9fS2ur1g8MmKI34sWsJCIU5Nrk5F2ZZdkynmqmE/uf20trM9lKhL0LTAUIfdaoSIPR9dQj6Lo9GQfxCReFtbRADCno9OKf//t5d/wABP13REZlv5jNTw8YOrJAaq9qjAfBTc4WYMka88Cx+M8uyRXmBOrtuh2pyRedJhonjfD0uEa5tv7fwxqcXiMK3f2zvPZD3O5yWaMa6Vdg1s9EDVOhB/7iHDsJD3tpOl8ktCKFH+gFRSLG3zGyPNscuVuFXFfT71F405Ctme4U8p+GeA+jNfkIUnq8bDT6tFnvkqxtodSSIVprt9BP8RpqeFQVCRI4NPcDu+RH6xO8Z+wZhZvsFH5X2L0KT3oL3BUSFHlgICC083p/0DBJ7XlSKDGjNAlwlREkxzPvlTpyI8Hg/QCoXcdEeoc97BvGdfqFBRNKb+vRLBx5awLRa3rdTeaB+vNdf1dKAN3kP7ad/Xtz5KaYfg/rBnv8IB6DnvZ/v+uMB4V/9Ny0z+o1+DG+g/OKmeSpJI36o1zxc4HUAve1/A+onhHyTiA4ToQs1o6sAugOg2/NbMaVTot6N/JvHX7mX2GRK15C1AAAAAElFTkSuQmCC" alt="cat-footprint">
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="story-">
+                    <img src="Sphinx.png" alt="">
+                    <div class="p-body">
+                        <h3 data-i18n="myth.sphinx">The Legend of the Sphinx and the Dream</h3>
+                        <button class="read-btn" onclick="window.location.href='Sphinx.html'">
+                            <span data-i18n="btn.read">Read</span>
+                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE70lEQVR4nO2aWYhcVRCGe9wVF1xwiYJGFFTcUERU9EXEBzUiiCIuEHcEFQRBxA2X+OAC6sMoPvigggZ9cUON0SiCCDFE1GSCJiajGCYzk+lbdW/91ROTkro9Pd5p+07fM91nRsQD92nuf6e+qjrnVJ3Ttdr/4z8yzGxPgG5R8FcK3gZhUqFPReiiKvpGg09X4UEIr4cQFPSbCr3EzEfU5mtkWbZIwd8o2NofCP0J8N1lWjPbDeDH/b1OegWPZllybnQIs5H9IbS2xIgWzC7V5PJOehV6cTat5nquAxOLo4IA9Gw3Q5oPDZvZ3kVtQ/jaalo2FVoZDSJN0yMhNFnVGJH0xpbWoRT0R2UQsEVLMRW+L8QQgN9taUX4hhCt5np6LgoIhD8IM4a2TGvB78wBZHUUkHyJDDFESAva4VAQBY1EAWmu90EgUtBqcESEJiOBMM/VoxCeCAfhiVgg64OMEd5Y0G4ITi3hTVFAVPi1QGNWTWubpUxoan0YBySjqwM9OlhwwmAwCPjJKCBmtg/A26sbQne2tECyNBREJDm/Fmuo0KMV02JXlmVHt3Rpmh4FoZ0BC8UWLzCjgZhtP6jSftKhVlLwl5VBlO/pyVAgvdQnaXOppWHvEdybM9/hS2Ypwz0aOzvVSarJkmrR5A1mtm9RO5llZwO8XMFjEMp88QD44hIIXlby8VERuqD4bkP4Ogjt6JRSqnxvp++b2YBHqktKSiNNz5zhAKGHOqVl7kylK2d6S5L7u3gpUaWTZsA0+FQIv+fd4VSHuMKjNVvEvQNU0OaS/7NNJDmvDeLhLhEc9R5pyqD0jNlSpbAcfuterfU4mPlwFX5ZQVshnAK0BuDHkiQ5tPgeQLdWWx2TpS3qldUnYXJZbR6GanJi1doOwu/XVOnkPK8rggD0xryACK2o7FzhX3yCP1FZkD+0OTaECF8fXGWH1kDFHiPGMLMBCK8Lcy6PecOzNQyEOSYImvuYBdr0kzc8jbm2r2UebQhf44d1Xpd5BH2DA+gZP7zoBqLCr4SCuMbnyHiYiD4uhajXD1Ghz8oXCh4v3Y1bERH6IRhEkyXhcwS8rJMBU0VhVyN835jMsnP61oUKbzSz3fPtv9fS2ur1g8MmKI34sWsJCIU5Nrk5F2ZZdkynmqmE/uf20trM9lKhL0LTAUIfdaoSIPR9dQj6Lo9GQfxCReFtbRADCno9OKf//t5d/wABP13REZlv5jNTw8YOrJAaq9qjAfBTc4WYMka88Cx+M8uyRXmBOrtuh2pyRedJhonjfD0uEa5tv7fwxqcXiMK3f2zvPZD3O5yWaMa6Vdg1s9EDVOhB/7iHDsJD3tpOl8ktCKFH+gFRSLG3zGyPNscuVuFXFfT71F405Ctme4U8p+GeA+jNfkIUnq8bDT6tFnvkqxtodSSIVprt9BP8RpqeFQVCRI4NPcDu+RH6xO8Z+wZhZvsFH5X2L0KT3oL3BUSFHlgICC083p/0DBJ7XlSKDGjNAlwlREkxzPvlTpyI8Hg/QCoXcdEeoc97BvGdfqFBRNKb+vRLBx5awLRa3rdTeaB+vNdf1dKAN3kP7ad/Xtz5KaYfg/rBnv8IB6DnvZ/v+uMB4V/9Ny0z+o1+DG+g/OKmeSpJI36o1zxc4HUAve1/A+onhHyTiA4ToQs1o6sAugOg2/NbMaVTot6N/JvHX7mX2GRK15C1AAAAAElFTkSuQmCC" alt="cat-footprint">
+                    </button>
+                </div>
+            </div>
+
+            <div class="story-">
+                <img src="Winged.png" alt="">
+                <div class="p-body">
+                    <h3 data-i18n="myth.wingedDisk">The Legend of the Winged Disk</h3>
+                    <button class="read-btn" onclick="window.location.href='WingedDisk.html'">
+                        <span data-i18n="btn.read">Read</span>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE70lEQVR4nO2aWYhcVRCGe9wVF1xwiYJGFFTcUERU9EXEBzUiiCIuEHcEFQRBxA2X+OAC6sMoPvigggZ9cUON0SiCCDFE1GSCJiajGCYzk+lbdW/91ROTkro9Pd5p+07fM91nRsQD92nuf6e+qjrnVJ3Ttdr/4z8yzGxPgG5R8FcK3gZhUqFPReiiKvpGg09X4UEIr4cQFPSbCr3EzEfU5mtkWbZIwd8o2NofCP0J8N1lWjPbDeDH/b1OegWPZllybnQIs5H9IbS2xIgWzC7V5PJOehV6cTat5nquAxOLo4IA9Gw3Q5oPDZvZ3kVtQ/jaalo2FVoZDSJN0yMhNFnVGJH0xpbWoRT0R2UQsEVLMRW+L8QQgN9taUX4hhCt5np6LgoIhD8IM4a2TGvB78wBZHUUkHyJDDFESAva4VAQBY1EAWmu90EgUtBqcESEJiOBMM/VoxCeCAfhiVgg64OMEd5Y0G4ITi3hTVFAVPi1QGNWTWubpUxoan0YBySjqwM9OlhwwmAwCPjJKCBmtg/A26sbQne2tECyNBREJDm/Fmuo0KMV02JXlmVHt3Rpmh4FoZ0BC8UWLzCjgZhtP6jSftKhVlLwl5VBlO/pyVAgvdQnaXOppWHvEdybM9/hS2Ypwz0aOzvVSarJkmrR5A1mtm9RO5llZwO8XMFjEMp88QD44hIIXlby8VERuqD4bkP4Ogjt6JRSqnxvp++b2YBHqktKSiNNz5zhAKGHOqVl7kylK2d6S5L7u3gpUaWTZsA0+FQIv+fd4VSHuMKjNVvEvQNU0OaS/7NNJDmvDeLhLhEc9R5pyqD0jNlSpbAcfuterfU4mPlwFX5ZQVshnAK0BuDHkiQ5tPgeQLdWWx2TpS3qldUnYXJZbR6GanJi1doOwu/XVOnkPK8rggD0xryACK2o7FzhX3yCP1FZkD+0OTaECF8fXGWH1kDFHiPGMLMBCK8Lcy6PecOzNQyEOSYImvuYBdr0kzc8jbm2r2UebQhf44d1Xpd5BH2DA+gZP7zoBqLCr4SCuMbnyHiYiD4uhajXD1Ghz8oXCh4v3Y1bERH6IRhEkyXhcwS8rJMBU0VhVyN835jMsnP61oUKbzSz3fPtv9fS2ur1g8MmKI34sWsJCIU5Nrk5F2ZZdkynmqmE/uf20trM9lKhL0LTAUIfdaoSIPR9dQj6Lo9GQfxCReFtbRADCno9OKf//t5d/wABP13REZlv5jNTw8YOrJAaq9qjAfBTc4WYMka88Cx+M8uyRXmBOrtuh2pyRedJhonjfD0uEa5tv7fwxqcXiMK3f2zvPZD3O5yWaMa6Vdg1s9EDVOhB/7iHDsJD3tpOl8ktCKFH+gFRSLG3zGyPNscuVuFXFfT71F405Ctme4U8p+GeA+jNfkIUnq8bDT6tFnvkqxtodSSIVprt9BP8RpqeFQVCRI4NPcDu+RH6xO8Z+wZhZvsFH5X2L0KT3oL3BUSFHlgICC083p/0DBJ7XlSKDGjNAlwlREkxzPvlTpyI8Hg/QCoXcdEeoc97BvGdfqFBRNKb+vRLBx5awLRa3rdTeaB+vNdf1dKAN3kP7ad/Xtz5KaYfg/rBnv8IB6DnvZ/v+uMB4V/9Ny0z+o1+DG+g/OKmeSpJI36o1zxc4HUAve1/A+onhHyTiA4ToQs1o6sAugOg2/NbMaVTot6N/JvHX7mX2GRK15C1AAAAAElFTkSuQmCC" alt="cat-footprint">
+                    </button>
+                </div>
+            </div>
+
+            <div class="story-">
+                <img src="Sailor.png" alt="">
+                <div class="p-body">
+                    <h3 data-i18n="myth.sailor">The Legend of the Shipwrecked Sailor</h3>
+                    <button class="read-btn" onclick="window.location.href='Sailor.html'">
+                        <span data-i18n="btn.read">Read</span>
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAE70lEQVR4nO2aWYhcVRCGe9wVF1xwiYJGFFTcUERU9EXEBzUiiCIuEHcEFQRBxA2X+OAC6sMoPvigggZ9cUON0SiCCDFE1GSCJiajGCYzk+lbdW/91ROTkro9Pd5p+07fM91nRsQD92nuf6e+qjrnVJ3Ttdr/4z8yzGxPgG5R8FcK3gZhUqFPReiiKvpGg09X4UEIr4cQFPSbCr3EzEfU5mtkWbZIwd8o2NofCP0J8N1lWjPbDeDH/b1OegWPZllybnQIs5H9IbS2xIgWzC7V5PJOehV6cTat5nquAxOLo4IA9Gw3Q5oPDZvZ3kVtQ/jaalo2FVoZDSJN0yMhNFnVGJH0xpbWoRT0R2UQsEVLMRW+L8QQgN9taUX4hhCt5np6LgoIhD8IM4a2TGvB78wBZHUUkHyJDDFESAva4VAQBY1EAWmu90EgUtBqcESEJiOBMM/VoxCeCAfhiVgg64OMEd5Y0G4ITi3hTVFAVPi1QGNWTWubpUxoan0YBySjqwM9OlhwwmAwCPjJKCBmtg/A26sbQne2tECyNBREJDm/Fmuo0KMV02JXlmVHt3Rpmh4FoZ0BC8UWLzCjgZhtP6jSftKhVlLwl5VBlO/pyVAgvdQnaXOppWHvEdybM9/hS2Ypwz0aOzvVSarJkmrR5A1mtm9RO5llZwO8XMFjEMp88QD44hIIXlby8VERuqD4bkP4Ogjt6JRSqnxvp++b2YBHqktKSiNNz5zhAKGHOqVl7kylK2d6S5L7u3gpUaWTZsA0+FQIv+fd4VSHuMKjNVvEvQNU0OaS/7NNJDmvDeLhLhEc9R5pyqD0jNlSpbAcfuterfU4mPlwFX5ZQVshnAK0BuDHkiQ5tPgeQLdWWx2TpS3qldUnYXJZbR6GanJi1doOwu/XVOnkPK8rggD0xryACK2o7FzhX3yCP1FZkD+0OTaECF8fXGWH1kDFHiPGMLMBCK8Lcy6PecOzNQyEOSYImvuYBdr0kzc8jbm2r2UebQhf44d1Xpd5BH2DA+gZP7zoBqLCr4SCuMbnyHiYiD4uhajXD1Ghz8oXCh4v3Y1bERH6IRhEkyXhcwS8rJMBU0VhVyN835jMsnP61oUKbzSz3fPtv9fS2ur1g8MmKI34sWsJCIU5Nrk5F2ZZdkynmqmE/uf20trM9lKhL0LTAUIfdaoSIPR9dQj6Lo9GQfxCReFtbRADCno9OKf//t5d/wABP13REZlv5jNTw8YOrJAaq9qjAfBTc4WYMka88Cx+M8uyRXmBOrtuh2pyRedJhonjfD0uEa5tv7fwxqcXiMK3f2zvPZD3O5yWaMa6Vdg1s9EDVOhB/7iHDsJD3tpOl8ktCKFH+gFRSLG3zGyPNscuVuFXFfT71F405Ctme4U8p+GeA+jNfkIUnq8bDT6tFnvkqxtodSSIVprt9BP8RpqeFQVCRI4NPcDu+RH6xO8Z+wZhZvsFH5X2L0KT3oL3BUSFHlgICC083p/0DBJ7XlSKDGjNAlwlREkxzPvlTpyI8Hg/QCoXcdEeoc97BvGdfqFBRNKb+vRLBx5awLRa3rdTeaB+vNdf1dKAN3kP7ad/Xtz5KaYfg/rBnv8IB6DnvZ/v+uMB4V/9Ny0z+o1+DG+g/OKmeSpJI36o1zxc4HUAve1/A+onhHyTiA4ToQs1o6sAugOg2/NbMaVTot6N/JvHX7mX2GRK15C1AAAAAElFTkSuQmCC" alt="cat-footprint">
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+        </section>
+
+        <section class="info">
+            <h4 data-i18n="info.heading">Did you know?</h4>
+            <div class="info-cards">
+                <div>
+                    <img class="ay" src="Ay1.png" alt="Ay">
+                    <h5 data-i18n="info.card1.title">Some Pharaohs Were Kids!</h5>
+                    <p data-i18n="info.card1.desc">King Tutankhamun became Pharaoh when he was only about 9 years old. Imagine being the ruler of Egypt while you were still a child!</p>
+                </div>
+                <div>
+                    <img class="ay" src="Ay1.png" alt="Ay">
+                    <h5 data-i18n="info.card2.title">Ancient Egypt Was Full of Color!</h5>
+                    <p data-i18n="info.card2.desc">The temples and statues of Ancient Egypt were once painted with bright, colorful paints. They didn't look plain and sandy like they do today.</p>
+                </div>
+                <div>
+                    <img class="ay" src="Ay1.png" alt="Ay">
+                    <h5 data-i18n="info.card3.title">They Had Board Games!</h5>
+                    <p data-i18n="info.card3.desc">One of the most popular games was Senet, a board game enjoyed by both children and adults over 5,000 years ago. It was one of the world's oldest known board games.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer>
+        <p data-i18n="footer.quote">The past is full of stories, and every story is a journey</p>
+        <small data-i18n="footer.author">- Ay</small>
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFPklEQVR4nO1YTWwbRRi1KqgQIIE4ABIcECckOHCDA6iq7cSxk911Yq9/E9s7s5gk9c46sRPHcZqtm6RJ49kAUgWqBJcKwQVROBQJ8SOoQFAkEEIg8VMoBVIQDVREDSpJ6kGzJJG93nXqNNlIyE+ai/ftfO/Nznzf57HZmmiiiSaa2E2MRliU9bkWEOMoy6yjnAt2nJE57nYzfj7OObK8+7zMOq4i1l7OBTpOKzy/17YbGAmxz6KO/UTSjYyv7VfFZtuj5xciXA8VrecPB9q/sl68wD6CGLsmYDTMkqP9cTLd20Oyfvd/v0WYpyv5SnfnnWlvywo1XIhyGn+mL0YGu1xrfG+vpQZyvOcjGnisu5OoCG4MLAEyEmRIpqvtjyrDQeYk5RcFvoo/258gaa+TDPs9Zy01MNjVujjkbyO4QkyliUyna1XPz4fZGq6KIJmAITLgbVm21AA9hFPJqKEgOg4l+JVKfpp1lGcPJAy5GEF6bq5aamDY7142E0/HTF+sagsVot66/EMCb+0XKILgl/UEqRL8tpI/3dv9Sz3+0f74BUsNqAhM1hOEEXxTx39nE/5blhqYSwv3YwRMtwVGoFhlQILjdb9YCozZrAZG4BmT1SyXEHiomis8Vmf1yziVfMByA8eTyZsxAmcMRL2g5yqKsoeeC0MDEnxlx0QqEe7hId59HjH2Ms3V+TB7ovL5TDJ5G5bgcxjBBRXBeRXBkqIY9zZzksgZiD832x+/e51T6u6+ZSTEvDvQ2bJC+6tcoONDo7bk2sRHA4+mWeeqvnfJBTo+3tKEdCtJAKgI/qhK4KKK4Al1IHZPpfhsl+uiPt5ImDvWuHhFuYFWT61d6OkkpVRC611oNaW/FSJc1rbNGOI932z0Vn0xrbdCrINkfW2XGp4sH2ZLdLKDMV/Nni1EvSTrc/2+neILUXaQNnpKIlAdK8ISmbWXG54w62v7LRdsNylSgGS6qnud68HxZPLGQW/LlXGDxSoKQUK73oYnHWCdq/QzmqW+STH8z3YZKES5I8OBdsPGcFIM00av8VgjIXalbuWU4Dmj95R4/KZckDmV9jqX6coNdLZeHg1zE/ViDQfafzJr9KiBHO/5tGEDE2Lou00MvFojHrbekfG1LeizCN3buTD7klmsYiKwaBbnMAitHgx79zVsACPRsMqujzkE41XieX5vxu+ep4LTrFNbuVIKELqvNSOMnYzFONEoVumAcMUszpEnoydtW8FTcvw+LMG/TSaep1ulkp8LeL6gQmXWTqZ7u2syCX1GC+EUDN1Vu1jwc+M44M8ZSbx3Swa0iVMgQfsUXQZaKaUEd7V45g1tqzB2MvVExGC7AZp2NRNDvPt7fRxVFmIGzeCSKoH9Wxa/MTmCHtrvaBMi+BmWRVfl83yQeXH9ZuIwCJluOVoEZcaxVlk7nq9ZLCQmVQTOqhJcxBI4pW8GdwS5APPe+iFVEn7zVnnjQAY1Lv1StFDadgv04mqI9/ygHVivk0yI5iuvHxMwvPElsn7Pz4UoE7ZUPL3fGexy/ZVmHVqGwSlwzeLXB835tN9Ba/dKNPWORVlgiYFhvv0T2tDNpoSGhetHKSWQohDQ7pFkzml4NrYd4zH+0vUKNy6MgIzH/I13nY2iJAlLO2FA1VI0vLzjBjACH+yUAWzFzcRcSnycFrNNtsMFVYLvYwm+jBF4DSNweu0vZ913SlbkfgpVEvapEnxbKzoILGEJfq1K8HWMgDyXFh80e4/+98UItqiSkKb3Spjeakgwr8qQP9bff6sl4ptoookmmvhf4V900pk2tcCsTgAAAABJRU5ErkJggg==" alt="cat-footprint" class="cat">
+        <img src="AY.png" alt="Ay">
+    </footer>
+
+    
+
+    <script>
+        const tabButtons = {
+            "Phar-card": "tabPharaohs",
+            "Queens-card": "tabQueens",
+            "Battles-card": "tabBattles",
+            "Myths-card": "tabMyths",
+        };
+        
+        const allTabs = Object.values(tabButtons).map(id => document.getElementById(id));
+        
+        Object.entries(tabButtons).forEach(([btnId, tabId]) => {
+            document.getElementById(btnId).addEventListener("click", () => {
+                allTabs.forEach(tab => tab.style.display = "none");
+                document.getElementById(tabId).style.display = "grid";
+            });
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
