@@ -24,6 +24,48 @@
 
 
     <main>
+        <section id="main">
+            <form action="" id="loginBox" class="login-div">
+                <div>
+                    <label for="role">Who are you?</label>
+                    <select style="color: var(--Brown);" name="role" id="role">
+                        <option style="color: var(--Brown);" value="parent">Parent</option>
+                        <option style="color: var(--Brown);" value="child">Child</option>
+                    </select>
+                </div>
+    
+                <div>
+                    <label for="fname">First Name</label>
+                    <input id="fname" type="text" placeholder="Enter your first name...">
+                </div>
+    
+                <div>
+                    <label for="lname">Last Name</label>
+                    <input id="lname" type="text" placeholder="Enter your last name...">
+                </div>
+    
+                <div>
+                    <label for="lname">Email</label>
+                    <input type="email" name="email" id="email" placeholder="example@gmail.com">
+                </div>
+                <div>
+                    <label for="age">Age</label>
+                    <input type="number" name="age" id="age" placeholder="18">
+                </div>
+    
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password">
+                </div>
+    
+                <div class="buttons" style="flex-direction: row-reverse;">
+                    <button id="submit" class="submit">Log In</button>
+                    <button id="cancel" class="cancel">Cancel</button>
+                </div>
+            </form>
+        </section>
+
+        
         <section class="hero-sec">
             <div class="hero-txt">
                 <h1>Khufu</h1>
@@ -163,16 +205,16 @@
                         <small id="status"></small>
                     </div>
                 </div>
-    
+
                 <div class="Question" style="width: 30rem;">
                     <small>Second Question</small>
                     <small> | </small>
                     <small style="color: var(--Golden);">5 points</small>
                     <div>
-                        <p>Think Like a Pharaoh... <br> <br> If you were building a monument that you wanted people to admire thousands of years later, what would you build, and why?</p>
+                        <p class="theQuestion" id="critical-thinking">Think Like a Pharaoh... <br> <br> If you were building a monument that you wanted people to admire thousands of years later, what would you build, and why?</p>
                         <div class="answer">
-                            <input type="text" placeholder="Write whatever you want here...">
-                            <button>
+                            <input type="text" placeholder="Write whatever you want here..." id="question-answer">
+                            <button id="submitAnswer">
                                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFJUlEQVR4nO2aa2gcVRSA1/cDH/jARxW0oqDiC0VERf+I9IcvBFGkKsRnEVQQBBF1RW0y50xSiP6IS2PmnNlGdNE/vlBrrRZBhFoqVk1rk517N7W0SVrtM6amK2c2yT46k527uzcR8cL9tXNmz3ce955z76RS/4//yFibyRylffcRTbhGMW5XjLs04Rea3JuTyBcIr9CEPZrhV824XxEWFOObg+8sPTM1V0P1wgLF+J1mLNZORfC3ZnwqTraYTh+uCF6dei5KfqTgu9dZh9iWS5+gCNdHKVGhzMGA4fYoeUXwxmyyujT/CHx3oVUQRdiZQJGiYtCburuPqZJluC+JrJZJsMoaRN7DszTDRFJlAoYHp2UFShP8nhiEsWgtxBTjsyaKKMIPpmULhA+YyOqSV7qsgGiGjw1BVNkI8L4xCMNaKyCyRBoqMl4Bok1BFME2KyCy3hsqsq8sC+MNeGTCCogi3N2oRTXDzgZAdloBmdqFTZQZLBsBNjaQ7EN2QAg8w2T/uiyLa8xzBD+xAhKQc4+ZRbGnAqSnAY+8bgUk76WP1YQ7EluUYUkZxGkzBQl85wYrICWFMJ0w0Q9q6jpnWi7ILjtbMU4ahJWSAtMayGDGOTnRfhJRKymGbxJ7w3OfbkpRzc4iSVJZamUTkx5BrFmlkO/cGleGl0IKJ6PqJEVwZ0JvbtS5ruOqZTuv0YQ5RTiqGPfK4hF4cEsMBLbHvHgk8PDGqmcJ7leEB6JCShE8E/X+YrF4mHiqDsS+YQ+vqvmvF6PCUoypGO+qgYDn6oTKn3mv8+IqGd+9TBN8KN1hqUOEleKt2TwuHaAmCGI8uX2Y8foa475UB3xEeqTw4YLfceVsoVLxR9+LVVNNjs2+e4ZmeEszbFUEezTBOsXwyjC3n1bjiUcT5RQ5bdMCqwyS8LbUHIxCH1yUuLYj/CiVZ+eScKlMuiwyrpgLEE2wMqlOmmGzNEuvJRcIcyWwDuHBYuMq27wGKvcYNkYxXNnwFzMQHJXVaquh0G6bIJqdRWaGDaPkZ/HIX422r3EWVeTeWzqsk7oMxmWDUwyuHF7UB8GMMQhjRsqGMUOQz2KVWN51qmb8Mn6hgLHY3XhqKIKfTEGkYmikT2iPUiAsChMoEe4bfe61repCNeNgMZc7Itz+my2tVX/HKSYJKi2wHLtGgjDuMgOBh0PBQtY5N6pmigmr32pL6w259NGKYbVxODB8GlUlKIYfE7+H8IfQGzOxzdCdRLDA+Nghic2QNYWosOaTtSCaoCOZIXCvbOZVwpuy3SfVCw0p7Wu9oRmXNg5R2sik8KzySC8skAK1ji4HlO/eEZlkea/jfFmPYwTX195bSOPTDETF3HBI7+GH/c6eGF1G61XYqZFeOFERvCAvF9cpwgFpbWfK5HIovtwiiOlYf7e4On1klaF8d6FiXK4Yhkt7EQ7IillbITc0xHKKoL+lEOV8+Vb3OZenbA9Z3eRQ2Q7ETAJPygl+kIWrrUAMrXDPMz/AbtpDn8s9Y8sgtmTSxzdwVNoqmAlpwVsCohifnx8ILE8PFjcNYjsvEk2Cdc17xLyIszH3z/nljo2pGMaa94hJEWcNBL9qHqS0088vCOFDrfrSYWDeQAhzLTuVV293XBAWd4n+GIbCvpucNinu5BRTjkHlYC/8CIdxWamfr/vxQF6+aanqN1oxphqoJXIqGXZ44f0H7iiV//Be+JvffqHJO7f0d56usnCTJrxbET6hCB6XW7Eg615q9W7k3zz+ATH+RBKosUosAAAAAElFTkSuQmCC" alt="cat-footprint" class="icon">
                             </button>
                         </div>
