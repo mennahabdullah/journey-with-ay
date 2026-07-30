@@ -11,7 +11,40 @@ loginBtn.addEventListener('click', () => {
         content.style.display = 'none';
     }
 });
+const submit = document.getElementById("submit");
+const account = document.getElementById("account")
+submit.addEventListener("click", (e) => {
+    e.preventDefault();
+    const header = document.getElementsByTagName("header")
+    const firstName = document.getElementById("fname").value;
+    const lastName = document.getElementById("lname").value;
+    const userAge = document.getElementById("age").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
 
+    const userInfo = {
+        fName: firstName,
+        lName: lastName,
+        age: userAge,
+        mail: email,
+        pass: password
+    }
+
+    localStorage.setItem("userInfo", JSON.stringify(userInfo));
+    window.location.href= "account.html"
+
+    loginBtn.style.display = "none";
+    account.style.display = "block"
+
+    const isHidden = window.getComputedStyle(loginBox).display === 'block';
+    if (isHidden) {
+        loginBox.style.display = 'none';
+        content.style.display = 'none';
+    } else {
+        loginBox.style.display = 'block';
+        content.style.display = 'flex';
+    }
+})
 
 const smallFontBtn = document.getElementById("smallFont");
 const defFontBtn = document.getElementById("defaultFont");
@@ -126,6 +159,23 @@ window.addEventListener('scroll', () => {
 function setProgress(percent) {
     document.getElementById('fill').style.width = percent + '%';
     document.getElementById('percentLabel').textContent = percent + '%';
-    storyProgress.style.width = `${percent} + %`;
-    storyLabel.textContent = `${percent} %`;
 }
+
+
+
+const answerBtn = document.getElementById("submitAnswer");
+answerBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const criticalThinking = document.getElementById("critical-thinking").textContent;
+    const answer = document.getElementById("question-answer").value;
+    const pageName = window.location.pathname.split("/").pop().replace(".html", "");
+    const existingData = JSON.parse(localStorage.getItem("questData")) || {};
+
+    existingData[pageName] = {
+        question: criticalThinking,
+        answers: answer
+    };
+
+    localStorage.setItem("questData", JSON.stringify(existingData));
+    window.location.href = "parents.html";
+})
