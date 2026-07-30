@@ -22,6 +22,48 @@
     </header>
 
     <main>
+        <section id="main">
+            <form action="" id="loginBox" class="login-div">
+                <div>
+                    <label for="role">Who are you?</label>
+                    <select style="color: var(--Brown);" name="role" id="role">
+                        <option style="color: var(--Brown);" value="parent">Parent</option>
+                        <option style="color: var(--Brown);" value="child">Child</option>
+                    </select>
+                </div>
+    
+                <div>
+                    <label for="fname">First Name</label>
+                    <input id="fname" type="text" placeholder="Enter your first name...">
+                </div>
+    
+                <div>
+                    <label for="lname">Last Name</label>
+                    <input id="lname" type="text" placeholder="Enter your last name...">
+                </div>
+    
+                <div>
+                    <label for="lname">Email</label>
+                    <input type="email" name="email" id="email" placeholder="example@gmail.com">
+                </div>
+                <div>
+                    <label for="age">Age</label>
+                    <input type="number" name="age" id="age" placeholder="18">
+                </div>
+    
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" id="password">
+                </div>
+    
+                <div class="buttons" style="flex-direction: row-reverse;">
+                    <button id="submit" class="submit">Log In</button>
+                    <button id="cancel" class="cancel">Cancel</button>
+                </div>
+            </form>
+        </section>
+
+        
         <section class="hero-sec">
             <div class="hero-txt">
                 <h1 data-i18n="hero.title">Parents Section</h1>
@@ -63,7 +105,8 @@
 
         <section class="child-answers" id="child-answers">
             <h3>How Does Your Kid Think?!</h3>
-            <small>Your kid's answers would be displayed here.</small>
+            <div id="theAnswersD"></div>
+            <small id="answersSmall">Your kid's answers would be displayed here.</small>
         </section>
     </main>
 
@@ -82,7 +125,33 @@
             <span>|</span>
             <a href=".">Terms of Use</a>
         </ul>
-        <small style="position: absolute; top: 4rem; left: 40%;">2026 Journey With Ay. All rights reserved.</small>
+        <small style="position: absolute;
+        top: 4rem;
+        left: 40%;">2026 Journey With Ay. All rights reserved.</small>
     </footer>
+
+    <script>
+        window.addEventListener("load", () => {
+            const savedAnswers = localStorage.getItem("questData");
+            const childAnswers = document.getElementById("theAnswersD");
+            const answersSmall = document.getElementById("answersSmall");
+        
+            if (savedAnswers) {
+                const allData = JSON.parse(savedAnswers);
+                answersSmall.style.display = "none";
+        
+                for (const pageName in allData) {
+                    const data = allData[pageName];
+                    childAnswers.innerHTML += `
+                    <div class="quest-answer">
+                        <p><strong>${pageName}</strong></p>
+                        <p>The Question: ${data.question}</p>
+                        <p>The answer: ${data.answers}</p>
+                    </div>
+                    `;
+                }
+            }
+        })
+    </script>
 </body> 
 </html>
