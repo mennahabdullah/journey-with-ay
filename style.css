@@ -918,6 +918,8 @@ ol{
 .login-div{
     display: none;
     margin: 1rem;
+    width: 30vw;
+    height: 90vh;
     border: var(--def-borders);
     background-color: whitesmoke;
     border-radius: var(--def-radius);
@@ -928,16 +930,19 @@ ol{
     position: absolute;
     padding: 1rem;
     top: 0%;
-    right: 20%;
+    right: 30%;
 }
-.login-div input{
-    width: 40vw;
-    height: 2rem;
+
+.login-div input,
+.login-div select{
+    width: 20vw;
+    height: 2vh;
     border: none;
     border-radius: 2rem;
     background-color: var(--Ivory);
     padding: 1rem;
-    margin-right: 1rem;
+    margin-bottom: 1rem;
+    color: var(--Brown);
 }
 .login-div button{
     width: 10vw;
@@ -946,8 +951,7 @@ ol{
     width: 100%;
     height: fit-content;
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    flex-direction: column;
 }
 #main{
     position: fixed;
@@ -962,6 +966,37 @@ ol{
     align-items: center;
     justify-content: center;
     z-index: 100;
+}
+.buttons{
+    flex-direction: row-reverse;
+}
+
+button{
+    width: 7vw;
+    height: 7vh;
+    cursor: pointer;
+    border-radius: var(--def-radius);
+    border: none;
+    -webkit-border-radius: var(--def-radius);
+    -moz-border-radius: var(--def-radius);
+    -ms-border-radius: var(--def-radius);
+    -o-border-radius: var(--def-radius);
+    box-shadow: var(--def-shadow);
+}
+.submit{
+    background-color: var(--Coral);
+    color: var(--Ivory);
+}
+.submit:hover{
+    scale: 1.01;
+}
+.cancel{
+    border: 2px solid var(--Coral);
+    background-color: transparent;
+    color: var(--Brown);
+}
+.cancel:hover{
+    scale: 1.01;
 }
 
 .mission{
@@ -1024,7 +1059,28 @@ ol{
     top: 50%;
     left: 40%;
 }
-
+.quest-answer{
+    background-color: var(--sageGreen);
+    padding: 1rem;
+    width: 25vw;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: var(--def-borders);
+    border-radius: var(--def-radius);
+    box-shadow: var(--def-shadow);
+    -webkit-border-radius: var(--def-radius);
+    -moz-border-radius: var(--def-radius);
+    -ms-border-radius: var(--def-radius);
+    -o-border-radius: var(--def-radius);
+}
+#theAnswersD{
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    width: 100%;
+}
 
 
 .badge-info{
@@ -1142,4 +1198,23 @@ ol{
 #third-c{
     background-image: url(scard-bg.png);
     background-size: cover;
+}
+
+
+.img-sec{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 3rem;
+    padding: 2rem;
+    gap: 2rem;
+}
+.img-sec img{
+    width: 40vw;
+    height: 40vh;
+    border: var(--def-borders);
+    border-radius: var(--def-radius);
+    -webkit-border-radius: var(--def-radius);
+    -moz-border-radius: var(--def-radius);
+    -ms-border-radius: var(--def-radius);
+    -o-border-radius: var(--def-radius);
 }
